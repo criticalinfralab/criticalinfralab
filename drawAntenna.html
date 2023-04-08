@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <style>
+            body {
+                background: orange;
+            }
+            #antennaspace {
+                text-align: center;
+            }
+            #antennaspace svg {
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <button onclick="window.location.reload();">reload to generate a unique antenna!</button>
+        <div id="antennaspace"><!-- space for antennas --></div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vivus/0.4.6/vivus.min.js"></script>
+        <script src="draw_antenna.js"></script>
+        <script>
+             var referenceNode = document.querySelector('#antennaspace');
+             var newNode = document.createElement('div');
+             referenceNode.append(newNode);
+             newNode.innerHTML = generate_svg();
+
+             // drawing effect using ID of SVG
+             new Vivus('antenna', {
+                 type: 'oneByOne',
+                 duration: 100
+             });
+        </script>
+    </body>
+</html>
