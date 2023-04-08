@@ -24,9 +24,9 @@ function getRandomArbitrary(min, max) {
 }
 
 function generate_antenna_coordinates() {
-    var size = 5;
-    var max_x = 250; // half of image width
-    var max_y = 600; // image height. could also be 100 and then using additive minima
+    var size = 6;
+    var max_x = 245; // half of image width minus some space for the rounded corners
+    var max_y = 595; // image height minus space for corners
 
     // construct the base
     // define starting point
