@@ -7,12 +7,11 @@ Template Name: Homepage
     <div id="content" class="content">
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
-                <h1 class="site-title"><?php the_title(); ?></h1>
                 <div class="site-description"><?php the_content(); ?></div>
             <?php endwhile; ?>
             <?php // subpages
             $args = array(
-                'post_parent' => $post->ID,
+                'child_of' => $post->ID,
                 'post-type' => 'page',
    	        'posts_per_page' => -1,
                 'post_status'  => 'publish',
@@ -35,14 +34,14 @@ Template Name: Homepage
                         if ($postquery->have_posts()) : 
                             while ($postquery->have_posts()) : $postquery->the_post(); ?> 
 	                    <div class="item">
-	                        <h4 class="item-title"><em class="category"><?php the_category(); ?></em><?php the_title(); ?></h4>
+	                        <h4 class="item-title"><em class="category"><?php the_category(',', 'single'); ?></em><?php the_title(); ?></h4>
 	                        <div class="item-content"><?php the_content(); ?></div>
 	                   </div>
 	                  <?php endwhile;
 	                  wp_reset_postdata();
 	               endif; ?>
 	            <?php else : ?>
-	    	    <div class="section-content"><?php echo $page->post_content; ?></div>
+	    	        <?php echo $page->post_content; ?>
 	            <?php endif; ?>
 	            </div>
 	        </div>
