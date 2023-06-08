@@ -7,6 +7,13 @@ Author URI: https://www.curlybracket.net
 
 @charset "UTF-8";
 
+:root {
+    --color1: #fff;
+    --color2: #000;
+    --hilight: #ff962e;
+    --basefontsize: 18px;
+}
+
 @font-face {
   font-family: 'SourceSans3';
   font-style:  normal;
@@ -33,15 +40,8 @@ Author URI: https://www.curlybracket.net
 }
 */
 
-:root {
-    --color1: #fff;
-    --color2: #000;
-    --hilight: #ff962e;
-    --basefontsize: 17px;
-}
-
 ::selection {
-    background: var(--color1);
+    background: dogerblue;
 }
 
 * {
@@ -65,6 +65,10 @@ body {
     color: var(--colourtext);
     shape-rendering: crispedges;
     text-rendering: optimizeLegibility;
+}
+
+body.desaturate {
+    background: #aaa;
 }
 
 i, em, blockquote {
@@ -101,14 +105,19 @@ a {
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
 input[type="submit"] {
 }
 
 input[type="submit"]:hover {
+}
+
+.button {
+    background: var(--color1);
+    border: 1px solid var(--color2);
+    color: var(--color2);
+    padding: .25em .5em;
+    font-variation-settings: "wght" 500;
+    font-size: calc(var(--basefontsize)*0.9);
 }
 
 .alignright {
@@ -134,22 +143,52 @@ input[type="submit"]:hover {
     display: none;
 }
 
-#header, #container {
+#header, #container, #footer {
 	width: 75vw;
 	margin: auto;
 	max-width: 1300px;
 }
 
+#header {
+}
+
+#header #eyecare {
+position: absolute;
+top: 1em;
+right: 0;
+}
+
+#footer {
+    margin-top: 5em;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-gap: 1em;
+}
+
 #canvas {
-    position: absolute;
+    position: fixed;
+    height: 100%;
     top: 0;
     left: 0;
     z-index: 1;
 }
 
-#content {
+#header, #content, #footer {
     position: relative;
     z-index: 2;
+}
+
+.site-description {
+    font-size: calc(var(--basefontsize)*0.95);
+    line-height: 145%;
+}
+
+.site-description a {
+    text-decoration: underline;
+}
+
+.site-description a:hover {
+    text-decoration: none;
 }
 
 .section {
@@ -157,11 +196,12 @@ input[type="submit"]:hover {
 }
 
 .section-title {
-    font-size: var(--basefontsize);
+    font-size: calc(var(--basefontsize)*0.85);
     color: var(--color1);
     background: var(--color2);
     display: inline-flex;
-    padding: 0 0.25em;
+    padding: .25em .5em;
+    letter-spacing: 0.02em;
 }
 
 .section-content {
@@ -173,10 +213,16 @@ input[type="submit"]:hover {
     border-top: 1px solid var(--color2);
     padding: .75em .25em;
     display: block;
+transition: 0.5s ease-in-out;
+}
+
+.item:last-child, /* blogposts */
+.section:nth-child(3) .section-content p:last-child /* publications */ {
+    border-bottom: 1px solid var(--color2);
 }
 
 .item:hover, /* blogposts */
-.section:nth-child(3) .section-content p:hover /* publications */ {
+.section:nth-child(3) .section-content p:not(.missing-link):hover /* publications */ {
     background: var(--color1);
     cursor: pointer;
 }
@@ -189,13 +235,20 @@ input[type="submit"]:hover {
 
 .section:nth-child(3) .section-content p:after /* publications */,
 .section:nth-child(4) a[href*="//"]:not([href*="criticalinfralab.net"]):after /* people */ {
-    content: " →";
+    content: "→";
+    padding-left: .25em;
+}
+
+/* People section */
+
+.section:nth-child(4) a[href*="//"]:not([href*="criticalinfralab.net"]):hover {
+    text-decoration: underline;
 }
 
 .section:nth-child(4) h3 {
-	font-size: var(--basefontsize);
+   font-size: var(--basefontsize);
     font-variation-settings: "wght" 400;
-	}
+}
 .section:nth-child(4) h3, .section:nth-child(4) ul {
 	display: inline;
 }

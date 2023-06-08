@@ -1,7 +1,7 @@
 const canvas = document.getElementById("canvas");
 const context = canvas.getContext("2d");
-const width = 1920;
-const height = 1080;
+const width = 2480;
+const height = 1920;
 
 canvas.width = width;
 canvas.height = height;
