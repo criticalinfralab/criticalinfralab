@@ -36,13 +36,12 @@ Author URI: https://www.curlybracket.net
 :root {
     --color1: #fff;
     --color2: #000;
-    --hilight: orange;
+    --hilight: #ff962e;
     --basefontsize: 17px;
 }
 
 ::selection {
     background: var(--color1);
-    display: block;
 }
 
 * {
@@ -51,9 +50,9 @@ Author URI: https://www.curlybracket.net
 }
 
 body {
-    background: var(--color1);
+    background: var(--hilight);
     color: var(--color2);
-    font-size: var(--basefontsize):
+    font-size: var(--basefontsize);
     font-family: "SourceSans3", sans-serif;
     font-variation-settings: "wght" 400;
     -webkit-font-smoothing: antialiased;
@@ -70,14 +69,19 @@ body {
 
 i, em, blockquote {
     font-family: "SourceSans3Italic";
+    font-style: normal;
 }
 
 b, strong,
-h1, h2, h3, h4, h5, h6 {
+.section-content h1,
+.section-content h2,
+.section-content h3,
+.section-content h4,
+.section-content h5 {
     font-variation-settings: "wght" 600;
 }
 
-code, pre, .infratext, h3 {
+code, pre, .site-description, .section-title {
     font-family: "SourceCodePro";
 }
 
@@ -99,9 +103,6 @@ a {
 
 a:hover {
     text-decoration: underline;
-}
-
-blockquote {
 }
 
 input[type="submit"] {
@@ -131,4 +132,76 @@ input[type="submit"]:hover {
 
 .screen-reader-text {
     display: none;
+}
+
+#header, #container {
+	width: 75vw;
+	margin: auto;
+	max-width: 1300px;
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+#content {
+    position: relative;
+    z-index: 2;
+}
+
+.section {
+    margin-top: 3em;
+}
+
+.section-title {
+    font-size: var(--basefontsize);
+    color: var(--color1);
+    background: var(--color2);
+    display: inline-flex;
+    padding: 0 0.25em;
+}
+
+.section-content {
+    margin-top: -2px;
+}
+
+.item, /* blogposts */
+.section:nth-child(3) .section-content p /* publications */ {
+    border-top: 1px solid var(--color2);
+    padding: .75em .25em;
+    display: block;
+}
+
+.item:hover, /* blogposts */
+.section:nth-child(3) .section-content p:hover /* publications */ {
+    background: var(--color1);
+    cursor: pointer;
+}
+
+.item-title .category, /* blogposts */
+.section:nth-child(3) .section-content p em:first-of-type /* publications */ {
+    margin-right: .25em;
+    font-variation-settings: "wght" 400;
+}
+
+.section:nth-child(3) .section-content p:after /* publications */,
+.section:nth-child(4) a[href*="//"]:not([href*="criticalinfralab.net"]):after /* people */ {
+    content: " →";
+}
+
+.section:nth-child(4) h3 {
+	font-size: var(--basefontsize);
+    font-variation-settings: "wght" 400;
+	}
+.section:nth-child(4) h3, .section:nth-child(4) ul {
+	display: inline;
+}
+.section:nth-child(4) li {
+	display: inline;
+	list-style: none;
+	margin-right: .75em;
+	font-variation-settings: "wght" 600;
 }
