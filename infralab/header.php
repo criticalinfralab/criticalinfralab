@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html>
 <head>
     <title><?php bloginfo('name'); ?> <?php if ( is_single() ) { ?> <?php } ?> <?php wp_title(); ?></title>
     <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
@@ -11,8 +10,8 @@
     <?php wp_head(); ?>
 </head>
 
-<body<?php body_class(); ?>>
+<body <?php body_class(); ?>>
     <div id="header">
-        <a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a>
+        <h1 class="site-title"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
     </div>
     <div id="container">
