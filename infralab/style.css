@@ -1,0 +1,134 @@
+/*
+Theme Name: criticalinfralab
+Theme URI: https://criticalinfralab.net
+Author: U. Uhlig
+Author URI: https://www.curlybracket.net
+*/
+
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'SourceSans3';
+  font-style:  normal;
+  src: url("fonts/SourceSans3-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'SourceSans3Italic';
+  font-style:  normal;
+  src: url("fonts/SourceSans3-Italic-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'SourceCodePro';
+  font-style:  normal;
+  src: url("fonts/SourceCodePro-VariableFont_wght.ttf") format("truetype");
+}
+
+/*
+@font-face {
+  font-family: 'SourceCodeProItalic';
+  font-style:  normal;
+  src: url("fonts/SourceCodePro-Italic-VariableFont_wght.ttf") format("truetype");
+}
+*/
+
+:root {
+    --color1: #fff;
+    --color2: #000;
+    --hilight: orange;
+    --basefontsize: 17px;
+}
+
+::selection {
+    background: var(--color1);
+    display: block;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--color1);
+    color: var(--color2);
+    font-size: var(--basefontsize):
+    font-family: "SourceSans3", sans-serif;
+    font-variation-settings: "wght" 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    font-kerning: normal;
+    font-variant: common-ligatures tabular-nums;
+    font-optical-sizing: auto;
+    overflow-x: hidden;
+    color: var(--colourtext);
+    shape-rendering: crispedges;
+    text-rendering: optimizeLegibility;
+}
+
+i, em, blockquote {
+    font-family: "SourceSans3Italic";
+}
+
+b, strong,
+h1, h2, h3, h4, h5, h6 {
+    font-variation-settings: "wght" 600;
+}
+
+code, pre, .infratext, h3 {
+    font-family: "SourceCodePro";
+}
+
+img {
+    border: none;
+    max-width: 100%;
+    height: auto;
+}
+
+hr {
+    visibility: hidden;
+    clear: both;
+}
+
+a {
+    color: var(--color2);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+blockquote {
+}
+
+input[type="submit"] {
+}
+
+input[type="submit"]:hover {
+}
+
+.alignright {
+    float: right;
+    margin-left: 2em;
+}
+
+.alignleft {
+    float: left;
+    margin-right: 2em;
+}
+
+.aligncenter {
+    margin: auto;
+    display: block;
+}
+
+.clear {
+    clear: both;
+}
+
+.screen-reader-text {
+    display: none;
+}
