@@ -52,7 +52,7 @@ jQuery(document).ready(function($) {
     let desaturation_cookie = Cookies.get('desaturate');
     if(desaturation_cookie == "desaturate") {
         $('body').addClass(desaturation_cookie);
-        $('eyecare').text('saturate');
+        $('#eyecare').text('saturate');
     }
     $('#eyecare').click(function() {
         let value = Cookies.get('desaturate');
