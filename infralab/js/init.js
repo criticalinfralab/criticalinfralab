@@ -93,4 +93,15 @@ jQuery(document).ready(function($) {
         };
         Cookies.set('desaturate', value, { expires: 365 });
     });
+
+    // draw Antenna in logo
+    var referenceNode = document.querySelector('#antennaspace');
+    var newNode = document.createElement('div');
+    referenceNode.append(newNode);
+    newNode.innerHTML = generate_svg();
+    // drawing effect using ID of SVG
+    new Vivus('antenna', {
+        type: 'oneByOne',
+        duration: 100
+    });
 });

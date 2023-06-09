@@ -13,6 +13,7 @@
 <body <?php body_class(); ?>>
     <div id="header">
         <h1 class="site-title"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+        <div id="antennaspace"><!-- space for antennas --></div>
         <a class="button" id="eyecare" href="#">desaturate</a>
     </div>
     <div id="container">

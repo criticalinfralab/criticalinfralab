@@ -178,9 +178,12 @@ button:hover {
 
 #header .site-title a {
     background: url(images/logo-criticalinfralab.svg) no-repeat;
-    height: 200px;
+    background: url(images/logo-criticalinfralab-noantenna.svg) no-repeat;
+    background-position: bottom left;
+    height: 240px;
     display: block;
     background-size: contain;
+    margin-top: 150px;
     margin-bottom: 2em;
     text-indent: -10000px;
 }
@@ -190,6 +193,13 @@ button:hover {
     top: 1em;
     right: 0;
 }
+
+#header #antenna {
+transform: rotate(45deg);
+position: absolute;
+top: 4em;
+left: 320px;
+} 
 
 #footer {
     margin-top: 5em;
@@ -344,10 +354,6 @@ button:hover {
 @media all and (min-width: 801px) {
     #header, #container, #footer {
         width: 75vw;
-    }
-
-    #header .site-title a {
-        height: 350px;
     }
     .item-content {
         padding-top: 1em;
