@@ -47,8 +47,24 @@ jQuery(document).ready(function($) {
            });
        }
     });
+
+    // show/hide blog posts logic
+    $('.item-content').hide();
+    $('.item-title').on('click', function() {
+        $(this).next('.item-content').slideToggle();
+    });
     
-    // desaturation
+    // show/hide publications logic
+    var $set = $('.section:nth-child(3) .section-content p');
+    if($set.length > 5) {
+        $set.slice(5, $set.length).wrapAll('<div class="hidden"/>');
+        $set.parent('.section-content').after('<span class="button reveal">see all publications</span>');
+        $('.reveal').on('click', function(){
+            $(this).parent().find('.hidden').slideToggle();
+        });
+    }
+
+    // desaturation cookie
     let desaturation_cookie = Cookies.get('desaturate');
     if(desaturation_cookie == "desaturate") {
         $('body').addClass(desaturation_cookie);
@@ -56,7 +72,6 @@ jQuery(document).ready(function($) {
     }
     $('#eyecare').click(function() {
         let value = Cookies.get('desaturate');
-console.log(value);
         if(value == "desaturate") {
             $('body').removeClass(value);
             $(this).text('desaturate');
