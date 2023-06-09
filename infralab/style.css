@@ -55,6 +55,7 @@ body {
     font-size: var(--basefontsize);
     font-family: "SourceSans3", sans-serif;
     font-variation-settings: "wght" 400;
+    line-height: 147%;
     font-smoothing: antialiased;
     font-kerning: normal;
     font-variant: common-ligatures tabular-nums;
@@ -104,6 +105,13 @@ a {
     text-decoration: none;
 }
 
+.site-description a,
+.item-content a,
+.section:nth-child(4) h4:hover,
+.section:nth-child(4) a:hover {
+    text-decoration: underline;
+}
+
 input[type="submit"] {
 }
 
@@ -119,11 +127,16 @@ input[type="submit"]:hover {
     background: var(--color1);
     border: 1px solid var(--color2);
     color: var(--color2);
-    padding: .25em .5em;
+    padding: .25em .75em;
     font-variation-settings: "wght" 500;
     font-size: calc(var(--basefontsize)*0.9);
+    letter-spacing: 0.02em;
     cursor: pointer;
 }
+
+button:hover {
+    transform: scale(1.1);
+} 
 
 .button.reveal {
     display: inline-block;
@@ -156,7 +169,7 @@ input[type="submit"]:hover {
 #header, #container, #footer {
     width: 90vw;
     margin: auto;
-    max-width: 1300px;
+    max-width: 1200px;
 }
 
 #header {
@@ -199,16 +212,9 @@ input[type="submit"]:hover {
 }
 
 .site-description {
+    font-variation-settings: "wght" 500;
     font-size: calc(var(--basefontsize)*0.95);
     line-height: 145%;
-}
-
-.site-description a, .item-content a {
-    border-bottom: 1px dashed;
-}
-
-.site-description a:hover, .item-content a:hover {
-    border-bottom: 2px dashed;
 }
 
 .section {
@@ -220,7 +226,7 @@ input[type="submit"]:hover {
     color: var(--color1);
     background: var(--color2);
     display: inline-flex;
-    padding: .25em .5em;
+    padding: .25em .75em;
     letter-spacing: 0.02em;
 }
 
@@ -232,18 +238,25 @@ input[type="submit"]:hover {
 .item, /* blogposts */
 .section:nth-child(3) .section-content p /* publications */ {
     border-top: 1px solid var(--color2);
-    padding: .75em .25em;
+    padding: .5em;
     display: block;
     transition: 0.5s ease-in-out;
 }
 
-.item:last-child, /* blogposts */ {
-    border-bottom: 1px solid var(--color2);
-}
-
+.item:focus, /* blogposts */
+.section:nth-child(3) .section-content p:not(.missing-link):focus /* publications */,
 .item:hover, /* blogposts */
 .section:nth-child(3) .section-content p:not(.missing-link):hover /* publications */ {
     background: var(--color1);
+}
+
+.item-title {
+    padding-right: 50px; /* prevent arrow from wrapping to next line */
+    cursor: pointer;
+}
+
+.section:nth-child(3) .section-content p:not(.missing-link),
+.section:nth-child(4) h4 /* people */ {
     cursor: pointer;
 }
 
@@ -253,29 +266,38 @@ input[type="submit"]:hover {
     font-variation-settings: "wght" 400;
 }
 
-.section:nth-child(3) .section-content p:after /* publications */,
+.section:nth-child(3) .section-content p:not(.missing-link):after,
 .section:nth-child(4) a[href*="//"]:not([href*="criticalinfralab.net"]):after /* people */ {
     content: "→";
     padding-left: .25em;
     font-variation-settings: "wght" 600;
+    margin-right: -25px;
 }
 
-/* blog posts */
-
-.item-title:after {
+.item-title:after, /* blogposts */
+.section:nth-child(4) h4:after /* people */ {
     content: "→";
     transform: rotate(90deg) translateX(-.35em);
     display: inline-block;
     padding-left: .75em;
+    margin-right: -25px;
 }
 
 .item-content {
-    padding: 1em 0;
+    padding: 1em 0 0.5em;
 }
 
 .item-content ul,
+.item-content ol{
+    margin-left: 1em;
+}
+
+.item-content blockquote,
+.item-content code,
+.item-content pre,
+.item-content ul,
 .item-content ol,
-.item-content p {
+.item-content p:not(:last-child) {
     margin-bottom: 1em;
 }
 
@@ -285,7 +307,9 @@ input[type="submit"]:hover {
 
 .item-content li:before {
     content: "–";
-    margin-right: 0.25em;
+    content: "→";
+    margin-right: 0.4em;
+    margin-left: -0.85em;
 }
 
 .has-recording {
@@ -297,10 +321,6 @@ input[type="submit"]:hover {
 
 /* People section */
 
-.section:nth-child(4) a[href*="//"]:not([href*="criticalinfralab.net"]):hover {
-    text-decoration: underline;
-}
-
 .section:nth-child(4) h3 {
    font-size: var(--basefontsize);
     font-variation-settings: "wght" 400;
@@ -308,10 +328,16 @@ input[type="submit"]:hover {
 .section:nth-child(4) h3, .section:nth-child(4) ul {
     display: inline;
 }
+.section:nth-child(4) h4 {
+    display: inline;
+    margin-right: 1.5em;
+}
+
 .section:nth-child(4) li {
     display: inline;
     list-style: none;
     margin-right: .75em;
+    padding-right: 20px;
     font-variation-settings: "wght" 600;
 }
 
@@ -324,7 +350,7 @@ input[type="submit"]:hover {
         height: 350px;
     }
     .item-content {
-        padding: 1em 2em 0;
+        padding-top: 1em;
     }
 }
 
