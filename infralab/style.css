@@ -111,6 +111,11 @@ input[type="submit"] {
 input[type="submit"]:hover {
 }
 
+.hidden {
+    display: none;
+}
+
+
 .button {
     background: var(--color1);
     border: 1px solid var(--color2);
@@ -118,6 +123,12 @@ input[type="submit"]:hover {
     padding: .25em .5em;
     font-variation-settings: "wght" 500;
     font-size: calc(var(--basefontsize)*0.9);
+    cursor: pointer;
+}
+
+.button.reveal {
+    display: inline-block;
+    margin-top: 1em;
 }
 
 .alignright {
@@ -144,25 +155,25 @@ input[type="submit"]:hover {
 }
 
 #header, #container, #footer {
-	width: 75vw;
-	margin: auto;
-	max-width: 1300px;
+    width: 90vw;
+    margin: auto;
+    max-width: 1300px;
 }
 
 #header {
 }
 
 #header #eyecare {
-position: absolute;
-top: 1em;
-right: 0;
+    position: absolute;
+    top: 1em;
+    right: 0;
 }
 
 #footer {
     margin-top: 5em;
-display: grid;
-grid-template-columns: 1fr 1fr 1fr 1fr;
-grid-gap: 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1em;
 }
 
 #canvas {
@@ -183,12 +194,12 @@ grid-gap: 1em;
     line-height: 145%;
 }
 
-.site-description a {
-    text-decoration: underline;
+.site-description a, .item-content a {
+    border-bottom: 1px dashed;
 }
 
-.site-description a:hover {
-    text-decoration: none;
+.site-description a:hover, .item-content a:hover {
+    border-bottom: 2px dashed;
 }
 
 .section {
@@ -206,6 +217,7 @@ grid-gap: 1em;
 
 .section-content {
     margin-top: -2px;
+    border-bottom: 1px solid var(--color2);
 }
 
 .item, /* blogposts */
@@ -213,11 +225,10 @@ grid-gap: 1em;
     border-top: 1px solid var(--color2);
     padding: .75em .25em;
     display: block;
-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
 }
 
-.item:last-child, /* blogposts */
-.section:nth-child(3) .section-content p:last-child /* publications */ {
+.item:last-child, /* blogposts */ {
     border-bottom: 1px solid var(--color2);
 }
 
@@ -239,6 +250,34 @@ transition: 0.5s ease-in-out;
     padding-left: .25em;
 }
 
+/* blog posts */
+
+.item-content {
+    padding: 1em 0;
+}
+
+.item-content ul,
+.item-content ol,
+.item-content p {
+    margin-bottom: 1em;
+}
+
+.item-content ul {
+    list-style: none;
+}
+
+.item-content li:before {
+    content: "–";
+    margin-right: 0.25em;
+}
+
+.has-recording {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    float: right;
+}
+
 /* People section */
 
 .section:nth-child(4) a[href*="//"]:not([href*="criticalinfralab.net"]):hover {
@@ -250,11 +289,21 @@ transition: 0.5s ease-in-out;
     font-variation-settings: "wght" 400;
 }
 .section:nth-child(4) h3, .section:nth-child(4) ul {
-	display: inline;
+    display: inline;
 }
 .section:nth-child(4) li {
-	display: inline;
-	list-style: none;
-	margin-right: .75em;
-	font-variation-settings: "wght" 600;
+    display: inline;
+    list-style: none;
+    margin-right: .75em;
+    font-variation-settings: "wght" 600;
 }
+
+@media all and (min-width: 801px) {
+    #header, #container, #footer {
+        width: 75vw;
+    }
+    .item-content {
+        padding: 1em 2em 0;
+    }
+}
+
