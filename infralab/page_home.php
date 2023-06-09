@@ -27,14 +27,18 @@ Template Name: Homepage
 	    	        <?php // blogposts
 	    	        $postquery = new WP_Query( array(
 	    	            'post-type' => 'post',
-	    	            'posts_per_page' => 5,
+	    	            'posts_per_page' => -1,
 	    	            'post_status'  => 'publish',
 	    	            'sort_order' => 'ASC'
 	    	        ));
                         if ($postquery->have_posts()) : 
-                            while ($postquery->have_posts()) : $postquery->the_post(); ?> 
+                            while ($postquery->have_posts()) : $postquery->the_post();
+                            $category = get_the_category(); ?> 
 	                    <div class="item">
-	                        <h4 class="item-title"><em class="category"><?php the_category(',', 'single'); ?></em><?php the_title(); ?></h4>
+                                <?php if(has_tag('has-recording')): ?>
+                                   <span class="has-recording">📹 <!-- has link to a recording --></span>
+                                <?php endif; ?>
+	                        <h4 class="item-title"><em class="category"><?php echo $category[0]->cat_name; ?></em><?php the_title(); ?></h4>
 	                        <div class="item-content"><?php the_content(); ?></div>
 	                   </div>
 	                  <?php endwhile;
