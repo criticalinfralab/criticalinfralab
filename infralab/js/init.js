@@ -30,9 +30,9 @@ jQuery(document).ready(function($) {
                    event.stopPropagation();
                    window.open(href, '_blank');
                });
-           } else {
-            $(this).addClass("missing-link");
-       }
+           }
+       } else {
+           $(this).addClass("missing-link");
        }
     });
 
@@ -58,11 +58,21 @@ jQuery(document).ready(function($) {
     var $set = $('.section:nth-child(3) .section-content p');
     if($set.length > 5) {
         $set.slice(5, $set.length).wrapAll('<div class="hidden"/>');
-        $set.parent('.section-content').after('<span class="button reveal">see all publications</span>');
+        $set.parent('.section-content').after('<span class="button reveal">see all</span>');
         $('.reveal').on('click', function(){
+        var text = $(this).text();
+        $(this).text(text == "see all" ? "unsee all" : "see all");
             $(this).parent().find('.hidden').slideToggle();
         });
     }
+    
+    // show/hide people logic
+    $(".section:nth-child(4) h4").each(function(){
+        $(this).nextUntil("h4").wrapAll('<div class="hidden item-content"></div>');
+        $(this).on('click', function(){
+            $(this).next('.hidden').slideToggle();
+        });
+    });
 
     // desaturation cookie
     let desaturation_cookie = Cookies.get('desaturate');
