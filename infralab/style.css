@@ -65,6 +65,7 @@ body {
     color: var(--colourtext);
     shape-rendering: crispedges;
     text-rendering: optimizeLegibility;
+    overflow-x: hidden;
 }
 
 body.desaturate {
@@ -161,6 +162,16 @@ input[type="submit"]:hover {
 }
 
 #header {
+    padding-top: 3em;
+}
+
+#header .site-title a {
+    background: url(images/logo-criticalinfralab.svg) no-repeat;
+    height: 200px;
+    display: block;
+    background-size: contain;
+    margin-bottom: 2em;
+    text-indent: -10000px;
 }
 
 #header #eyecare {
@@ -252,6 +263,13 @@ input[type="submit"]:hover {
 
 /* blog posts */
 
+.item-title:after {
+    content: "→";
+    transform: rotate(90deg) translateX(-.35em);
+    display: inline-block;
+    padding-left: .75em;
+}
+
 .item-content {
     padding: 1em 0;
 }
@@ -301,6 +319,10 @@ input[type="submit"]:hover {
 @media all and (min-width: 801px) {
     #header, #container, #footer {
         width: 75vw;
+    }
+
+    #header .site-title a {
+        height: 350px;
     }
     .item-content {
         padding: 1em 2em 0;
