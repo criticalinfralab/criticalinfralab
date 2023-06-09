@@ -55,21 +55,23 @@ body {
     font-size: var(--basefontsize);
     font-family: "SourceSans3", sans-serif;
     font-variation-settings: "wght" 400;
-    -webkit-font-smoothing: antialiased;
-    -moz-font-smoothing: antialiased;
     font-smoothing: antialiased;
     font-kerning: normal;
     font-variant: common-ligatures tabular-nums;
     font-optical-sizing: auto;
     overflow-x: hidden;
-    color: var(--colourtext);
+    color: var(--color2);
     shape-rendering: crispedges;
     text-rendering: optimizeLegibility;
-    overflow-x: hidden;
 }
 
 body.desaturate {
     background: #aaa;
+}
+
+b, strong, h1, h2, h3, h4, h5 {
+    font-style: normal;
+    font-weight: normal;
 }
 
 i, em, blockquote {
@@ -78,11 +80,7 @@ i, em, blockquote {
 }
 
 b, strong,
-.section-content h1,
-.section-content h2,
-.section-content h3,
-.section-content h4,
-.section-content h5 {
+.section-content h4 {
     font-variation-settings: "wght" 600;
 }
 
@@ -259,6 +257,7 @@ input[type="submit"]:hover {
 .section:nth-child(4) a[href*="//"]:not([href*="criticalinfralab.net"]):after /* people */ {
     content: "→";
     padding-left: .25em;
+    font-variation-settings: "wght" 600;
 }
 
 /* blog posts */
