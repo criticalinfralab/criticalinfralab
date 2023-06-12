@@ -284,15 +284,15 @@ input[type="submit"]:hover {
 }
 
 .section:nth-child(3) .section-content p.category-environment:before {
-    background: green;
+    background: rgb(86,214,44);
 }
 
 .section:nth-child(3) .section-content p.category-standards:before {
-    background: dodgerblue;
+    background: rgb(71,144,255);
 }
 
 .section:nth-child(3) .section-content p.category-geopolitics:before {
-    background: brown;
+    background: rgb(122,77,43);
 }
 
 .item:focus, /* blogposts */
