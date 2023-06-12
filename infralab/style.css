@@ -241,6 +241,9 @@ left: 320px;
     letter-spacing: 0.02em;
 }
 
+.section-content {
+    border-bottom: 1px solid var(--color2);
+}
 .section-content.blogposts {
     border-bottom: none;
 }
