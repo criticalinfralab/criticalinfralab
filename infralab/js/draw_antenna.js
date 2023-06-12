@@ -16,7 +16,7 @@ var color = "#000";
 var strokew = 6;
 
 function getRandomArbitrary(min, max) {
-  return Math.floor(Math.random() * (max - min) + min);
+    return Math.floor(Math.random() * (max - min) + min);
 }
 
 function generate_antenna_coordinates() {
@@ -38,7 +38,7 @@ function generate_antenna_coordinates() {
         antenna.push({x: x_new, y: y_new});
     }
 
-    console.log(JSON.stringify(antenna));
+    // console.log(JSON.stringify(antenna));
     return antenna;
 }
 
