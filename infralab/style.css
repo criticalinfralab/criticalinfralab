@@ -32,14 +32,6 @@ Author URI: https://www.curlybracket.net
   src: url("fonts/SourceCodePro-VariableFont_wght.ttf") format("truetype");
 }
 
-/*
-@font-face {
-  font-family: 'SourceCodeProItalic';
-  font-style:  normal;
-  src: url("fonts/SourceCodePro-Italic-VariableFont_wght.ttf") format("truetype");
-}
-*/
-
 ::selection {
     background: dogerblue;
 }
@@ -123,9 +115,25 @@ input[type="submit"]:hover {
     display: none;
 }
 
-.pagination {
+.navigation, .pagination {
     padding-top: 1em;
     border-top: 1px solid var(--color2);
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation .previous:before,
+.navigation .next:after {
+    content: "→";
+    padding-left: .25em;
+}
+
+.navigation .previous:before {
+    transform: rotate(180deg) translateY(-3px);
+    display: inline-block;
 }
 
 .button, .pagination .next {
@@ -319,7 +327,7 @@ left: 320px;
     font-variation-settings: "wght" 400;
 }
 
-.item-title:after, /* blogposts */
+.home .item-title:after, /* blogposts */
 .section:nth-child(4) h4:after /* people */ {
     content: "→";
     transform: rotate(90deg) translateX(-.35em);
@@ -384,6 +392,12 @@ left: 320px;
     margin-right: .75em;
     padding-right: 20px;
     font-variation-settings: "wght" 600;
+}
+
+/* single post */
+
+.single .item {
+    background: var(--color1);
 }
 
 @media all and (min-width: 801px) {
