@@ -22,8 +22,8 @@ Template Name: Homepage
             foreach($pages as $page): ?>
 	        <div class="section">
 	            <h2 class="section-title"><?php echo $page->post_title; ?></h2>
-	    	    <div class="section-content blogposts">
 	            <?php if(str_contains($page->post_title, 'activit')) : ?>
+	    	    <div class="section-content blogposts">
 	    	          <?php // blogposts
                           $count = get_option('posts_per_page', 5);
                           $paged = get_query_var('paged') ? get_query_var('paged') : 1;
@@ -48,12 +48,14 @@ Template Name: Homepage
                                   }
                                   echo '<div class="pagination" data-query="'.htmlspecialchars(json_encode($postquery->query_vars)).'" data-maxpages="'.htmlspecialchars(json_encode($postquery->max_num_pages)).'" data-current="'.$current_page.'">'.paginate_links(array('total' => $postquery->max_num_pages)).'</div>';
                              }
-	                     wp_reset_postdata();
-	                 endif; ?>
-	            <?php else : ?>
+	                     wp_reset_postdata(); ?>
+	              </div>
+	              <?php endif; ?>
+	        <?php else : ?>
+	    	   <div class="section-content">
 	    	       <?php echo $page->post_content; ?>
-	            <?php endif; ?>
-	            </div>
+	           </div>
+	        <?php endif; ?>
 	        </div>
             <?php endforeach; ?>
         <?php endif;
