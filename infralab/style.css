@@ -188,27 +188,28 @@ input[type="submit"]:hover {
 #header .site-title a {
     background: url(images/logo-criticalinfralab.svg) no-repeat;
     background: url(images/logo-criticalinfralab-noantenna.svg) no-repeat;
-    background-position: bottom left;
-    height: 240px;
-    display: block;
+    background-position: top left;
     background-size: contain;
-    margin-top: 150px;
-    margin-bottom: 2em;
+    display: block;
     text-indent: -10000px;
+    margin-bottom: 2em;
+    width: 280px;
+    height: 100px;
+    margin-top: 100px;
 }
+
+#header #antenna {
+    transform: rotate(45deg) scale(0.6);
+    position: absolute;
+    top: 1.2em;
+    left: 90px;
+} 
 
 #header #eyecare {
     position: absolute;
     top: 1em;
     right: 0;
 }
-
-#header #antenna {
-    transform: rotate(45deg);
-    position: absolute;
-    top: 4em;
-    left: 320px;
-} 
 
 #footer {
     margin-top: 8em;
@@ -407,12 +408,34 @@ input[type="submit"]:hover {
     background: var(--color1);
 }
 
+@media all and (min-width: 641px) {
+    #header .site-title a {
+        width: 400px;
+        height: 140px;
+        margin-top: 150px;
+    }
+    #header #antenna {
+        transform: rotate(45deg) scale(0.65);
+        left: 160px;
+        top: 4em;
+    }
+}
+
 @media all and (min-width: 801px) {
     #header, #container, #footer {
         width: 75vw;
     }
     #footer {
         grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+    #header .site-title a {
+        height: 250px;
+        width: 700px;
+    }
+
+    #header #antenna {
+        left: 320px;
+        transform: rotate(45deg) scale(1);
     }
     .item-content {
         padding-top: 1em;
