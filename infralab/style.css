@@ -286,15 +286,6 @@ left: 320px;
     background: var(--color1);
 }
 
-.item-title {
-    padding-right: 50px; /* prevent arrow from wrapping to next line */
-    cursor: pointer;
-}
-
-.item-title .date {
-    font-variation-settings: "wght" 400;
-}
-
 .section:nth-child(3) .section-content p:not(.missing-link),
 .section:nth-child(4) h4 /* people */ {
     cursor: pointer;
@@ -312,6 +303,20 @@ left: 320px;
     padding-left: .25em;
     font-variation-settings: "wght" 600;
     margin-right: -25px;
+}
+
+.item .permalink {
+    float: right;
+    margin-left: .75em;
+}
+
+.item-title {
+    padding-right: 50px; /* prevent arrow from wrapping to next line */
+    cursor: pointer;
+}
+
+.item-title .date {
+    font-variation-settings: "wght" 400;
 }
 
 .item-title:after, /* blogposts */
