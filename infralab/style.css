@@ -60,7 +60,7 @@ body {
 }
 
 body.desaturate {
-    background: #aaa;
+    background: #bdb8b8;
 }
 
 b, strong, h1, h2, h3, h4, h5 {
@@ -226,11 +226,15 @@ input[type="submit"]:hover {
 }
 
 #canvas {
-    position: fixed;
+    position: absolute;
     height: 100%;
     top: 0;
     left: 0;
     z-index: 1;
+}
+
+.desaturate #canvas {
+    opacity: 0.4;
 }
 
 #header, #content, #footer {
