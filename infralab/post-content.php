@@ -2,7 +2,7 @@
 <div class="item">
         <a class="permalink" href="<?php the_permalink(); ?>" title="permanent link to <?php the_title(); ?>">#</a>
     <?php if(has_tag('has-recording')): ?>
-       <span class="has-recording">📹 <!-- has link to a recording --></span>
+       <span class="has-recording" title="This item has a link to a recording.">📹 <!-- has link to a recording --></span>
     <?php endif; ?>
     <h4 class="item-title">
         <em class="category"><?php echo $category[0]->cat_name; ?></em>
