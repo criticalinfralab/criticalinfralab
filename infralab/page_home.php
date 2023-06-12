@@ -22,34 +22,36 @@ Template Name: Homepage
             foreach($pages as $page): ?>
 	        <div class="section">
 	            <h2 class="section-title"><?php echo $page->post_title; ?></h2>
-	    	    <div class="section-content">
+	    	    <div class="section-content blogposts">
 	            <?php if(str_contains($page->post_title, 'activit')) : ?>
-	    	        <?php // blogposts
-	    	        $postquery = new WP_Query( array(
-	    	            'post-type' => 'post',
-	    	            'posts_per_page' => -1,
-	    	            'post_status'  => 'publish',
-	    	            'sort_order' => 'ASC'
-	    	        ));
-                        if ($postquery->have_posts()) : 
-                            while ($postquery->have_posts()) : $postquery->the_post();
-                            $category = get_the_category(); ?> 
-	                    <div class="item">
-                                <?php if(has_tag('has-recording')): ?>
-                                   <span class="has-recording">📹 <!-- has link to a recording --></span>
-                                <?php endif; ?>
-	                        <h4 class="item-title">
-                                    <em class="category"><?php echo $category[0]->cat_name; ?></em>
-                                    <span class="title"><?php the_title(); ?></span>
-                                    <span class="date"><?php if($category[0]->cat_name != "reading group"): the_time('F Y'); endif; ?></span>
-                                </h4>
-	                        <div class="item-content"><?php the_content(); ?></div>
-	                   </div>
-	                  <?php endwhile;
-	                  wp_reset_postdata();
-	               endif; ?>
+	    	          <?php // blogposts
+                          $count = get_option('posts_per_page', 5);
+                          $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+	    	          $postquery = new WP_Query( array(
+	    	              'post-type' => 'post',
+	    	              'post_status'  => 'publish',
+	    	              'sort_order' => 'ASC',
+                              'posts_per_page' => $count,
+                              'paged' => $paged,
+                              'offset' => $offset,
+	    	          ));
+                          if ($postquery->have_posts()) : 
+                              while ($postquery->have_posts()) : $postquery->the_post();
+                                   get_template_part('post-content');
+	                      endwhile;
+                              // Pagination
+                              if($postquery->max_num_pages > 1) {
+                                  if($postquery->query_vars["paged"] == 0) {
+                                      $current_page = 1;
+                                  } else {
+                                      $current_page = $postquery->query_vars["paged"];
+                                  }
+                                  echo '<div class="pagination" data-query="'.htmlspecialchars(json_encode($postquery->query_vars)).'" data-maxpages="'.htmlspecialchars(json_encode($postquery->max_num_pages)).'" data-current="'.$current_page.'">'.paginate_links(array('total' => $postquery->max_num_pages)).'</div>';
+                             }
+	                     wp_reset_postdata();
+	                 endif; ?>
 	            <?php else : ?>
-	    	        <?php echo $page->post_content; ?>
+	    	       <?php echo $page->post_content; ?>
 	            <?php endif; ?>
 	            </div>
 	        </div>
