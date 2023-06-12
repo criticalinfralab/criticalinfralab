@@ -32,14 +32,6 @@ Author URI: https://www.curlybracket.net
   src: url("fonts/SourceCodePro-VariableFont_wght.ttf") format("truetype");
 }
 
-/*
-@font-face {
-  font-family: 'SourceCodeProItalic';
-  font-style:  normal;
-  src: url("fonts/SourceCodePro-Italic-VariableFont_wght.ttf") format("truetype");
-}
-*/
-
 ::selection {
     background: dogerblue;
 }
@@ -64,10 +56,11 @@ body {
     color: var(--color2);
     shape-rendering: crispedges;
     text-rendering: optimizeLegibility;
+    text-transform: lowercase;
 }
 
 body.desaturate {
-    background: #aaa;
+    background: #bdb8b8;
 }
 
 b, strong, h1, h2, h3, h4, h5 {
@@ -122,8 +115,28 @@ input[type="submit"]:hover {
     display: none;
 }
 
+.navigation, .pagination {
+    padding-top: 1em;
+    border-top: 1px solid var(--color2);
+}
 
-.button {
+.navigation {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation .previous:before,
+.navigation .next:after {
+    content: "→";
+    padding-left: .25em;
+}
+
+.navigation .previous:before {
+    transform: rotate(180deg) translateY(-3px);
+    display: inline-block;
+}
+
+.button, .pagination .next {
     background: var(--color1);
     border: 1px solid var(--color2);
     color: var(--color2);
@@ -133,10 +146,6 @@ input[type="submit"]:hover {
     letter-spacing: 0.02em;
     cursor: pointer;
 }
-
-button:hover {
-    transform: scale(1.1);
-} 
 
 .button.reveal {
     display: inline-block;
@@ -179,14 +188,22 @@ button:hover {
 #header .site-title a {
     background: url(images/logo-criticalinfralab.svg) no-repeat;
     background: url(images/logo-criticalinfralab-noantenna.svg) no-repeat;
-    background-position: bottom left;
-    height: 240px;
-    display: block;
+    background-position: top left;
     background-size: contain;
-    margin-top: 150px;
-    margin-bottom: 2em;
+    display: block;
     text-indent: -10000px;
+    margin-bottom: 2em;
+    width: 280px;
+    height: 100px;
+    margin-top: 100px;
 }
+
+#header #antenna {
+    transform: rotate(45deg) scale(0.6);
+    position: absolute;
+    top: 1.2em;
+    left: 90px;
+} 
 
 #header #eyecare {
     position: absolute;
@@ -194,26 +211,28 @@ button:hover {
     right: 0;
 }
 
-#header #antenna {
-transform: rotate(45deg);
-position: absolute;
-top: 4em;
-left: 320px;
-} 
-
 #footer {
-    margin-top: 5em;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 1em;
+    margin-top: 8em;
+    padding-bottom: 5em;
+    display: flex;
+    justify-content: space-between;
+}
+
+#footer img {
+    width: 180px;
+    max-width: 20%;
 }
 
 #canvas {
-    position: fixed;
+    position: absolute;
     height: 100%;
     top: 0;
     left: 0;
     z-index: 1;
+}
+
+.desaturate #canvas {
+    opacity: 0.4;
 }
 
 #header, #content, #footer {
@@ -241,8 +260,10 @@ left: 320px;
 }
 
 .section-content {
-    margin-top: -2px;
     border-bottom: 1px solid var(--color2);
+}
+.section-content.blogposts {
+    border-bottom: none;
 }
 
 .item, /* blogposts */
@@ -253,16 +274,34 @@ left: 320px;
     transition: 0.5s ease-in-out;
 }
 
+/* publication categories */ 
+.section:nth-child(3) .section-content p:before {
+    content: " ";
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    float: right;
+    margin-left: .75em;
+    margin-bottom: .5em;
+}
+
+.section:nth-child(3) .section-content p.category-environment:before {
+    background: rgb(86,214,44);
+}
+
+.section:nth-child(3) .section-content p.category-standards:before {
+    background: rgb(71,144,255);
+}
+
+.section:nth-child(3) .section-content p.category-geopolitics:before {
+    background: rgb(122,77,43);
+}
+
 .item:focus, /* blogposts */
 .section:nth-child(3) .section-content p:not(.missing-link):focus /* publications */,
 .item:hover, /* blogposts */
 .section:nth-child(3) .section-content p:not(.missing-link):hover /* publications */ {
     background: var(--color1);
-}
-
-.item-title {
-    padding-right: 50px; /* prevent arrow from wrapping to next line */
-    cursor: pointer;
 }
 
 .section:nth-child(3) .section-content p:not(.missing-link),
@@ -284,7 +323,21 @@ left: 320px;
     margin-right: -25px;
 }
 
-.item-title:after, /* blogposts */
+.item .permalink {
+    float: right;
+    margin-left: .75em;
+}
+
+.item-title {
+    padding-right: 50px; /* prevent arrow from wrapping to next line */
+    cursor: pointer;
+}
+
+.item-title .date {
+    font-variation-settings: "wght" 400;
+}
+
+.home .item-title:after, /* blogposts */
 .section:nth-child(4) h4:after /* people */ {
     content: "→";
     transform: rotate(90deg) translateX(-.35em);
@@ -351,12 +404,42 @@ left: 320px;
     font-variation-settings: "wght" 600;
 }
 
+/* single post */
+
+.single .item {
+    background: var(--color1);
+}
+
+@media all and (min-width: 641px) {
+    #header .site-title a {
+        width: 400px;
+        height: 140px;
+        margin-top: 150px;
+    }
+    #header #antenna {
+        transform: rotate(45deg) scale(0.65);
+        left: 160px;
+        top: 4em;
+    }
+}
+
 @media all and (min-width: 801px) {
     #header, #container, #footer {
         width: 75vw;
     }
+
+    #header .site-title a {
+        height: 250px;
+        width: 700px;
+    }
+
+    #header #antenna {
+        left: 320px;
+        transform: rotate(45deg) scale(1);
+    }
     .item-content {
         padding-top: 1em;
     }
+
 }
 
