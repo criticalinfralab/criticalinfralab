@@ -64,6 +64,7 @@ body {
     color: var(--color2);
     shape-rendering: crispedges;
     text-rendering: optimizeLegibility;
+    text-transform: lowercase;
 }
 
 body.desaturate {
@@ -253,6 +254,29 @@ left: 320px;
     transition: 0.5s ease-in-out;
 }
 
+/* publication categories */ 
+.section:nth-child(3) .section-content p:before {
+    content: " ";
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    float: right;
+    margin-left: .75em;
+    margin-bottom: .5em;
+}
+
+.section:nth-child(3) .section-content p.category-environment:before {
+    background: green;
+}
+
+.section:nth-child(3) .section-content p.category-standards:before {
+    background: dodgerblue;
+}
+
+.section:nth-child(3) .section-content p.category-geopolitics:before {
+    background: brown;
+}
+
 .item:focus, /* blogposts */
 .section:nth-child(3) .section-content p:not(.missing-link):focus /* publications */,
 .item:hover, /* blogposts */
@@ -263,6 +287,10 @@ left: 320px;
 .item-title {
     padding-right: 50px; /* prevent arrow from wrapping to next line */
     cursor: pointer;
+}
+
+.item-title .date {
+    font-variation-settings: "wght" 400;
 }
 
 .section:nth-child(3) .section-content p:not(.missing-link),
