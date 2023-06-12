@@ -1,14 +1,4 @@
 <?php
-add_action( 'after_setup_theme', 'curlybracket_setup' );
-if ( ! function_exists( 'curlybracket_setup' ) ):
-function curlybracket_setup() {
-    // This theme uses wp_nav_menu() in one location.
-    register_nav_menu( 'primary', __( 'MainMenu', 'curlybracket' ) );
-    // WP post thumbnails
-    add_theme_support( 'post-thumbnails' );
-}
-endif;
-
 function removeHeadLinks() {
        remove_action('wp_head', 'rsd_link');
        remove_action('wp_head', 'wlwmanifest_link');
@@ -37,9 +27,32 @@ function sanitize_filename_on_upload($filename) {
 add_filter('sanitize_file_name', 'sanitize_filename_on_upload', 10);
 
 /**
- * Adds the Customize page to the WordPress admin area
+ * Ajax load more posts
  */
-function theme_customizer_menu_on() {
-    add_theme_page( 'Customize', 'Customize', 'edit_theme_options', 'customize.php' );
+
+function infralab_load_scripts() {
+    wp_enqueue_script('jquery');
+    wp_register_script( 'infralab_load_more', get_stylesheet_directory_uri() . '/js/loadmore.js', array('jquery') );
+    wp_localize_script('infralab_load_more', 'infralab_string', array(
+        'ajaxurl' => admin_url('admin-ajax.php'),
+        'buttontxt' => __('Load more','infralab-theme'),
+        'buttonload' => __('Loading ...','infralab-theme'),
+    ));
+    wp_enqueue_script( 'infralab_load_more' );
 }
-add_action( 'admin_menu', 'theme_customizer_menu_on' );
+add_action( 'wp_enqueue_scripts', 'infralab_load_scripts' );
+
+function infralab_load_more_handler(){
+    $args = json_decode( stripslashes( $_POST['query'] ), true );
+    $args['paged'] = $_POST['page'] + 1;
+    $args['post_status'] = 'publish';
+    query_posts( $args );
+    if( have_posts() ) {
+        while( have_posts() ) { the_post();
+            get_template_part('post-content');
+        }
+    }
+    die;
+}
+add_action('wp_ajax_infralab_load_more', 'infralab_load_more_handler');
+add_action('wp_ajax_nopriv_infralab_load_more', 'infralab_load_more_handler');
