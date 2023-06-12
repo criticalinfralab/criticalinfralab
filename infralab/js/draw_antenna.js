@@ -1,7 +1,3 @@
-// https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute/stroke
-// 100 < x < 100
-// 0 < y < 400
-
 /*
  *  expected format for drawing the antenna
  *
@@ -16,23 +12,23 @@ var antenna = [
 ];
 */
 
-var color = "#fff";
-var strokew = 15;
+var color = "#000";
+var strokew = 6;
 
 function getRandomArbitrary(min, max) {
   return Math.floor(Math.random() * (max - min) + min);
 }
 
 function generate_antenna_coordinates() {
-    var size = 6;
-    var max_x = 245; // half of image width minus some space for the rounded corners
-    var max_y = 595; // image height minus space for corners
+    var size = 5;
+    var max_x = 100; // half of image width minus some space for the rounded corners
+    var max_y = 195; // image height minus space for corners
 
     // construct the base
     // define starting point
     var antenna = [{x: "0", y: "0"}];
     // make sure we start straight and with a short first arm
-    let p2_y = getRandomArbitrary(50, 100);
+    let p2_y = getRandomArbitrary(20, 60);
     antenna.push({x: "0", y: p2_y});
 
     // construct the rest
@@ -50,8 +46,8 @@ function generate_svg() {
     var antenna = generate_antenna_coordinates();
 
     var svg = '';
-    svg += '<svg id="antenna" width="500px" height="600px" version="1.1" xmlns="http://www.w3.org/2000/svg">\n';
-    svg += '<g transform="translate(250,600) scale(1,-1)">'; // flip the coord system upside down and move halfway
+    svg += '<svg id="antenna" width="200px" height="200px" version="1.1" xmlns="http://www.w3.org/2000/svg">\n';
+    svg += '<g transform="translate(100,200) scale(1,-1)">'; // flip the coord system upside down and move halfway
 
     for(var i in antenna) {
         var path = '';

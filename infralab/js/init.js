@@ -1,160 +1,107 @@
+/*
+@licstart
+Copyright (C) 2023 Ulrike Uhlig
+
+    The JavaScript code in this page is free software: you can
+    redistribute it and/or modify it under the terms of the GNU
+    General Public License (GNU GPL) as published by the Free Software
+    Foundation, either version 3 of the License, or (at your option)
+    any later version.  The code is distributed WITHOUT ANY WARRANTY;
+    without even the implied warranty of MERCHANTABILITY or FITNESS
+    FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+    As additional permission under GNU GPL version 3 section 7, you
+    may distribute non-source (e.g., minimized or compacted) forms of
+    that code without the copy of the GNU GPL normally required by
+    section 4, provided you include this license notice and a URL
+    through which recipients can access the Corresponding Source.
+@licend
+*/
+
 jQuery(document).ready(function($) {
-    // detect scroll for showing the menu (applied via CSS on small screens only)
-    var lastScrollTop = 0, delta = 10;
-    $(window).scroll(function(){
-        var currentScrollTop = $(this).scrollTop();
-        // add classes to show or hide the menu
-        if(Math.abs(lastScrollTop - currentScrollTop) >= delta){
-            if (currentScrollTop > lastScrollTop){
-                $('body').removeClass('scrolling-up').addClass('scrolling-down');
-            } else {
-                $('body').removeClass('scrolling-down').addClass('scrolling-up');
-            }
-            lastScrollTop = currentScrollTop;
-        }
+    // click publication opens first href found
+    $('.section:nth-child(3) .section-content p').each(function() {
+       let href = $(this).find('a').attr('href');
+       if(href !== undefined) {
+           var a = new RegExp('/' + window.location.host + '/');
+           if(!a.test(href)) {
+               $(this).click(function(event) {
+                   event.preventDefault();
+                   event.stopPropagation();
+                   window.open(href, '_blank');
+               });
+           }
+       } else {
+           $(this).addClass("missing-link");
+       }
     });
 
-    $(document).click(function() {
-        // close search when clicking anywhere outside the header
-        $('body').removeClass('search-visible');
-        // in some cases, the search box needs to be told to disappear :)
-        $('#ajaxsearchliteres1:visible').hide();
+    // open external links in new tab
+    $('a').each(function() {
+       var a = new RegExp('/' + window.location.host + '/');
+       if(!a.test(this.href)) {
+           $(this).click(function(event) {
+               event.preventDefault();
+               event.stopPropagation();
+               window.open(this.href, '_blank');
+           });
+       }
     });
-    $('.show-tools').click(function(event){
-        $('body').toggleClass('search-visible');
-        if ($("#ajaxsearchliteres1").css("visibility") === "visible") {
-            $('#ajaxsearchliteres1:visible').hide();
+
+    // show/hide blog posts logic
+    $('.item-content').hide();
+    $('.item-title').on('click', function() {
+        $(this).next('.item-content').slideToggle();
+    });
+    
+    // show/hide publications logic
+    var $set = $('.section:nth-child(3) .section-content p');
+    if($set.length > 5) {
+        $set.slice(5, $set.length).wrapAll('<div class="hidden"/>');
+        $set.parent('.section-content').after('<span class="button reveal">see all</span>');
+        $('.reveal').on('click', function(){
+        var text = $(this).text();
+        $(this).text(text == "see all" ? "unsee all" : "see all");
+            $(this).parent().find('.hidden').slideToggle();
+        });
+    }
+    
+    // show/hide people logic
+    $(".section:nth-child(4) h4").each(function(){
+        $(this).nextUntil("h4").wrapAll('<div class="hidden item-content"></div>');
+        $(this).on('click', function(){
+            $(this).next('.hidden').slideToggle();
+        });
+    });
+
+    // desaturation cookie
+    let desaturation_cookie = Cookies.get('desaturate');
+    if(desaturation_cookie == "desaturate") {
+        $('body').addClass(desaturation_cookie);
+        $('#eyecare').text('saturate');
+    }
+    $('#eyecare').click(function() {
+        let value = Cookies.get('desaturate');
+        if(value == "desaturate") {
+            $('body').removeClass(value);
+            $(this).text('desaturate');
+            value = "";
         } else {
-            $('#ajaxsearchliteres1:visible').show();
-        }
-        event.preventDefault();
-        event.stopPropagation();
-        return false;
+            value = "desaturate";
+            $('body').addClass(value);
+            $(this).text('saturate');
+        };
+        Cookies.set('desaturate', value, { expires: 365 });
     });
 
-    $('.simple-links-list a').each(function() {
-        $(this).removeAttr('title');
+    // draw Antenna in logo
+    var referenceNode = document.querySelector('#antennaspace');
+    var newNode = document.createElement('div');
+    referenceNode.append(newNode);
+    newNode.innerHTML = generate_svg();
+    // drawing effect using ID of SVG
+    new Vivus('antenna', {
+        type: 'oneByOne',
+        duration: 100
     });
-
 });
-
-// video view count
-(function($) {
-"use strict";
-    function count_views(element) {
-        var $video = $(element).find('video');
-        console.log($video);
-        $video.on("play", function() {
-            console.log("Playing event triggered");
-            var filesrc = $video.attr('src');
-            $.ajax({
-                  method: "POST",
-                  url: "https://mamanetwork.org/viewcount/viewcount.php",
-                  data: { filename: filesrc }
-            })
-            .done(function(msg) {
-                  console.log("Data saved." + msg);
-            });
-        });
-    }
-    jQuery(function($) {
-        $('.entry').each(function(){
-            count_views(this);
-        });
-    });
-})(jQuery);
-
-/* Search and filter functions / isotope */
-(function($) {
-"use strict";
-
-    function install_things(element) {
-        var tags=[];
-        var categories=[];
-
-        var $container = $(element).find('.grid');
-        $container.isotope({
-            itemSelector: '.item',
-            //transitionDuration: '0.5s',
-            stagger: 30,
-        });
-
-        $(element).find('.clearAll').addClass('active');
-
-        $(element).find('a.option').click(function() {
-            let combofilters=[]; // temporary array to store the filters
-            let comboFilter; // string for isotope with filter contents
-
-            // find container that was clicked
-            var $gridcontainer = $(this).parents('.grid-container');
-            var gridcontainerName = $gridcontainer.attr('id');
-            // use isotope filter only on the container that was clicked
-            $container = $gridcontainer.find('.grid');
-
-            if($(this).hasClass('active')) {
-                $(this).removeClass('active');
-                if($(this).hasClass('tag')) {
-                    tags.remove('.'+$(this).attr('data-filter-value'));
-                } else {
-                    categories.remove('.'+$(this).attr('data-filter-value'));
-                }
-            } else {
-                $(this).addClass('active');
-                if($(this).hasClass('tag')) {
-                    tags.push('.'+$(this).attr('data-filter-value'));
-                    $('.clearAll.tag').removeClass('active'); // do per grid-container
-                } else {
-                    categories.push('.'+$(this).attr('data-filter-value'));
-                    $('.clearAll.categories').removeClass('active'); // do per grid-container
-                }
-            }
-
-            if(tags.length > 0) {
-                for (let tag=0; tag<tags.length; tag++) {
-                    if(categories.length > 0) {
-                        // combine tags and categories
-                        for (let category=0; category<categories.length; category++) {
-                            combofilters.push(tags[tag]+categories[category]);
-                        }
-                    } else {
-                        // only push the tag
-                        combofilters.push(tags[tag]);
-                    }
-                }
-            } else {
-                // only push the category
-                for (let category=0; category<categories.length; category++) {
-                    combofilters.push(categories[category]);
-                }
-            }
-            comboFilter = combofilters.join(', ');
-            $container.isotope({ filter: comboFilter });
-        });
-
-        $(element).find('.clearAll.tag').click(function() {
-            $(element).find('.option-set a.tag.active').trigger('click');
-            $(this).addClass('active');
-        });
-        $(element).find('.clearAll.categories').click(function() {
-            $(element).find('.option-set a.category.active').trigger('click');
-            $(this).addClass('active');
-        });
-    }
-
-    jQuery(function($) {
-        $('.grid-container').each(function(){
-            install_things(this);
-        });
-    });
-
-    Array.prototype.remove = function() {
-        var what, a = arguments, L = a.length, ax;
-        while (L && this.length) {
-            what = a[--L];
-            while ((ax = this.indexOf(what)) !== -1) {
-                this.splice(ax, 1);
-            }
-        }
-        return this;
-    };
-})(jQuery);
