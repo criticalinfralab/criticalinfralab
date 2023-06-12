@@ -204,17 +204,24 @@ input[type="submit"]:hover {
 }
 
 #header #antenna {
-transform: rotate(45deg);
-position: absolute;
-top: 4em;
-left: 320px;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 4em;
+    left: 320px;
 } 
 
 #footer {
-    margin-top: 5em;
+    margin-top: 8em;
+    padding-bottom: 5em;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 1em;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2em;
+}
+
+#footer img {
+    width: 180px;
+    max-width: 100%;
+    margin: auto;
 }
 
 #canvas {
@@ -404,8 +411,12 @@ left: 320px;
     #header, #container, #footer {
         width: 75vw;
     }
+    #footer {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
     .item-content {
         padding-top: 1em;
     }
+
 }
 
