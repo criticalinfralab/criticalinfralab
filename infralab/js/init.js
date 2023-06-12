@@ -49,9 +49,14 @@ jQuery(document).ready(function($) {
     });
 
     // show/hide blog posts logic
-    $('.item-content').hide();
-    $('.item-title').on('click', function() {
-        $(this).next('.item-content').slideToggle();
+//  $('.item-content').hide();
+    $(document.body).on('click', '.item-title', function() {
+        let xcontent = $(this).next('.item-content');
+        if(xcontent.is(":visible")) {
+            xcontent.slideUp();
+        } else {
+            xcontent.slideDown();
+        }
     });
     
     // show/hide publications logic
