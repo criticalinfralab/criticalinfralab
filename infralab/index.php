@@ -1,10 +1,12 @@
 <?php get_header(); ?>
-    <div id="content" class="content">
+<div class="section">
+    <div class="section-content">
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
-                <?php include(TEMPLATEPATH.'/content_thumb.php'); ?>
+                <?php get_template_part('post-content.php'); ?>
             <?php endwhile; ?>
         <?php endif; ?>
     </div>
-    <?php include(TEMPLATEPATH.'/nav.php'); ?>
+</div>
+<?php get_template_part('nav.php'); ?>
 <?php get_footer(); ?>
