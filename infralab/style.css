@@ -123,8 +123,12 @@ input[type="submit"]:hover {
     display: none;
 }
 
+.pagination {
+    padding-top: 1em;
+    border-top: 1px solid var(--color2);
+}
 
-.button {
+.button, .pagination .next {
     background: var(--color1);
     border: 1px solid var(--color2);
     color: var(--color2);
@@ -134,10 +138,6 @@ input[type="submit"]:hover {
     letter-spacing: 0.02em;
     cursor: pointer;
 }
-
-button:hover {
-    transform: scale(1.1);
-} 
 
 .button.reveal {
     display: inline-block;
@@ -241,9 +241,8 @@ left: 320px;
     letter-spacing: 0.02em;
 }
 
-.section-content {
-    margin-top: -2px;
-    border-bottom: 1px solid var(--color2);
+.section-content.blogposts {
+    border-bottom: none;
 }
 
 .item, /* blogposts */
