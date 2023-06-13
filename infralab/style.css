@@ -123,13 +123,13 @@ a {
     justify-content: space-between;
 }
 
-.navigation .previous:before,
-.navigation .next:after {
+.navigation .previous a:before,
+.navigation .next a:after {
     content: "→";
     padding-left: .25em;
 }
 
-.navigation .previous:before {
+.navigation .previous a:before {
     transform: rotate(180deg) translateY(-3px);
     display: inline-block;
 }
@@ -197,10 +197,10 @@ a {
     background-size: contain;
     display: block;
     text-indent: -10000px;
-    margin-bottom: 2em;
     width: 280px;
     height: 100px;
     margin-top: 100px;
+    margin-bottom: .75em;
 }
 
 #header .site-title a {
@@ -223,8 +223,8 @@ a {
 }
 
 #footer {
-    margin-top: 8em;
-    padding-bottom: 5em;
+    margin-top: 3em;
+    padding-bottom: 1.5em;
     display: flex;
     justify-content: space-between;
 }
@@ -425,7 +425,7 @@ a {
     background: var(--color1);
 }
 
-.single .iitem-title {
+.single .item-title {
     line-height: 145%;
     font-size: var(--basefontsize);
     font-variation-settings: "wght" 600;
@@ -438,11 +438,15 @@ a {
         width: 400px;
         height: 140px;
         margin-top: 150px;
+        margin-bottom: 2em;
     }
     #header #antenna {
         transform: rotate(45deg) scale(0.65);
         left: 160px;
         top: 4em;
+    }
+    #footer {
+        margin-top: 5em;
     }
 }
 
