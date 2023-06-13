@@ -63,7 +63,7 @@ jQuery(document).ready(function($) {
     var $set = $('#section-publications .section-content p');
     if($set.length > 5) {
         $set.slice(5, $set.length).wrapAll('<div class="hidden"/>');
-        $set.parent('.section-content').after('<span class="button reveal">see all</span>');
+        $set.parent('.section-content').after('<span class="button reveal">see more</span>');
         $('.reveal').on('click', function(){
         var text = $(this).text();
         $(this).text(text == "see more" ? "see less" : "see more");
