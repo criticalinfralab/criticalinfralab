@@ -60,19 +60,19 @@ jQuery(document).ready(function($) {
     });
     
     // show/hide publications logic
-    var $set = $('.section:nth-child(3) .section-content p');
+    var $set = $('#section-publications .section-content p');
     if($set.length > 5) {
         $set.slice(5, $set.length).wrapAll('<div class="hidden"/>');
         $set.parent('.section-content').after('<span class="button reveal">see all</span>');
         $('.reveal').on('click', function(){
         var text = $(this).text();
-        $(this).text(text == "see all" ? "unsee all" : "see all");
+        $(this).text(text == "see more" ? "see less" : "see more");
             $(this).parent().find('.hidden').slideToggle();
         });
     }
     
     // show/hide people logic
-    $(".section:nth-child(4) h4").each(function(){
+    $("#section-people-and-governance h4").each(function(){
         $(this).nextUntil("h4").wrapAll('<div class="hidden item-content"></div>');
         $(this).on('click', function(){
             $(this).next('.hidden').slideToggle();
