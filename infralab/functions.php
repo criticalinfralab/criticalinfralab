@@ -35,8 +35,8 @@ function infralab_load_scripts() {
     wp_register_script( 'infralab_load_more', get_stylesheet_directory_uri() . '/js/loadmore.js', array('jquery') );
     wp_localize_script('infralab_load_more', 'infralab_string', array(
         'ajaxurl' => admin_url('admin-ajax.php'),
-        'buttontxt' => __('Load more','infralab-theme'),
-        'buttonload' => __('Loading ...','infralab-theme'),
+        'buttontxt' => __('See more','infralab-theme'),
+        'buttonload' => __('Loading…','infralab-theme'),
     ));
     wp_enqueue_script( 'infralab_load_more' );
 }
