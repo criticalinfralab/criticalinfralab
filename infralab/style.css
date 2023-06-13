@@ -335,27 +335,27 @@ a {
     margin-right: -25px;
 }
 
-.item .permalink {
-    float: right;
-    margin-left: .75em;
-}
-
-.item-title {
+.item:not(.empty-content) .item-title {
     padding-right: 50px; /* prevent arrow from wrapping to next line */
     cursor: pointer;
 }
 
-.item-title .date {
-    font-variation-settings: "wght" 400;
-}
-
-.home .item-title:after, /* blogposts */
+.home .item:not(.empty-content) .item-title:after, /* blogposts */
 .section#section-people-and-governance h4:after {
     content: "→";
     transform: rotate(90deg) translateX(-.35em);
     display: inline-block;
     padding-left: .75em;
     margin-right: -25px;
+}
+
+.item .permalink {
+    float: right;
+    margin-left: .75em;
+}
+
+.item-title .date {
+    font-variation-settings: "wght" 400;
 }
 
 .item-content {
@@ -424,6 +424,14 @@ a {
 .single .item {
     background: var(--color1);
 }
+
+.single .iitem-title {
+    line-height: 145%;
+    font-size: var(--basefontsize);
+    font-variation-settings: "wght" 600;
+}
+
+/* Media queries */
 
 @media all and (min-width: 641px) {
     #header .site-title {
