@@ -1,3 +1,5 @@
+Wordpress theme for criticalinfrastructurelab.net
+
 ## General
 
 - CSS transforms all text to lowercase, so you don't have to bother doing it yourself unless you want to
