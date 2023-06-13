@@ -20,7 +20,7 @@ Template Name: Homepage
             );
             $pages = get_pages($args);
             foreach($pages as $page): ?>
-	        <div class="section">
+	        <div class="section" id="section-<?php echo $page->post_name; ?>">
 	            <h2 class="section-title"><?php echo $page->post_title; ?></h2>
 	            <?php if(str_contains($page->post_title, 'activit')) : ?>
 	    	    <div class="section-content blogposts">
