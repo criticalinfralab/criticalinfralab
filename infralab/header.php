@@ -12,7 +12,11 @@
 
 <body <?php body_class(); ?>>
     <div id="header">
-        <h1 class="site-title"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+        <h1 class="site-title">
+            <?php if(!is_front_page()): ?><a href="<?php bloginfo('url'); ?>"><?php endif; ?>
+            <?php bloginfo('name'); ?>
+            <?php if(is_home()): ?></a><?php endif; ?>
+        </h1>
         <div id="antennaspace"><!-- space for antennas --></div>
         <a class="button" id="eyecare" href="#">desaturate</a>
     </div>

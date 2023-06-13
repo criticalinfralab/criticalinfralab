@@ -187,7 +187,7 @@ input[type="submit"]:hover {
     padding-top: 3em;
 }
 
-#header .site-title a {
+#header .site-title {
     background: url(images/logo-criticalinfralab.svg) no-repeat;
     background: url(images/logo-criticalinfralab-noantenna.svg) no-repeat;
     background-position: top left;
@@ -198,6 +198,12 @@ input[type="submit"]:hover {
     width: 280px;
     height: 100px;
     margin-top: 100px;
+}
+
+#header .site-title a {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 #header #antenna {
@@ -417,7 +423,7 @@ input[type="submit"]:hover {
 }
 
 @media all and (min-width: 641px) {
-    #header .site-title a {
+    #header .site-title {
         width: 400px;
         height: 140px;
         margin-top: 150px;
@@ -434,7 +440,7 @@ input[type="submit"]:hover {
         width: 75vw;
     }
 
-    #header .site-title a {
+    #header .site-title {
         height: 250px;
         width: 700px;
     }
