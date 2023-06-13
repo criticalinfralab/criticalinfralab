@@ -15,25 +15,26 @@ Author URI: https://www.curlybracket.net
 }
 
 @font-face {
-  font-family: 'SourceSans3';
-  font-style:  normal;
-  src: url("fonts/SourceSans3-VariableFont_wght.ttf") format("truetype");
+    font-family: 'SourceSans3';
+    font-style:  normal;
+    src: url("fonts/SourceSans3-VariableFont_wght.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'SourceSans3Italic';
-  font-style:  normal;
-  src: url("fonts/SourceSans3-Italic-VariableFont_wght.ttf") format("truetype");
+    font-family: 'SourceSans3Italic';
+    font-style:  normal;
+    src: url("fonts/SourceSans3-Italic-VariableFont_wght.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'SourceCodePro';
-  font-style:  normal;
-  src: url("fonts/SourceCodePro-VariableFont_wght.ttf") format("truetype");
+    font-family: 'SourceCodePro';
+    font-style:  normal;
+    src: url("fonts/SourceCodePro-VariableFont_wght.ttf") format("truetype");
 }
 
 ::selection {
-    background: dogerblue;
+    background: var(--color2);
+    color: var(--color1);
 }
 
 * {
