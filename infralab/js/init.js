@@ -72,11 +72,16 @@ jQuery(document).ready(function($) {
     }
     
     // show/hide people logic
-    $("#section-people-and-governance h4").each(function(){
-        $(this).nextUntil("h4").wrapAll('<div class="hidden item-content"></div>');
-        $(this).on('click', function(){
-            $(this).next('.hidden').slideToggle();
+    var xcount = 0;
+    $("#section-people-and-governance h4").each(function() {
+        $(this).nextUntil("h4").wrapAll('<div class="hidden item-content people-'+xcount+'"></div>');
+        $(this).attr('id', 'people-'+xcount).insertBefore($(this).parent().find('.people-0'));
+        $(this).on('click', function() {
+            $(this).toggleClass('active');
+            let xtarget = $(this).attr('id');
+            $('.'+xtarget).slideToggle();
         });
+        xcount ++;
     });
 
     // desaturation cookie
