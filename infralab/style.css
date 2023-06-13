@@ -78,7 +78,9 @@ b, strong,
     font-variation-settings: "wght" 600;
 }
 
-code, pre, .site-description, .section-title {
+code, pre,
+.site-description,
+.section-title {
     font-family: "SourceCodePro";
 }
 
@@ -100,8 +102,8 @@ a {
 
 .site-description a,
 .item-content a,
-.section:nth-child(4) h4:hover,
-.section:nth-child(4) a:hover {
+.section#section-people-and-governance h4:hover,
+.section#section-people-and-governance a:hover {
     text-decoration: underline;
 }
 
@@ -262,12 +264,13 @@ input[type="submit"]:hover {
 .section-content {
     border-bottom: 1px solid var(--color2);
 }
+
 .section-content.blogposts {
     border-bottom: none;
 }
 
 .item, /* blogposts */
-.section:nth-child(3) .section-content p /* publications */ {
+.section#section-publications .section-content p /* publications */ {
     border-top: 1px solid var(--color2);
     padding: .5em;
     display: block;
@@ -275,7 +278,7 @@ input[type="submit"]:hover {
 }
 
 /* publication categories */ 
-.section:nth-child(3) .section-content p:before {
+.section#section-publications .section-content p:before {
     content: " ";
     width: 25px;
     height: 25px;
@@ -285,38 +288,38 @@ input[type="submit"]:hover {
     margin-bottom: .5em;
 }
 
-.section:nth-child(3) .section-content p.category-environment:before {
+.section#section-publications .section-content p.category-environment:before {
     background: rgb(86,214,44);
 }
 
-.section:nth-child(3) .section-content p.category-standards:before {
+.section#section-publications .section-content p.category-standards:before {
     background: rgb(71,144,255);
 }
 
-.section:nth-child(3) .section-content p.category-geopolitics:before {
+.section#section-publications .section-content p.category-geopolitics:before {
     background: rgb(122,77,43);
 }
 
 .item:focus, /* blogposts */
-.section:nth-child(3) .section-content p:not(.missing-link):focus /* publications */,
+.section#section-publications .section-content p:not(.missing-link):focus,
 .item:hover, /* blogposts */
-.section:nth-child(3) .section-content p:not(.missing-link):hover /* publications */ {
+.section#section-publications .section-content p:not(.missing-link):hover {
     background: var(--color1);
 }
 
-.section:nth-child(3) .section-content p:not(.missing-link),
-.section:nth-child(4) h4 /* people */ {
+.section#section-publications .section-content p:not(.missing-link),
+.section#section-people-and-governance h4 /* people */ {
     cursor: pointer;
 }
 
-.item-title .category, /* blogposts */
-.section:nth-child(3) .section-content p em:first-of-type /* publications */ {
+.section#section-activities .item-title .category,
+.section#section-publications .section-content p em:first-of-type {
     margin-right: .25em;
     font-variation-settings: "wght" 400;
 }
 
-.section:nth-child(3) .section-content p:not(.missing-link):after,
-.section:nth-child(4) a[href*="//"]:not([href*="criticalinfralab.net"]):after /* people */ {
+.section#section-publications .section-content p:not(.missing-link):after,
+.section#section-people-and-governance a[href*="//"]:not([href*="criticalinfralab.net"]):after {
     content: "→";
     padding-left: .25em;
     font-variation-settings: "wght" 600;
@@ -338,7 +341,7 @@ input[type="submit"]:hover {
 }
 
 .home .item-title:after, /* blogposts */
-.section:nth-child(4) h4:after /* people */ {
+.section#section-people-and-governance h4:after {
     content: "→";
     transform: rotate(90deg) translateX(-.35em);
     display: inline-block;
@@ -384,19 +387,22 @@ input[type="submit"]:hover {
 
 /* People section */
 
-.section:nth-child(4) h3 {
+.section#section-people-and-governance h3 {
    font-size: var(--basefontsize);
     font-variation-settings: "wght" 400;
 }
-.section:nth-child(4) h3, .section:nth-child(4) ul {
+
+.section#section-people-and-governance h3,
+.section#section-people-and-governance h4,
+.section#section-people-and-governance ul {
     display: inline;
 }
-.section:nth-child(4) h4 {
-    display: inline;
+
+.section#section-people-and-governance h4 {
     margin-right: 1.5em;
 }
 
-.section:nth-child(4) li {
+.section#section-people-and-governance li {
     display: inline;
     list-style: none;
     margin-right: .75em;
@@ -442,4 +448,3 @@ input[type="submit"]:hover {
     }
 
 }
-
