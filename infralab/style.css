@@ -11,6 +11,9 @@ Author URI: https://www.curlybracket.net
     --color1: #fff;
     --color2: #000;
     --hilight: #ff962e;
+    --color-environment: rgb(86,214,44);
+    --color-geopolitics: rgb(122,77,43);
+    --color-standards: rgb(71,144,255);
     --basefontsize: 18px;
 }
 
@@ -293,20 +296,40 @@ a {
     height: 25px;
     border-radius: 50%;
     float: right;
-    margin-left: .75em;
+    margin-left: 50px;
     margin-bottom: .5em;
 }
 
 .section#section-publications .section-content p.category-environment:before {
-    background: rgb(86,214,44);
+    background: var(--color-environment);
 }
 
 .section#section-publications .section-content p.category-standards:before {
-    background: rgb(71,144,255);
+    background: var(--color-standards);
 }
 
 .section#section-publications .section-content p.category-geopolitics:before {
-    background: rgb(122,77,43);
+    background: var(--color-geopolitics);
+}
+
+.section#section-publications .section-content p.category-standards-geopolitics:before {
+    background: var(--color-standards);
+    box-shadow: -30px 0 0 var(--color-geopolitics);
+}
+
+.section#section-publications .section-content p.category-environment-geopolitics:before {
+    background: var(--color-environment);
+    box-shadow: -30px 0 0 var(--color-geopolitics);
+}
+
+.section#section-publications .section-content p.category-environment-standards:before {
+    background: var(--color-environment);
+    box-shadow: -30px 0 0 var(--color-standards);
+}
+
+.section#section-publications .section-content p.category-all:before {
+    background: var(--hilight);
+    box-shadow: 0 0 1px var(--color1);
 }
 
 .item:focus, /* blogposts */
