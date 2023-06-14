@@ -90,7 +90,8 @@ jQuery(document).ready(function($) {
         $('body').addClass(desaturation_cookie);
         $('#eyecare').text('saturate');
     }
-    $('#eyecare').click(function() {
+    $('#eyecare').on('click', function(e) {
+        e.preventDefault();
         let value = Cookies.get('desaturate');
         if(value == "desaturate") {
             $('body').removeClass(value);
