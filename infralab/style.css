@@ -314,22 +314,22 @@ a {
 
 .section#section-publications .section-content p.category-standards-geopolitics:before {
     background: var(--color-standards);
-    box-shadow: -30px 0 0 var(--color-geopolitics);
+    box-shadow: -10px 0 0 var(--color-geopolitics);
 }
 
 .section#section-publications .section-content p.category-environment-geopolitics:before {
     background: var(--color-environment);
-    box-shadow: -30px 0 0 var(--color-geopolitics);
+    box-shadow: -10px 0 0 var(--color-geopolitics);
 }
 
 .section#section-publications .section-content p.category-environment-standards:before {
     background: var(--color-environment);
-    box-shadow: -30px 0 0 var(--color-standards);
+    box-shadow: -10px 0 0 var(--color-standards);
 }
 
 .section#section-publications .section-content p.category-all:before {
-    background: var(--hilight);
-    box-shadow: 0 0 1px var(--color1);
+    background: var(--color-standards);
+    box-shadow: -10px 0 0 var(--color-environment), -20px 0 0 var(--color-geopolitics);
 }
 
 .item:focus, /* blogposts */
