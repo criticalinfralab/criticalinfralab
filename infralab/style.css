@@ -58,7 +58,7 @@ body {
     font-optical-sizing: auto;
     overflow-x: hidden;
     color: var(--color2);
-    shape-rendering: crispedges;
+    shape-rendering: geometricPrecision;
     text-rendering: optimizeLegibility;
     text-transform: lowercase;
 }
