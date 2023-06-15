@@ -6,9 +6,6 @@
     <link rel="profile" href="http://gmpg.org/xfn/11" />
     <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?revalidate" type="text/css" media="all" />
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>" />
-    <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery-3.7.0.min.js"></script>
-    <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/js.cookie.min.js"></script>
-    <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/cookie-background.js"></script>
     <?php wp_head(); ?>
 </head>
 
