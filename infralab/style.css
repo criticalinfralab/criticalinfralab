@@ -46,7 +46,6 @@ Author URI: https://www.curlybracket.net
 }
 
 body {
-    background: var(--hilight);
     color: var(--color2);
     font-size: var(--basefontsize);
     font-family: "SourceSans3", sans-serif;
@@ -63,7 +62,11 @@ body {
     text-transform: lowercase;
 }
 
-body.desaturate {
+body.saturated {
+    background: var(--hilight);
+}
+
+body.desaturated {
     background: #bdb8b8;
 }
 
@@ -225,6 +228,102 @@ a {
     right: 0;
 }
 
+/* menu */
+
+.menu {
+    background: #fff;
+    position: fixed;
+    z-index: 19;
+    top: 0;
+    left: -379px;
+    width: 375px;
+    height: 100%;
+    box-sizing: border-box;
+    opacity: 0.5;
+    transition: left 0.9s cubic-bezier(0.78, 0.2, 0.05, 1),opacity 1.1s cubic-bezier(0.78, 0.2, 0.05, 1);
+    padding-top: 6em;
+    padding-left: 1em;
+    list-style: none;
+}
+
+.toggler, #menuToggle {
+    position: fixed;
+    top: 2em;
+    left: 1em;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+display: none !important;
+}
+
+.toggler {
+    z-index: 21;
+    display: block;
+}
+
+#menuToggle {
+    z-index: 20;
+    display: none;
+}
+
+.menu-icon span {
+   display: block;
+   position: absolute;
+   width: 100%;
+   height: 2px;
+   background: var(--color1);
+   transform-origin: 5px -5px;
+   transition:transform 0.6s cubic-bezier(0.78, 0.2, 0.05, 1),background 0.6s cubic-bezier(0.78, 0.2, 0.05, 1),opacity 0.6s ease,width 0.6s ease
+}
+
+.menu-icon span:first-child {
+    transform-origin: 0% 0%
+}
+.menu-icon span:last-child,
+.menu-icon:hover span:first-child {
+    width: 75%
+}
+.menu-icon:hover span {
+    background:var(--color2);
+}
+.menu-icon:hover span:last-child {
+    width: 100%
+}
+.menu-icon .toggler span:nth-child(2) {
+    margin-top: 8px
+}
+.menu-icon .toggler span:last-child {
+    transform-origin: 0% 100%;
+    margin-top: 16px;
+}
+
+#menuToggle:checked ~ .menu {
+   left: 0;
+   opacity: 1;
+}
+
+#menuToggle:checked ~ .menu-icon .toggler span {
+   opacity:1;
+   transform:rotate(45deg) translate(0, 0);
+   background:var(--color2);
+}
+
+#menuToggle:checked ~ .menu-icon .toggler span:first-child {
+   width: 100%;
+}
+
+#menuToggle:checked ~ .menu-icon .toggler span:nth-child(2) {
+   transform: rotate(-45deg) translate(-19px, 9px)
+}
+
+#menuToggle:checked ~ .menu-icon .toggler span:last-child {
+   opacity: 0;
+   transform: rotate(0deg) scale(0.1, 0.1)
+}
+
+.menu li {
+}
+
 #footer {
     margin-top: 3em;
     padding-bottom: 1.5em;
@@ -277,12 +376,12 @@ a {
     border-bottom: 1px solid var(--color2);
 }
 
-.section-content.blogposts {
+.section#section-activities .section-content {
     border-bottom: none;
 }
 
 .item, /* blogposts */
-.section#section-publications .section-content p /* publications */ {
+.section#section-publications .section-content p {
     border-top: 1px solid var(--color2);
     padding: .5em;
     display: block;
@@ -340,7 +439,7 @@ a {
 }
 
 .section#section-publications .section-content p:not(.missing-link),
-.section#section-people-and-governance h4 /* people */ {
+.section#section-people-and-governance h4 {
     cursor: pointer;
 }
 
@@ -374,7 +473,7 @@ a {
 
 .item .permalink {
     float: right;
-    margin-left: .75em;
+    margin-left: .35em;
 }
 
 .item-title .date {
@@ -411,10 +510,12 @@ a {
 }
 
 .has-recording {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+    width: 25px;
+    height: 25px;
     float: right;
+    background: url(images/has-recording.svg) no-repeat;
+    background-size: contain;
+    content: " ";
 }
 
 /* People section */
@@ -442,9 +543,10 @@ a {
     font-variation-settings: "wght" 600;
 }
 
-/* single post */
+/* single post and page */
 
-.single .item {
+.single .item,
+.page-template-default .item {
     background: var(--color1);
 }
 

@@ -84,27 +84,6 @@ jQuery(document).ready(function($) {
         xcount ++;
     });
 
-    // desaturation cookie
-    let desaturation_cookie = Cookies.get('desaturate');
-    if(desaturation_cookie == "desaturate") {
-        $('body').addClass(desaturation_cookie);
-        $('#eyecare').text('saturate');
-    }
-    $('#eyecare').on('click', function(e) {
-        e.preventDefault();
-        let value = Cookies.get('desaturate');
-        if(value == "desaturate") {
-            $('body').removeClass(value);
-            $(this).text('desaturate');
-            value = "";
-        } else {
-            value = "desaturate";
-            $('body').addClass(value);
-            $(this).text('saturate');
-        };
-        Cookies.set('desaturate', value, { expires: 365 });
-    });
-
     // draw Antenna in logo
     var referenceNode = document.querySelector('#antennaspace');
     var newNode = document.createElement('div');

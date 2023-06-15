@@ -24,8 +24,11 @@
                </div>
             </div>
             <?php endif; ?>
-        <?php endwhile; ?>
+       <?php endwhile; ?>
+       <?php get_template_part('nav.php'); ?>
+   <?php else: ?>
+	<p>Oops, there is nothing here.
+	<strong><a href="<?php bloginfo('url'); ?>">Go back to start and retrace your steps?</a></strong></p>
    <?php endif; ?>
-   <?php get_template_part('nav.php'); ?>
 </div>
 <?php get_footer(); ?>
