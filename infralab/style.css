@@ -543,9 +543,10 @@ display: none !important;
     font-variation-settings: "wght" 600;
 }
 
-/* single post and page */
+/* single post and page and category page */
 
 .single .item,
+.category .item,
 .page-template-default .item {
     background: var(--color1);
 }
