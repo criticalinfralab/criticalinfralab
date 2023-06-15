@@ -19,6 +19,32 @@ Copyright (C) 2023 Ulrike Uhlig
 */
 
 jQuery(document).ready(function($) {
+    // desaturation cookie
+    let desaturation_cookie = Cookies.get('desaturate');
+    if(desaturation_cookie == "desaturate") {
+        $('body').addClass('desaturated');
+        $('#eyecare').text('saturate');
+    } else {
+        $('body').addClass('saturated');
+        $('#eyecare').text('desaturate');
+    }
+    $('#eyecare').on('click', function(e) {
+        e.preventDefault();
+        let value = Cookies.get('desaturate');
+        if(value == "desaturate") {
+            $('body').removeClass('desaturated');
+            $('body').addClass('saturated');
+            $(this).text('desaturate');
+            value = "";
+        } else {
+            value = "desaturate";
+            $('body').removeClass('saturated');
+            $('body').addClass('desaturated');
+            $(this).text('saturate');
+        };
+        Cookies.set('desaturate', value, { expires: 365 });
+    });
+
     // click publication opens first href found
     $('.section:nth-child(3) .section-content p').each(function() {
        let href = $(this).find('a').attr('href');
@@ -82,27 +108,6 @@ jQuery(document).ready(function($) {
             $('.'+xtarget).slideToggle();
         });
         xcount ++;
-    });
-
-    // desaturation cookie
-    let desaturation_cookie = Cookies.get('desaturate');
-    if(desaturation_cookie == "desaturate") {
-        $('body').addClass(desaturation_cookie);
-        $('#eyecare').text('saturate');
-    }
-    $('#eyecare').on('click', function(e) {
-        e.preventDefault();
-        let value = Cookies.get('desaturate');
-        if(value == "desaturate") {
-            $('body').removeClass(value);
-            $(this).text('desaturate');
-            value = "";
-        } else {
-            value = "desaturate";
-            $('body').addClass(value);
-            $(this).text('saturate');
-        };
-        Cookies.set('desaturate', value, { expires: 365 });
     });
 
     // draw Antenna in logo
