@@ -376,12 +376,12 @@ display: none !important;
     border-bottom: 1px solid var(--color2);
 }
 
-.section-content.blogposts {
+.section#section-activities .section-content {
     border-bottom: none;
 }
 
 .item, /* blogposts */
-.section#section-publications .section-content p /* publications */ {
+.section#section-publications .section-content p {
     border-top: 1px solid var(--color2);
     padding: .5em;
     display: block;
@@ -439,7 +439,7 @@ display: none !important;
 }
 
 .section#section-publications .section-content p:not(.missing-link),
-.section#section-people-and-governance h4 /* people */ {
+.section#section-people-and-governance h4 {
     cursor: pointer;
 }
 
@@ -543,7 +543,7 @@ display: none !important;
     font-variation-settings: "wght" 600;
 }
 
-/* single post */
+/* single post and page */
 
 .single .item,
 .page-template-default .item {
