@@ -11,29 +11,33 @@ Author URI: https://www.curlybracket.net
     --color1: #fff;
     --color2: #000;
     --hilight: #ff962e;
+    --color-environment: rgb(86,214,44);
+    --color-geopolitics: rgb(122,77,43);
+    --color-standards: rgb(71,144,255);
     --basefontsize: 18px;
 }
 
 @font-face {
-  font-family: 'SourceSans3';
-  font-style:  normal;
-  src: url("fonts/SourceSans3-VariableFont_wght.ttf") format("truetype");
+    font-family: 'SourceSans3';
+    font-style:  normal;
+    src: url("fonts/SourceSans3-VariableFont_wght.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'SourceSans3Italic';
-  font-style:  normal;
-  src: url("fonts/SourceSans3-Italic-VariableFont_wght.ttf") format("truetype");
+    font-family: 'SourceSans3Italic';
+    font-style:  normal;
+    src: url("fonts/SourceSans3-Italic-VariableFont_wght.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: 'SourceCodePro';
-  font-style:  normal;
-  src: url("fonts/SourceCodePro-VariableFont_wght.ttf") format("truetype");
+    font-family: 'SourceCodePro';
+    font-style:  normal;
+    src: url("fonts/SourceCodePro-VariableFont_wght.ttf") format("truetype");
 }
 
 ::selection {
-    background: dogerblue;
+    background: var(--color2);
+    color: var(--color1);
 }
 
 * {
@@ -54,7 +58,7 @@ body {
     font-optical-sizing: auto;
     overflow-x: hidden;
     color: var(--color2);
-    shape-rendering: crispedges;
+    shape-rendering: geometricPrecision;
     text-rendering: optimizeLegibility;
     text-transform: lowercase;
 }
@@ -102,15 +106,10 @@ a {
 
 .site-description a,
 .item-content a,
+.section#section-people-and-governance h4.active,
 .section#section-people-and-governance h4:hover,
 .section#section-people-and-governance a:hover {
     text-decoration: underline;
-}
-
-input[type="submit"] {
-}
-
-input[type="submit"]:hover {
 }
 
 .hidden {
@@ -127,18 +126,19 @@ input[type="submit"]:hover {
     justify-content: space-between;
 }
 
-.navigation .previous:before,
-.navigation .next:after {
+.navigation .previous a:before,
+.navigation .next a:after {
     content: "→";
     padding-left: .25em;
 }
 
-.navigation .previous:before {
+.navigation .previous a:before {
     transform: rotate(180deg) translateY(-3px);
     display: inline-block;
 }
 
-.button, .pagination .next {
+.button,
+.pagination .next {
     background: var(--color1);
     border: 1px solid var(--color2);
     color: var(--color2);
@@ -147,6 +147,12 @@ input[type="submit"]:hover {
     font-size: calc(var(--basefontsize)*0.9);
     letter-spacing: 0.02em;
     cursor: pointer;
+    transition: 0.5s ease-in-out;
+}
+
+.button:hover,
+.pagination .next:hover {
+    opacity: 0.6;
 }
 
 .button.reveal {
@@ -187,17 +193,23 @@ input[type="submit"]:hover {
     padding-top: 3em;
 }
 
-#header .site-title a {
+#header .site-title {
     background: url(images/logo-criticalinfralab.svg) no-repeat;
     background: url(images/logo-criticalinfralab-noantenna.svg) no-repeat;
     background-position: top left;
     background-size: contain;
     display: block;
     text-indent: -10000px;
-    margin-bottom: 2em;
     width: 280px;
     height: 100px;
     margin-top: 100px;
+    margin-bottom: .75em;
+}
+
+#header .site-title a {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 #header #antenna {
@@ -214,8 +226,8 @@ input[type="submit"]:hover {
 }
 
 #footer {
-    margin-top: 8em;
-    padding-bottom: 5em;
+    margin-top: 3em;
+    padding-bottom: 1.5em;
     display: flex;
     justify-content: space-between;
 }
@@ -284,20 +296,40 @@ input[type="submit"]:hover {
     height: 25px;
     border-radius: 50%;
     float: right;
-    margin-left: .75em;
+    margin-left: 50px;
     margin-bottom: .5em;
 }
 
 .section#section-publications .section-content p.category-environment:before {
-    background: rgb(86,214,44);
+    background: var(--color-environment);
 }
 
 .section#section-publications .section-content p.category-standards:before {
-    background: rgb(71,144,255);
+    background: var(--color-standards);
 }
 
 .section#section-publications .section-content p.category-geopolitics:before {
-    background: rgb(122,77,43);
+    background: var(--color-geopolitics);
+}
+
+.section#section-publications .section-content p.category-standards-geopolitics:before {
+    background: var(--color-standards);
+    box-shadow: -10px 0 0 var(--color-geopolitics);
+}
+
+.section#section-publications .section-content p.category-environment-geopolitics:before {
+    background: var(--color-environment);
+    box-shadow: -10px 0 0 var(--color-geopolitics);
+}
+
+.section#section-publications .section-content p.category-environment-standards:before {
+    background: var(--color-environment);
+    box-shadow: -10px 0 0 var(--color-standards);
+}
+
+.section#section-publications .section-content p.category-all:before {
+    background: var(--color-standards);
+    box-shadow: -10px 0 0 var(--color-environment), -20px 0 0 var(--color-geopolitics);
 }
 
 .item:focus, /* blogposts */
@@ -326,27 +358,27 @@ input[type="submit"]:hover {
     margin-right: -25px;
 }
 
-.item .permalink {
-    float: right;
-    margin-left: .75em;
-}
-
-.item-title {
+.item:not(.empty-content) .item-title {
     padding-right: 50px; /* prevent arrow from wrapping to next line */
     cursor: pointer;
 }
 
-.item-title .date {
-    font-variation-settings: "wght" 400;
-}
-
-.home .item-title:after, /* blogposts */
+.home .item:not(.empty-content) .item-title:after, /* blogposts */
 .section#section-people-and-governance h4:after {
     content: "→";
     transform: rotate(90deg) translateX(-.35em);
     display: inline-block;
     padding-left: .75em;
     margin-right: -25px;
+}
+
+.item .permalink {
+    float: right;
+    margin-left: .75em;
+}
+
+.item-title .date {
+    font-variation-settings: "wght" 400;
 }
 
 .item-content {
@@ -416,16 +448,28 @@ input[type="submit"]:hover {
     background: var(--color1);
 }
 
+.single .item-title {
+    line-height: 145%;
+    font-size: var(--basefontsize);
+    font-variation-settings: "wght" 600;
+}
+
+/* Media queries */
+
 @media all and (min-width: 641px) {
-    #header .site-title a {
+    #header .site-title {
         width: 400px;
         height: 140px;
         margin-top: 150px;
+        margin-bottom: 2em;
     }
     #header #antenna {
         transform: rotate(45deg) scale(0.65);
         left: 160px;
         top: 4em;
+    }
+    #footer {
+        margin-top: 5em;
     }
 }
 
@@ -434,7 +478,7 @@ input[type="submit"]:hover {
         width: 75vw;
     }
 
-    #header .site-title a {
+    #header .site-title {
         height: 250px;
         width: 700px;
     }

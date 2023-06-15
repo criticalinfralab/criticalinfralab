@@ -63,7 +63,7 @@ jQuery(document).ready(function($) {
     var $set = $('#section-publications .section-content p');
     if($set.length > 5) {
         $set.slice(5, $set.length).wrapAll('<div class="hidden"/>');
-        $set.parent('.section-content').after('<span class="button reveal">see all</span>');
+        $set.parent('.section-content').after('<span class="button reveal">see more</span>');
         $('.reveal').on('click', function(){
         var text = $(this).text();
         $(this).text(text == "see more" ? "see less" : "see more");
@@ -72,11 +72,16 @@ jQuery(document).ready(function($) {
     }
     
     // show/hide people logic
-    $("#section-people-and-governance h4").each(function(){
-        $(this).nextUntil("h4").wrapAll('<div class="hidden item-content"></div>');
-        $(this).on('click', function(){
-            $(this).next('.hidden').slideToggle();
+    var xcount = 0;
+    $("#section-people-and-governance h4").each(function() {
+        $(this).nextUntil("h4").wrapAll('<div class="hidden item-content people-'+xcount+'"></div>');
+        $(this).attr('id', 'people-'+xcount).insertBefore($(this).parent().find('.item-content').first());
+        $(this).on('click', function() {
+            $(this).toggleClass('active');
+            let xtarget = $(this).attr('id');
+            $('.'+xtarget).slideToggle();
         });
+        xcount ++;
     });
 
     // desaturation cookie
@@ -85,7 +90,8 @@ jQuery(document).ready(function($) {
         $('body').addClass(desaturation_cookie);
         $('#eyecare').text('saturate');
     }
-    $('#eyecare').click(function() {
+    $('#eyecare').on('click', function(e) {
+        e.preventDefault();
         let value = Cookies.get('desaturate');
         if(value == "desaturate") {
             $('body').removeClass(value);
