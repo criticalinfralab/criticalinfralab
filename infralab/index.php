@@ -5,7 +5,7 @@
             <?php if(get_post_type() != 'page'): ?>
             <div class="section" id="section-activities">
                <div class="section-content">
-                   <h2 class="section-title">activities</h2>
+                   <h2 class="section-title"><a href="<?php bloginfo('url'); ?>/activities" rel="nofollow">activities</a></h2>
 		   <div class="item">
 		       <h2 class="item-title"><?php the_title(); ?></h2>
 		       <div class="item-content">
@@ -18,7 +18,7 @@
 		<?php global $post;
 		$slug = $post->post_name; ?>
             <div class="section" id="section-<?php echo $slug; ?>">
-               <h2 class="section-title"><?php the_title(); ?></h2>
+               <h2 class="section-title"><a href="<?php echo $page->guid; ?>" rel="nofollow"><?php the_title(); ?></a></h2>
                <div class="section-content">
                    <?php the_content(); ?>
                </div>

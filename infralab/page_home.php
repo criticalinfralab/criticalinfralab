@@ -21,7 +21,7 @@ Template Name: Homepage
             $pages = get_pages($args);
             foreach($pages as $page): ?>
 	        <div class="section" id="section-<?php echo $page->post_name; ?>">
-	            <h2 class="section-title"><?php echo $page->post_title; ?></h2>
+	            <h2 class="section-title"><a href="<?php echo $page->guid; ?>" rel="nofollow"><?php echo $page->post_title; ?></a></h2>
 	            <?php if(str_contains($page->post_title, 'activit')) : ?>
 	    	    <div class="section-content blogposts">
 	    	          <?php // blogposts
