@@ -53,7 +53,7 @@ Template Name: Homepage
 	              <?php endif; ?>
 	        <?php else : ?>
 	    	   <div class="section-content">
-	    	       <?php echo $page->post_content; ?>
+	    	       <?php echo remove_html_comments($page->post_content); ?>
 	           </div>
 	        <?php endif; ?>
 	        </div>
