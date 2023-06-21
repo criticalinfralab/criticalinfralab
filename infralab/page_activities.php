@@ -9,6 +9,7 @@ Template Name: Activities
         <?php while (have_posts()) : the_post(); ?>
 	   <div class="section" id="section-<?php echo $post->post_name; ?>">
 	       <h2 class="section-title"><?php the_title(); ?></h2>
+               <a class="go-home" href="<?php bloginfo('url'); ?>">←</a>
 	<?php endwhile; ?>
 	    <div class="section-content">
 	        <?php // blogposts
@@ -19,8 +20,7 @@ Template Name: Activities
 	            'post_status'  => 'publish',
 	            'sort_order' => 'ASC',
                     'posts_per_page' => $count,
-                    'paged' => $paged,
-                    'offset' => $offset,
+                    'paged' => $paged
 	        ));
                 if ($postquery->have_posts()) : 
                     while ($postquery->have_posts()) : $postquery->the_post();

@@ -21,7 +21,7 @@ Template Name: Homepage
             $pages = get_pages($args);
             foreach($pages as $page): ?>
 	        <div class="section" id="section-<?php echo $page->post_name; ?>">
-	            <h2 class="section-title"><?php echo $page->post_title; ?></h2>
+	            <h2 class="section-title"><a href="<?php echo $page->guid; ?>" rel="nofollow"><?php echo $page->post_title; ?></a></h2>
 	            <?php if(str_contains($page->post_title, 'activit')) : ?>
 	    	    <div class="section-content blogposts">
 	    	          <?php // blogposts
@@ -32,8 +32,7 @@ Template Name: Homepage
 	    	              'post_status'  => 'publish',
 	    	              'sort_order' => 'ASC',
                               'posts_per_page' => $count,
-                              'paged' => $paged,
-                              'offset' => $offset,
+                              'paged' => $paged
 	    	          ));
                           if ($postquery->have_posts()) : 
                               while ($postquery->have_posts()) : $postquery->the_post();
@@ -53,7 +52,7 @@ Template Name: Homepage
 	              <?php endif; ?>
 	        <?php else : ?>
 	    	   <div class="section-content">
-	    	       <?php echo $page->post_content; ?>
+	    	       <?php echo remove_html_comments($page->post_content); ?>
 	           </div>
 	        <?php endif; ?>
 	        </div>

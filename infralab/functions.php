@@ -1,30 +1,28 @@
 <?php
 function removeHeadLinks() {
-       remove_action('wp_head', 'rsd_link');
-       remove_action('wp_head', 'wlwmanifest_link');
+   remove_action('wp_head', 'rsd_link');
+   remove_action('wp_head', 'wlwmanifest_link');
+   // remove emoji code
+   remove_action('wp_head', 'print_emoji_detection_script', 7);
+   remove_action('wp_print_styles', 'print_emoji_styles');
+   remove_action('admin_print_scripts', 'print_emoji_detection_script');
+   remove_action('admin_print_styles', 'print_emoji_styles');
 }
 add_action('init', 'removeHeadLinks');
+
+// no generator in head
+remove_action('wp_head', 'wp_generator');
+
+// remove WP HTML markup comments
+// https://davidwalsh.name/remove-html-comments-php
+function remove_html_comments($content='') {
+    return preg_replace('/<!--(.|\s)*?-->/', '', $content);
+}
 
 // Globally deactivate comments
 function __disable_feature($data) { return false; }
 add_filter('comments_number', '__disable_feature');
 add_filter('comments_open', '__disable_feature');
-
-// no generator in head
-remove_action('wp_head', 'wp_generator');
-
-/*
- * Safari Mac cannot display images with Umlauts as Filenames. so we force a replacement when uploading.
-*/
-function sanitize_filename_on_upload($filename) {
-    $ext = end(explode('.',$filename));
-    // Replace all weird characters
-    $sanitized = preg_replace('/[^a-zA-Z0-9-_.]/','', substr($filename, 0, -(strlen($ext)+1)));
-    // Replace dots inside filename
-    $sanitized = str_replace('.','-', $sanitized);
-    return strtolower($sanitized.'.'.$ext);
-}
-add_filter('sanitize_file_name', 'sanitize_filename_on_upload', 10);
 
 /**
  * Ajax load more posts
