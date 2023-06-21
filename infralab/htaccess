@@ -1,9 +1,0 @@
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-    Redirect boards-and-governance/ /
-    Redirect 301 exhibit/ 2023/02/28/antennas-and-us-exhibit-at-the-amsterdam-public-library/
-    Redirect fellows-2022-2023/ /
-    Redirect people/ /
-    Redirect reading-groups/ category/reading-group/
-    Redirect walk/ category/infrastructure-walk/
-</IfModule>
