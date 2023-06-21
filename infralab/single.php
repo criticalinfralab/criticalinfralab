@@ -4,7 +4,7 @@
         <?php while (have_posts()) : the_post(); ?>
             <?php $category = get_the_category(); ?>
             <div class="section" id="section-activities">
-               <span class="section-title"><a href="<?php bloginfo('url'); ?>/activities" rel="nofollow">actvities</a></span>
+               <span class="section-title"><a href="<?php bloginfo('url'); ?>/activities" rel="nofollow">activities</a></span>
                <a class="go-home" href="<?php bloginfo('url'); ?>">←</a>
 
 		<div class="section-content">
