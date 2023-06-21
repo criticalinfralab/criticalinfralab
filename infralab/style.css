@@ -229,8 +229,9 @@ a {
 }
 
 .go-home {
-    display: block;
-    font-weight: bold;
+    font-variation-settings: "wght" 600;
+    width: 30px;
+    margin-left: .25em;
 }
 
 #footer {

@@ -3,9 +3,9 @@
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
         <div class="section" id="section-<?php echo $post->post_name; ?>">
-            <a class="go-home" href="<?php bloginfo('url'); ?>">←</a>
             <div class="section-content">
                 <h1 class="section-title"><?php the_title(); ?></h1>
+                <a class="go-home" href="<?php bloginfo('url'); ?>">←</a>
                 <?php the_content(); ?>
             </div>
         </div>

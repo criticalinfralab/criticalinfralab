@@ -4,8 +4,8 @@
         <?php while (have_posts()) : the_post(); ?>
             <?php $category = get_the_category(); ?>
             <div class="section" id="section-activities">
-               <a class="go-home" href="<?php bloginfo('url'); ?>">←</a>
                <span class="section-title"><a href="<?php bloginfo('url'); ?>/activities" rel="nofollow">actvities</a></span>
+               <a class="go-home" href="<?php bloginfo('url'); ?>">←</a>
 
 		<div class="section-content">
                     <div class="item">

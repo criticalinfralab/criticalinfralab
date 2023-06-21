@@ -8,8 +8,8 @@ Template Name: Activities
         <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
 	   <div class="section" id="section-<?php echo $post->post_name; ?>">
-               <a class="go-home" href="<?php bloginfo('url'); ?>">←</a>
 	       <h2 class="section-title"><?php the_title(); ?></h2>
+               <a class="go-home" href="<?php bloginfo('url'); ?>">←</a>
 	<?php endwhile; ?>
 	    <div class="section-content">
 	        <?php // blogposts

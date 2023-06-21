@@ -5,8 +5,8 @@
             <?php if(get_post_type() != 'page'): ?>
             <div class="section" id="section-activities">
                <div class="section-content">
-                   <a class="go-home" href="<?php bloginfo('url'); ?>">←</a>
                    <h2 class="section-title"><a href="<?php bloginfo('url'); ?>/activities" rel="nofollow">activities</a></h2>
+                   <a class="go-home" href="<?php bloginfo('url'); ?>">←</a>
 		   <div class="item">
 		       <h2 class="item-title"><?php the_title(); ?></h2>
 		       <div class="item-content">
