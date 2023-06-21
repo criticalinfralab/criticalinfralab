@@ -3,6 +3,7 @@
    <?php if (have_posts()) : ?>
         <div class="section" id="section-activities">
            <div class="section-content">
+               <a class="go-home" href="<?php bloginfo('url'); ?>">←</a>
                <h2 class="section-title">activities</h2>
 	       <?php while (have_posts()) : the_post(); ?>
                    <?php get_template_part('post-content'); ?>
