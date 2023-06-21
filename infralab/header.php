@@ -19,21 +19,5 @@
         </h1>
         <div id="antennaspace"><!-- space for antennas --></div>
         <a class="button" id="eyecare" href="#">desaturate</a>
-        <!--
-        <input type="checkbox" id="menuToggle">
-        <label for="menuToggle" class="menu-icon">
-           <span class="toggler">
-               <span aria-hidden="true" class="menu-deco"></span>
-               <span aria-hidden="true" class="menu-deco"></span>
-               <span aria-hidden="true" class="menu-deco"></span>
-           </span>
-        </label>
-        <ul class="menu">
-            <li><a href="<?php bloginfo('url'); ?>/#header">start</a></li>
-            <li><a href="<?php bloginfo('url'); ?>/#section-activities">activities</a></li>
-            <li><a href="<?php bloginfo('url'); ?>/#section-publications">publications</a></li>
-            <li><a href="<?php bloginfo('url'); ?>/#section-people-and-governance">people and governance</a></li>
-        </ul>
-        -->
     </div>
     <div id="container">
