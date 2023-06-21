@@ -30,19 +30,6 @@ function __disable_feature($data) { return false; }
 add_filter('comments_number', '__disable_feature');
 add_filter('comments_open', '__disable_feature');
 
-/*
- * Safari Mac cannot display images with Umlauts as Filenames. so we force a replacement when uploading.
-*/
-function sanitize_filename_on_upload($filename) {
-    $ext = end(explode('.',$filename));
-    // Replace all weird characters
-    $sanitized = preg_replace('/[^a-zA-Z0-9-_.]/','', substr($filename, 0, -(strlen($ext)+1)));
-    // Replace dots inside filename
-    $sanitized = str_replace('.','-', $sanitized);
-    return strtolower($sanitized.'.'.$ext);
-}
-add_filter('sanitize_file_name', 'sanitize_filename_on_upload', 10);
-
 /**
  * Ajax load more posts
  */
