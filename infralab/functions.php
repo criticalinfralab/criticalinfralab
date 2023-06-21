@@ -10,12 +10,6 @@ function removeHeadLinks() {
 }
 add_action('init', 'removeHeadLinks');
 
-/* Disable Gutenberg styles in header */
-function wps_deregister_styles() {
-    wp_dequeue_style('global-styles');
-}
-add_action('wp_enqueue_scripts', 'wps_deregister_styles', 100);
-
 // no generator in head
 remove_action('wp_head', 'wp_generator');
 
