@@ -19,8 +19,7 @@ Template Name: Activities
 	            'post_status'  => 'publish',
 	            'sort_order' => 'ASC',
                     'posts_per_page' => $count,
-                    'paged' => $paged,
-                    'offset' => $offset,
+                    'paged' => $paged
 	        ));
                 if ($postquery->have_posts()) : 
                     while ($postquery->have_posts()) : $postquery->the_post();
