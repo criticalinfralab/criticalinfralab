@@ -14,7 +14,7 @@ Author URI: https://www.curlybracket.net
     --color-environment: rgb(86,214,44);
     --color-geopolitics: rgb(122,77,43);
     --color-standards: rgb(71,144,255);
-    --basefontsize: 18px;
+    --basefontsize: 19px;
 }
 
 @font-face {
@@ -50,7 +50,7 @@ body {
     font-size: var(--basefontsize);
     font-family: "SourceSans3", sans-serif;
     font-variation-settings: "wght" 400;
-    line-height: 147%;
+    line-height: 153%;
     font-smoothing: antialiased;
     font-kerning: normal;
     font-variant: common-ligatures tabular-nums;
