@@ -462,7 +462,7 @@ a {
 
 .single .item,
 .category .item,
-.page-template-default .item {
+.page-template-default .item:hover {
     background: var(--color1);
 }
 
