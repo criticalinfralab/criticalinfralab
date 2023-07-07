@@ -60,7 +60,7 @@ jQuery(document).ready(function($) {
     });
     
     // show/hide publications logic
-    var $set = $('#section-publications .section-content p');
+    var $set = $('.home #section-publications .section-content p');
     if($set.length > 5) {
         $set.slice(5, $set.length).wrapAll('<div class="hidden"/>');
         $set.parent('.section-content').after('<span class="button reveal">see more</span>');
