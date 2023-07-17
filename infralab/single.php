@@ -15,8 +15,16 @@
                         <h2 class="item-title">
                             <em class="category"><?php echo $category[0]->cat_name; ?></a></em>
                             <span class="title"><?php the_title(); ?></span>
-                            <span class="date"><?php if($category[0]->cat_name != "reading group"): the_time('F Y'); endif; ?></span>
-                        </h2>
+			    <span class="date">
+			    <?php if($category[0]->cat_name != "reading group"):
+			        $has_custom_date = filter_var(get_post_meta(get_the_ID(), 'date', true), FILTER_SANITIZE_STRING);;
+				if(!empty($has_custom_date)):
+				    echo $has_custom_date;
+				else:
+				    the_time('F Y');
+		                endif;
+			    endif; ?></span>
+			</h2>
                         <div class="item-content"><?php the_content(); ?></div>
                    </div>
 	      </div>
