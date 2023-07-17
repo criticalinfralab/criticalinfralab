@@ -26,6 +26,7 @@ Wordpress theme for criticalinfrastructurelab.net
   - manually: make title bold
   - manually: just link the title, not the entire parapgraph
   - manually: add CSS classes per paragraph using WP block interface (category-environment, category-standards, category-geopolitics, category-all, category-standards-geopolitics, category-environment-geopolitics, category-environment-standards)
+    - or use the "reusable blocks" feature
 
 ## People and governance
 
