@@ -1,0 +1,380 @@
+@charset "UTF-8";
+
+:root {
+    --color1: #fff;
+    --color2: #000;
+    --hilight: #ff962e;
+    --color-environment: rgb(86,214,44);
+    --color-geopolitics: rgb(122,77,43);
+    --color-standards: rgb(71,144,255);
+    --basefontsize: 10pt;
+}
+
+/********
+ * Fonts
+ * ******/
+
+@font-face {
+    font-family: 'SourceSerif';
+    font-style:  normal;
+    src: url("./fonts/SourceSerif4-VariableFont_opsz,wght.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'SourceSerifItalic';
+    font-style:  normal;
+    src: url("./fonts/SourceSerif4-Italic-VariableFont_opsz,wght.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'SourceSans';
+    font-style:  normal;
+    src: url("./fonts/SourceSans3-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'SourceCode';
+    font-style:  normal;
+    src: url("fonts/SourceCodePro-VariableFont_wght.ttf") format("truetype");
+}
+
+/**
+ *  Reset
+ */
+
+body {
+    margin: 0;
+}
+
+hr {
+    display: none;
+}
+
+/* *******
+ * Basics
+ * *******/
+
+body {
+    font-family: "SourceSerif";
+    font-variation-settings: "wght" 350;
+    font-variant: common-ligatures;
+    line-height: 14.5pt;
+    font-size: var(--basefontsize);
+    letter-spacing: 0.025em;
+    color: var(--color2);
+    counter-reset: pagenumbermargin;
+    /*
+    shape-rendering: geometricPrecision;
+    text-rendering: optimizeLegibility;
+    */
+}
+
+/* *******************
+ * general page setup
+ * *******************/
+
+@page {
+    size: 210mm 297mm;
+    bleed: 3mm;
+    margin-top: 15mm;
+    margin-bottom: 36mm;
+}
+
+@page:left {
+    margin-left: 12mm;
+    margin-right: 12mm;
+}
+
+@page:right {
+    margin-left: 12mm;
+    margin-right: 12mm;
+}
+
+/***************
+ * pagination
+ * ************/
+
+@page {
+    @bottom-left:after {
+        /* when using pagedjs-cli, then this should not be :after */
+        content: counter(page);
+        font-family: "SourceSans";
+        font-variation-settings: "wght" 600;
+        font-variant: slashed-zero;
+        font-size: 11pt;
+        line-height: 12pt;
+        /*width: 1.2em;*/
+        border-top: 2px solid;
+        vertical-align: top;
+        padding-top: 0.25em;
+        margin-top: 2em;
+        counter-increment: pagenumbermargin;
+        margin-left: calc(1em+pagenumbermargin); /* this is not working */
+    }
+}
+
+/* any page that is intentionally left blank: */
+
+@page:blank {
+    @top-center { content: "This page is intentionally left blank." }
+}
+
+/* first page of document */
+
+@page:first {
+    background: orange;
+}
+
+/*******************
+ * front cover
+ * ****************/
+
+@media screen {
+    #frontcover {
+        width: 100vw;
+        height: 100vh;
+    }
+    #frontcover:after {
+        content: " ";
+        width: 10mm;
+        height: 5mm;
+        background-image: url(assets/images/logo-criticalinfralab.svg) no-repeat;
+    }
+}
+
+#frontcover {
+    content: " ";
+    background-color: var(--hilight);
+    /*background-image: url(assets/images/antenna.svg) no-repeat;*/
+    display: block;
+    margin-left: -3mm;
+    margin-top: -3mm;
+}
+
+h1 {
+    transform: rotate(45deg);
+    transform-origin: 0 50%;
+    font-size: 3em;
+    line-height: 140%;
+    padding: 0;
+}
+
+a {
+    color: var(--color2);
+    text-decoration: underline;
+}
+
+/* page breaks */
+
+h1, h2 {
+    page-break-before: always; /* starts a new page before this elm */
+}
+
+h1, h2, h3, h4, h5 { /* no page breaks in or after titles */
+    page-break-inside: avoid;
+    page-break-after: avoid;
+}
+
+p:last-child {
+    page-break-after: avoid;
+}
+
+table, figure { /* don't break figures and tables */
+    page-break-inside: avoid;
+}
+
+/* ***************
+ * Element styles
+ * ***************/
+
+h1, h2, h3, h4, h5 {
+    margin-bottom: 0;
+    font-weight: normal;
+    font-family: "SourceSans", sans-serif;
+    font-variation-settings: "wght" 600;
+    font-variant: slashed-zero;
+    font-feature-settings: "ss01" on, "ss02" on, "ss10" on;
+}
+
+h2 {
+    font-size: 19pt;
+    line-height: 21pt;
+    letter-spacing: 0;
+    margin-top: 0;
+    margin-bottom: 30mm;
+}
+
+h3 {
+    font-size: 13pt;
+    line-height: 17pt;
+    letter-spacing: 0.01em;
+    margin-bottom: 0.25em;
+}
+
+h3, h4, h5, figure, ol {
+    margin-left: 64mm;
+}
+
+ul {
+    margin-left: 56.5mm;
+    list-style: none;
+    text-align: left;
+}
+
+ul li:before {
+    content: "-";
+    margin-left: -0.85em;
+    padding-right: 0.5em;
+}
+
+p {
+    text-indent: 10mm;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-left: 64mm;
+}
+
+h2 + p,
+h3 + p,
+h4 + p {
+    text-indent: 0;
+}
+
+li p {
+    margin: 0;
+    text-indent: 0;
+}
+
+p, li {
+    text-align: justify;
+}
+
+blockquote {
+    font-family: "SourceSerifItalic";
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-right: 0;
+    margin-left: 74mm;
+}
+
+blockquote p,
+dl p {
+    margin: 0;
+    text-indent: 0;
+    text-align: left;
+}
+
+dl {
+    margin-left: 64mm;
+    margin-top: 1em;
+    text-indent: 10mm;
+    margin-bottom: 0;
+}
+
+dt {
+    float: left;
+    margin-right: 0.4em;
+}
+
+b, strong, dt {
+    font-variation-settings: "wght" 600;
+}
+
+i, em {
+    font-family: "SourceSerifItalic";
+}
+
+/* Prevent superscripts and subscripts from affecting line-height */
+sup, sub {
+    vertical-align: baseline;
+    position: relative;
+    top: -0.3em;
+}
+
+sub {
+    top: 0.4em;
+}
+
+/* footnote references in text */
+
+.footnote-ref {
+    text-decoration: none;
+    color: black;
+    font-family: "SourceSans";
+    font-variation-settings: "wght" 600;
+}
+
+/**************
+ * footnotes
+ * ************/
+
+.footnotes {
+    page-break-before: avoid;
+    page-break-inside: avoid;
+    page-break-after: always;
+    letter-spacing: 0;
+    text-align: left;
+}
+
+.footnotes:before {
+    content: " ";
+    width: 10mm;
+    height: 0.25mm;
+    display: block;
+    margin-left: 64mm;
+    margin-top: 15mm;
+    background-color: var(--color2);
+}
+
+.footnotes ol {
+    padding: 0;
+    margin-left: 62.5mm;
+    list-style-type: none;
+    counter-reset: list-number;
+}
+
+.footnotes li {
+    font-family: "SourceSans";
+    font-size: 9.5pt;
+    line-height: 11pt;
+    margin-bottom: 0.5em;
+    font-variation-settings: "wght" 400;
+}
+
+.footnotes li:before {
+    /*font-variation-settings: "wght" 600;*/
+    margin-left: -1em;
+    counter-increment: list-number;
+    content: counter(list-number, decimal-leading-zero);
+    float: left;
+}
+
+.footnotes li p {
+    font-variation-settings: "wght" 400;
+    margin-left: 0.5em;
+}
+
+/* To get the pandoc-generated bibliography to match style, define csl classes. */
+
+#references {
+    content: "Bibliography";
+}
+
+.csl-bib-body {
+    margin-left: 64mm;
+}
+
+.csl-entry {
+    margin-bottom: .5em;
+}
+
+/* toc */
+
+ul.toc a::after {
+    content: target-counter(attr(href), page);
+}
+
+ul.toc a::after {
+    content: leader('.') target-counter(attr(href), page);
+}
