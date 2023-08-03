@@ -1,5 +1,11 @@
 # TODO
 
+## Editing style
+
+- don't have headlines follow each other, there should always be text
+  between normally. → that's something that cannot be automated but
+  needs to be checked when editing the text
+
 ## Preprocessing
 
 This can be achieved with pandoc [filters](https://pandoc.org/filters.html)
@@ -7,25 +13,30 @@ This can be achieved with pandoc [filters](https://pandoc.org/filters.html)
 - script to clean trainling whitespace
   sed -i 's/[ \t]*$//' "$1"
   → seems to not matter at all, this is already done by Pandoc
-- remove empty lines which have only "###" or #### or #####
-  → filters/delemptyheader.py
 - transform single paragraphs with strong> into h3 → this proves to be
   super tedious, I'm abandoning
+- remove empty lines which have only "###" or #### or #####
+  → filters/delemptyheader.py
 - remove spaces before notes
   → filters/remove-space-before-note.lua
 - maybe script to remove unicode chars
 
-`pandoc -s -t native input.md | more` → see AST produced by pandoc
+### Useful for writing filters
+
+see AST produced by pandoc:
+
+ `pandoc -s -t native input.md | more`
 
 # TODO list
 
 - [x] font variants
-       https://wakamaifondue.com/beta
-       https://css-tricks.com/almanac/properties/f/font-variant-numeric/
-       https://fonts.google.com/knowledge/using_type/implementing_open_type_features_on_the_web
+      https://wakamaifondue.com/beta
+      https://css-tricks.com/almanac/properties/f/font-variant-numeric/
+      https://fonts.google.com/knowledge/using_type/implementing_open_type_features_on_the_web
 - [x] styles for footnotes
 - [x] footnotes instead of endnotes
       https://pandoc.org/MANUAL.html#footnotes
+- [x] preprocessing
 - [] improve footnote placement
 - [] footnote counter not working with pagedjs, but it works with
      weasyprint
@@ -35,7 +46,7 @@ This can be achieved with pandoc [filters](https://pandoc.org/filters.html)
   - [] need to add logo infralab to front page
   - [] need to add background image to front page
 - [] backcover
-- [] compute page number placement
+- [] compute page number placement → currently seems impossible to do
 - [] test images
 - [] test tables
 - [] test logos
@@ -45,11 +56,6 @@ This can be achieved with pandoc [filters](https://pandoc.org/filters.html)
       https://pandoc.org/MANUAL.html#option--bibliography
 - [] Schusterjunge/Hurenkinder, what to do about these?
 - [] if possible break titles after colons ":"
-
-# Editing rules
-
-- don't have headlines follow each other, there should always be text
-  between normally.
 
 # Scope
 
@@ -69,7 +75,7 @@ pandoc input.md\
        --lua-filter filters/remove-space-before-note.lua
        --pdf-engine=weasyprint\
        --dpi=300\
-       -css=print.css\
+       -css=assets/print.css\
        -o output.pdf
 
 pandoc input.md\
@@ -82,7 +88,7 @@ pandoc input.md\
        --lua-filter filters/remove-space-before-note.lua
        --pdf-engine=pagedjs-cli\
        --dpi=300\
-       -css=print.css\
+       -css=assets/print.css\
        -o output.pdf
 
 # Requirements
