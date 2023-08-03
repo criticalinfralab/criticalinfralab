@@ -35,7 +35,7 @@
 @font-face {
     font-family: 'SourceCode';
     font-style:  normal;
-    src: url("fonts/SourceCodePro-VariableFont_wght.ttf") format("truetype");
+    src: url("./fonts/SourceCodePro-VariableFont_wght.ttf") format("truetype");
 }
 
 /**
