@@ -159,6 +159,20 @@ h1 {
     padding: 0;
 }
 
+/* Logos section */
+
+#logos { /* hide title but keep margin */
+    /*display: none;*/
+    visibility: hidden;
+}
+
+#logos+p img {
+    width: 25%;
+    box-sizing: border-box;
+    padding: 0 5mm 5mm 0;
+    display: inline-block;
+}
+
 a {
     color: var(--color2);
     text-decoration: underline;
@@ -377,4 +391,33 @@ ul.toc a::after {
 
 ul.toc a::after {
     content: leader('.') target-counter(attr(href), page);
+}
+
+/* tables */
+
+table {
+    font-family: "SourceSans";
+    margin-left: 63mm;
+    width: 123mm;
+    text-align: left;
+    border-collapse: collapse;
+    border: 1px solid;
+}
+
+table thead {
+    font-variation-settings: "wght" 600;
+}
+
+table tr {
+    border-bottom: 1px solid;
+}
+
+table,
+table tr {
+    border-color: rgba(0, 0, 0, 0.8);
+}
+
+table th,
+table td {
+    padding: 0 1mm;
 }
