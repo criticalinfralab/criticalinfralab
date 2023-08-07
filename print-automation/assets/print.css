@@ -27,9 +27,21 @@
 }
 
 @font-face {
-    font-family: 'SourceSans';
+    font-family: 'SourceSans-Regular';
     font-style:  normal;
-    src: url("./fonts/SourceSans3-VariableFont_wght.ttf") format("truetype");
+    src: url("./fonts/SourceSans3-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'SourceSans-Bold';
+    font-style:  normal;
+    src: url("./fonts/SourceSans3-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'SourceSans-Italic';
+    font-style:  normal;
+    src: url("./fonts/SourceSans3-Italic.ttf") format("truetype");
 }
 
 @font-face {
@@ -98,8 +110,7 @@ body {
     @bottom-left:after {
         /* when using pagedjs-cli, then this should not be :after */
         content: counter(page);
-        font-family: "SourceSans";
-        font-variation-settings: "wght" 600;
+        font-family: "SourceSans-Bold";
         font-variant: slashed-zero;
         font-size: 11pt;
         line-height: 12pt;
@@ -204,8 +215,7 @@ table, figure { /* don't break figures and tables */
 h1, h2, h3, h4, h5 {
     margin-bottom: 0;
     font-weight: normal;
-    font-family: "SourceSans", sans-serif;
-    font-variation-settings: "wght" 600;
+    font-family: "SourceSans-Bold", sans-serif;
     font-variant: slashed-zero;
     font-feature-settings: "ss01" on, "ss02" on, "ss10" on;
 }
@@ -314,9 +324,8 @@ sub {
 
 .footnote-ref {
     text-decoration: none;
-    color: black;
-    font-family: "SourceSans";
-    font-variation-settings: "wght" 600;
+    color: #000;
+    font-family: "SourceSans-Bold";
 }
 
 /**************
@@ -349,15 +358,15 @@ sub {
 }
 
 .footnotes li {
-    font-family: "SourceSans";
+    font-family: "SourceSans-Regular";
     font-size: 9.5pt;
-    line-height: 11pt;
+    line-height: 11.5pt;
+    text-align: left;
     margin-bottom: 0.5em;
-    font-variation-settings: "wght" 400;
 }
 
 .footnotes li:before {
-    /*font-variation-settings: "wght" 600;*/
+    font-family: "SourceSans-Bold";
     margin-left: -1em;
     counter-increment: list-number;
     content: counter(list-number, decimal-leading-zero);
@@ -365,7 +374,6 @@ sub {
 }
 
 .footnotes li p {
-    font-variation-settings: "wght" 400;
     margin-left: 0.5em;
 }
 
@@ -396,7 +404,7 @@ ul.toc a::after {
 /* tables */
 
 table {
-    font-family: "SourceSans";
+    font-family: "SourceSans-Regular";
     margin-left: 63mm;
     width: 123mm;
     text-align: left;
@@ -404,8 +412,12 @@ table {
     border: 1px solid;
 }
 
-table thead {
-    font-variation-settings: "wght" 600;
+table thead, table b, table strong {
+    font-family: "SourceSans-Bold";
+}
+
+table em, table i {
+    font-family: "SourceSans-Italic";
 }
 
 table tr {
