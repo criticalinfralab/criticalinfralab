@@ -417,7 +417,7 @@ table {
     width: 123mm;
     text-align: left;
     border-collapse: collapse;
-    border: 1px solid;
+    border: .25mm solid;
 }
 
 table thead, table b, table strong {
@@ -429,7 +429,7 @@ table em, table i {
 }
 
 table tr {
-    border-bottom: 1px solid;
+    border-bottom: .25mm solid;
 }
 
 table,
