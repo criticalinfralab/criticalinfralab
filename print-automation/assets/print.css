@@ -173,16 +173,43 @@ h1 {
 /* Logos section */
 
 #logos { /* hide title but keep margin */
-    /*display: none;*/
-    visibility: hidden;
+    display: none;
+}
+
+#logos+p {
+    margin-left: 0;
 }
 
 #logos+p img {
     width: 25%;
+    padding-right: 5%;
     box-sizing: border-box;
-    padding: 0 5mm 5mm 0;
     display: inline-block;
+    position: absolute;
+    bottom: 0;
 }
+
+#logos+p img:nth-child(1) {
+    left: 0;
+}
+
+#logos+p img:nth-child(2) {
+    left: 25%;
+}
+
+#logos+p img:nth-child(3) {
+    left: 50%;
+}
+
+#logos+p img:nth-child(4) {
+    left: 75%;
+}
+
+#logos+p img:nth-child(4n) {
+    padding-right: 0;
+}
+
+/* Basic standards */
 
 a {
     color: var(--color2);
