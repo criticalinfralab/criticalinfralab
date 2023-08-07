@@ -17,13 +17,19 @@
 @font-face {
     font-family: 'SourceSerif';
     font-style:  normal;
-    src: url("./fonts/SourceSerif4-VariableFont_opsz,wght.ttf") format("truetype");
+    src: url("./fonts/SourceSerif4-Regular.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'SourceSerifItalic';
+    font-family: 'SourceSerif-Italic';
     font-style:  normal;
-    src: url("./fonts/SourceSerif4-Italic-VariableFont_opsz,wght.ttf") format("truetype");
+    src: url("./fonts/SourceSerif4-Italic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'SourceSerif-Bold';
+    font-style:  normal;
+    src: url("./fonts/SourceSerif4-Bold.ttf") format("truetype");
 }
 
 @font-face {
@@ -68,7 +74,6 @@ hr {
 
 body {
     font-family: "SourceSerif";
-    font-variation-settings: "wght" 350;
     font-variant: common-ligatures;
     line-height: 14.5pt;
     font-size: var(--basefontsize);
@@ -134,13 +139,13 @@ body {
 
 @page:first {
     background: orange;
-    background-image: url(assets/images/criticalinfralab-antenna.svg) no-repeat;
+    /*background-image: url(assets/images/criticalinfralab-antenna.svg) no-repeat;*/
 }
 
 h1 {
     transform: rotate(45deg);
     transform-origin: 0 50%;
-    font-size: 3em;
+    font-size: 3.4em;
     line-height: 140%;
     padding: 0;
 }
@@ -277,7 +282,7 @@ p, li {
 }
 
 blockquote {
-    font-family: "SourceSerifItalic";
+    font-family: "SourceSerif-Italic";
     margin-top: 1em;
     margin-bottom: 1em;
     margin-right: 0;
@@ -304,11 +309,12 @@ dt {
 }
 
 b, strong, dt {
-    font-variation-settings: "wght" 600;
+    font-weight: normal;
+    font-family: "SourceSerif-Bold";
 }
 
 i, em {
-    font-family: "SourceSerifItalic";
+    font-family: "SourceSerif-Italic";
 }
 
 /* Prevent superscripts and subscripts from affecting line-height */
