@@ -37,19 +37,22 @@ see AST produced by pandoc:
 - [x] footnotes instead of endnotes
       https://pandoc.org/MANUAL.html#footnotes
 - [x] preprocessing
+- [x] test images
+- [x] test logos
+- [x] test tables
 - [] improve footnote placement
 - [] footnote counter not working with pagedjs, but it works with
      weasyprint
+- [] footnotes and tables both appear weirdly bold in Sans, I think
+  weasy might have an issue with the font weight settings, will try with
+  separate fonts
+- [] compute page number placement → currently seems impossible to do
 - [] generate and style toc
 - [] place toc after cover or generate cover separately and join later?
 - [] cover page
   - [] need to add logo infralab to front page
   - [] need to add background image to front page
 - [] backcover
-- [] compute page number placement → currently seems impossible to do
-- [] test images
-- [] test tables
-- [] test logos
 - [] improve citation rendering and layout
       https://pandoc.org/MANUAL.html#citations
 - [x] bibliography
