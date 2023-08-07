@@ -134,32 +134,7 @@ body {
 
 @page:first {
     background: orange;
-}
-
-/*******************
- * front cover
- * ****************/
-
-@media screen {
-    #frontcover {
-        width: 100vw;
-        height: 100vh;
-    }
-    #frontcover:after {
-        content: " ";
-        width: 10mm;
-        height: 5mm;
-        background-image: url(assets/images/logo-criticalinfralab.svg) no-repeat;
-    }
-}
-
-#frontcover {
-    content: " ";
-    background-color: var(--hilight);
-    /*background-image: url(assets/images/antenna.svg) no-repeat;*/
-    display: block;
-    margin-left: -3mm;
-    margin-top: -3mm;
+    background-image: url(assets/images/criticalinfralab-antenna.svg) no-repeat;
 }
 
 h1 {
