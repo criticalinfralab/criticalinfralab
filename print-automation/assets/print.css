@@ -135,21 +135,6 @@ body {
     @top-center { content: "This page is intentionally left blank." }
 }
 
-/* first page of document */
-
-@page:first {
-    background: orange;
-    /*background-image: url(assets/images/criticalinfralab-antenna.svg) no-repeat;*/
-}
-
-h1 {
-    transform: rotate(45deg);
-    transform-origin: 0 50%;
-    font-size: 3.4em;
-    line-height: 140%;
-    padding: 0;
-}
-
 /* Logos section */
 
 #logos { /* hide title but keep margin */
