@@ -11,6 +11,9 @@
 * Pandoc manual
   https://www.uv.es/wikibase/doc/eng/pandoc_manual_2.7.3.wiki
 
+* Standard
+  https://www.w3.org/TR/css-gcpm-3/
+
 # TODO
 
 ## Preprocessing
