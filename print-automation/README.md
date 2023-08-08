@@ -1,8 +1,7 @@
-# Editing style
+# Manually verify:
 
-- don't have headlines follow each other, there should always be text
-  between normally. → that's something that cannot be automated but
-  needs to be checked when editing the text
+- that there are no paragraphs with bold text disguising as a headline →
+  please make them into h3 headlines manually
 
 # Documentation
 
@@ -48,30 +47,33 @@ see AST produced by pandoc:
 - [x] footnotes and tables both appear weirdly bold in Sans, I think
   weasy might have an issue with the font weight settings, will try with
   separate fonts
+- [x] bibliography
+      https://pandoc.org/MANUAL.html#option--bibliography
 - [x] cover page
   - [x] need to add logo infralab to front page
   - [x] need to add background image to front page
-- [] generate and style toc
-- [] improve footnote placement
-- [] place toc after cover or generate cover separately and join later?
-- [] backcover
-- [] improve citation rendering and layout
-      https://pandoc.org/MANUAL.html#citations
-- [x] bibliography
-      https://pandoc.org/MANUAL.html#option--bibliography
+- [] style toc and place it correctly
 
 ### Nice to have
 
 the following things would be nice to have but require much more time:
 
+- [] Make page generation use pagedjs-cli as well
+  - [] footnote counter not working with pagedjs, but it works with
+        weasyprint
+  - [] pagedjs-cli page bottom rendering sucks
+- [] improve footnote placement - we want to have them at the bottom of
+     the page, not right after the text
+- [] improve citation rendering and layout
+      https://pandoc.org/MANUAL.html#citations
 - [] Check hyphenation style, we can use CSS hyphenation but we need a
      lang attribute for this to work correctly
 - [] See if widows and orphans can be handled better:
      https://en.wikipedia.org/wiki/Widows_and_orphans
 - [] if possible break titles after colons ":"
-- [] footnote counter not working with pagedjs, but it works with
-     weasyprint
 - [] compute page number placement → currently seems impossible to do
+- [] generate and have a backcover (that should be fairly easy, but it's
+  one more step in the process.)
 
 → probably I first need to generate the front cover page, then the toc,
 then the contents and then merge it
