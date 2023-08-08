@@ -1,0 +1,67 @@
+
+@font-face {
+    font-family: 'SourceSans-Bold';
+    font-style:  normal;
+    src: url("./fonts/SourceSans3-Bold.ttf") format("truetype");
+}
+
+
+@page {
+    size: 210mm 297mm;
+    bleed: 3mm;
+    margin: 12mm;
+}
+
+@page:first {
+    background: orange;
+}
+
+body {
+    font-family: "SourceSans-Bold";
+}
+
+p > img { /* cover background image */
+    position: absolute;
+    top: -15mm;
+    left: -115mm;
+}
+
+h1 {
+    /*transform: rotate(28deg);*/
+    transform-origin: 0 0;
+    font-size: 30pt;
+    line-height: 30pt;
+    padding: 0;
+    background: green;
+    margin: 0 0 10pt 0;
+}
+
+h2 {
+
+}
+
+h3 {
+    font-size: 18pt;
+    line-height: 18.5pt;
+    position: absolute;
+    top: 156mm;
+    left: 135mm;
+}
+
+.category {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15mm;
+    height: 15mm;
+    display: block;
+    border-radius: 50%;
+    background: blue;
+}
+
+.category-geopolitics {
+
+}
+.category-environment {
+
+}
