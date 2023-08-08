@@ -193,7 +193,7 @@ h1 {
 
 a {
     color: var(--color2);
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 /* page breaks */
