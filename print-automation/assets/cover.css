@@ -1,3 +1,11 @@
+@charset "UTF-8";
+
+:root {
+    --hilight: #ff962e;
+    --color-environment: rgb(86,214,44);
+    --color-geopolitics: rgb(122,77,43);
+    --color-standards: rgb(71,144,255);
+}
 
 @font-face {
     font-family: 'SourceSans-Bold';
@@ -13,7 +21,7 @@
 }
 
 @page:first {
-    background: #ff962e;
+    background: var(--hilight);
 }
 
 body {
@@ -26,21 +34,20 @@ p > img { /* cover background image */
     left: -115mm;
 }
 
+#header {
+    transform: rotate(28deg) translateY(15mm) translateX(10mm);
+    transform-origin: 0 50%;
+    width: 153mm;
+}
+
 h1 {
-    /*transform: rotate(28deg);*/
-    transform-origin: 0 0;
-    font-size: 30pt;
-    line-height: 30pt;
+    font-size: 27pt;
+    line-height: 27pt;
     padding: 0;
-    background: green;
-    margin: 0 0 10pt 0;
+    margin: 2pt 0 0 0;
 }
 
 h2 {
-
-}
-
-h3 {
     font-size: 18pt;
     line-height: 18.5pt;
     position: absolute;
@@ -56,12 +63,36 @@ h3 {
     height: 15mm;
     display: block;
     border-radius: 50%;
-    background: blue;
 }
 
-.category-geopolitics {
-
+.category.geopolitics {
+    background: var(--color-geopolitics);
 }
-.category-environment {
 
+.category.environment {
+    background: var(--color-environment);
+}
+
+.category.standards {
+    background: var(--color-standards);
+}
+
+.category.standards-geopolitics {
+    background: var(--color-standards);
+    box-shadow: -5mm 0 0 var(--color-geopolitics);
+}
+
+.category.environment-geopolitics {
+    background: var(--color-environment);
+    box-shadow: -5mm 0 0 var(--color-geopolitics);
+}
+
+.category.environment-standards {
+    background: var(--color-environment);
+    box-shadow: -5mm 0 0 var(--color-standards);
+}
+
+.category.all {
+    background: var(--color-standards);
+    box-shadow: -5mm 0 0 var(--color-environment), -10mm 0 0 var(--color-geopolitics);
 }
