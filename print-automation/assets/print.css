@@ -274,6 +274,7 @@ p {
     margin-left: 64mm;
 }
 
+p:has(code),
 h2 + p,
 h3 + p,
 h4 + p {
@@ -324,6 +325,13 @@ b, strong, dt {
 i, em {
     font-family: "SourceSerif-Italic";
 }
+
+pre, code {
+    font-family: "SourceCode";
+    margin-left: 31.5mm;
+    display: block;
+}
+
 
 /* Prevent superscripts and subscripts from affecting line-height */
 sup, sub {
