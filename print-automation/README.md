@@ -48,13 +48,12 @@ see AST produced by pandoc:
 - [x] footnotes and tables both appear weirdly bold in Sans, I think
   weasy might have an issue with the font weight settings, will try with
   separate fonts
+- [x] cover page
+  - [x] need to add logo infralab to front page
+  - [x] need to add background image to front page
 - [] generate and style toc
 - [] improve footnote placement
 - [] place toc after cover or generate cover separately and join later?
-- [] cover page
-  - [] need to add logo infralab to front page
-  - [] need to add background image to front page
-  https://stackoverflow.com/questions/25591517/pandoc-inserting-pages-before-generated-table-of-contents could be useful
 - [] backcover
 - [] improve citation rendering and layout
       https://pandoc.org/MANUAL.html#citations
@@ -83,9 +82,18 @@ A markdown file that correctly renders to PDF using vanilla pandoc, as
 in `pandoc input.md -o out-vanilla.pdf` should work if "correctly" if
 you don't find confusing rendering artefacts in the output.
 
-# Using pandoc and weasyprint or pagedjs-cli
+# Generating the PDF
 
-pandoc input.md\
+## Generate cover
+
+`pandoc ./examples/cover.md\
+       -c assets/cover.css
+       --pdf-engine=pagedjs-cli
+       -o cover.pdf`
+
+## Generate pages
+
+`pandoc input.md\
        --reference-location=section\
        --toc -V toc-title:"Table of Contents"\
        --toc-depth=2
@@ -97,42 +105,19 @@ pandoc input.md\
        --pdf-engine=weasyprint\
        --dpi=300\
        -css=assets/print.css\
-       -o output.pdf
-
-pandoc input.md\
-       --reference-location=section\
-       --toc -V toc-title:"Table of Contents"\
-       --toc-depth=2
-       --citeproc\
-       --bibliography=assets/xapers.bib
-       --metadata title="Shifting terrain"\
-       --filter filters/deleteemptyheader.py
-       --lua-filter filters/remove-space-before-note.lua
-       --pdf-engine=pagedjs-cli\
-       --dpi=300\
-       -css=assets/print.css\
-       -o output.pdf
-
-## Generate cover
-
-pandoc ./examples/cover.md\
-       -c assets/cover.css
-       --pdf-engine=pagedjs-cli
-       -o cover.pdf
+       -o output.pdf`
 
 ## Combine cover and text
 
-qpdf --empty --pages cover.pdf output.pdf -- combined.pdf
+`qpdf --empty --pages cover.pdf output.pdf -- combined.pdf`
 
 # Requirements
 
-Using weasyprint:
+Currently, the cover is best interpreted by pagedjs-cli, while the
+contents is best interpreted by weasyprint. Ideally, both would work
+with one or the other.
 
-  `sudo apt install pandoc python3-pandocfilters python-is-python3 weasyprint qpdf`
-
-Using pagedjs-cli:
-
-  `sudo apt install pandoc python3-pandocfilters python-is-python3 npm qpdf`
+  `sudo apt install pandoc python3-pandocfilters python-is-python3 weasyprint qpdf npm`
   `sudo npm install -g pagedjs-cli`
 
 # Additional requirements
