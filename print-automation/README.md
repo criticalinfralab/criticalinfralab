@@ -1,10 +1,15 @@
-# TODO
-
-## Editing style
+# Editing style
 
 - don't have headlines follow each other, there should always be text
   between normally. → that's something that cannot be automated but
   needs to be checked when editing the text
+
+# Documentation
+
+* Weasyprint CSS support in detail
+  https://doc.courtbouillon.org/weasyprint/v52.5/features.html#css
+
+# TODO
 
 ## Preprocessing
 
@@ -40,25 +45,37 @@ see AST produced by pandoc:
 - [x] test images
 - [x] test logos
 - [x] test tables
-- [] improve footnote placement
-- [] footnote counter not working with pagedjs, but it works with
-     weasyprint
-- [] footnotes and tables both appear weirdly bold in Sans, I think
+- [x] footnotes and tables both appear weirdly bold in Sans, I think
   weasy might have an issue with the font weight settings, will try with
   separate fonts
-- [] compute page number placement → currently seems impossible to do
 - [] generate and style toc
+- [] improve footnote placement
 - [] place toc after cover or generate cover separately and join later?
 - [] cover page
   - [] need to add logo infralab to front page
   - [] need to add background image to front page
+  https://stackoverflow.com/questions/25591517/pandoc-inserting-pages-before-generated-table-of-contents could be useful
 - [] backcover
 - [] improve citation rendering and layout
       https://pandoc.org/MANUAL.html#citations
 - [x] bibliography
       https://pandoc.org/MANUAL.html#option--bibliography
-- [] Schusterjunge/Hurenkinder, what to do about these?
+
+### Nice to have
+
+the following things would be nice to have but require much more time:
+
+- [] Check hyphenation style, we can use CSS hyphenation but we need a
+     lang attribute for this to work correctly
+- [] See if widows and orphans can be handled better:
+     https://en.wikipedia.org/wiki/Widows_and_orphans
 - [] if possible break titles after colons ":"
+- [] footnote counter not working with pagedjs, but it works with
+     weasyprint
+- [] compute page number placement → currently seems impossible to do
+
+→ probably I first need to generate the front cover page, then the toc,
+then the contents and then merge it
 
 # Scope
 
@@ -70,7 +87,8 @@ you don't find confusing rendering artefacts in the output.
 
 pandoc input.md\
        --reference-location=section\
-       --toc\
+       --toc -V toc-title:"Table of Contents"\
+       --toc-depth=2
        --citeproc\
        --bibliography=assets/xapers.bib
        --metadata title="Shifting terrain"\
@@ -83,7 +101,8 @@ pandoc input.md\
 
 pandoc input.md\
        --reference-location=section\
-       --toc\
+       --toc -V toc-title:"Table of Contents"\
+       --toc-depth=2
        --citeproc\
        --bibliography=assets/xapers.bib
        --metadata title="Shifting terrain"\
@@ -95,7 +114,6 @@ pandoc input.md\
        -o output.pdf
 
 # Requirements
-
 
 Using weasyprint:
 
@@ -110,3 +128,25 @@ Using pagedjs-cli:
 
 (to be tested)
 * for SVG output: librsvg2-bin
+
+# Markup examples
+
+single logo:
+
+![logo critical infrastructure lab](./assets/images/logo-criticalinfralab.svg)\
+
+logos:
+
+  ### Logos
+
+  ![logo Open Future](./assets/images/logo-open-future.svg)
+  ![logo critical infrastructure lab](./assets/images/logo-criticalinfralab.svg)
+  ![logo New America](./assets/images/logo-new-america.png)
+  ![logo Ford Foundation](./assets/images/logo-ford-foundation.svg)
+
+table:
+
+  | Item         | Price     | # In stock |
+  |--------------|-----------|------------|
+  | Juicy Apples | 1.99      | *7*        |
+  | Bananas      | **1.89**  | 5234       |
