@@ -328,6 +328,39 @@ sub {
     top: 0.4em;
 }
 
+/* tables */
+
+table {
+    font-family: "SourceSans-Regular";
+    margin-left: 63mm;
+    width: 123mm;
+    text-align: left;
+    border-collapse: collapse;
+    border: .25mm solid;
+}
+
+table thead, table b, table strong {
+    font-family: "SourceSans-Bold";
+}
+
+table em, table i {
+    font-family: "SourceSans-Italic";
+}
+
+table tr {
+    border-bottom: .25mm solid;
+}
+
+table,
+table tr {
+    border-color: rgba(0, 0, 0, 0.8);
+}
+
+table th,
+table td {
+    padding: 0 1mm;
+}
+
 /* footnote references in text */
 
 .footnote-ref {
@@ -401,43 +434,10 @@ sub {
 
 /* toc */
 
-ul.toc a::after {
+ul.toc a:after {
     content: target-counter(attr(href), page);
 }
 
-ul.toc a::after {
+ul.toc a:after {
     content: leader('.') target-counter(attr(href), page);
-}
-
-/* tables */
-
-table {
-    font-family: "SourceSans-Regular";
-    margin-left: 63mm;
-    width: 123mm;
-    text-align: left;
-    border-collapse: collapse;
-    border: .25mm solid;
-}
-
-table thead, table b, table strong {
-    font-family: "SourceSans-Bold";
-}
-
-table em, table i {
-    font-family: "SourceSans-Italic";
-}
-
-table tr {
-    border-bottom: .25mm solid;
-}
-
-table,
-table tr {
-    border-color: rgba(0, 0, 0, 0.8);
-}
-
-table th,
-table td {
-    padding: 0 1mm;
 }
