@@ -55,6 +55,7 @@ see AST produced by pandoc:
   - [x] need to add logo infralab to front page
   - [x] need to add background image to front page
 - [x] style toc and place it correctly
+- [x] footnote counter is broken
 
 ### Nice to have
 
