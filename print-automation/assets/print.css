@@ -433,12 +433,34 @@ table td {
     margin-bottom: .5em;
 }
 
-/* toc */
+/* toc,
+ * crazy hack: the h2+ only works if we pass a toc-title */
 
-ul.toc a:after {
-    content: target-counter(attr(href), page);
+h2+ul ul,
+h2+ul li,
+h2+ul li:before {
+    margin: 0;
+    padding: 0;
 }
 
-ul.toc a:after {
-    content: leader('.') target-counter(attr(href), page);
+h2+ul li:before {
+    content: "";
+}
+
+h2+ul > li {
+    font-family: "SourceSerif-Bold";
+}
+
+h2+ul > li > ul > li {
+    font-family: "SourceSerif";
+}
+
+h2+ul li a {
+    width: 114mm; /* that's the cool thing about a fixed output size, you can calulate… */
+    display: block;
+    text-align: left;
+}
+
+h2+ul li a:after {
+    content: leader(' ') target-counter(attr(href), page); /* leader could also be a dot */
 }
