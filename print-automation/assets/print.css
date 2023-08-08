@@ -215,6 +215,14 @@ table, figure { /* don't break figures and tables */
     page-break-inside: avoid;
 }
 
+li:last-child { /* prevent orphan in lists */
+    break-before: avoid;
+}
+
+li:first-child { /* prevent orphan in lists */
+    break-after: avoid;
+}
+
 /* ***************
  * Element styles
  * ***************/
