@@ -113,21 +113,32 @@ pandoc input.md\
        -css=assets/print.css\
        -o output.pdf
 
+## Generate cover
+
+pandoc ./examples/cover.md\
+       -c assets/cover.css
+       --pdf-engine=pagedjs-cli
+       -o cover.pdf
+
+## Combine cover and text
+
+qpdf --empty --pages cover.pdf output.pdf -- combined.pdf
+
 # Requirements
 
 Using weasyprint:
 
-  `sudo apt install pandoc python3-pandocfilters python-is-python3 weasyprint`
+  `sudo apt install pandoc python3-pandocfilters python-is-python3 weasyprint qpdf`
 
 Using pagedjs-cli:
 
-  `sudo apt install pandoc python3-pandocfilters python-is-python3 npm`
+  `sudo apt install pandoc python3-pandocfilters python-is-python3 npm qpdf`
   `sudo npm install -g pagedjs-cli`
 
 # Additional requirements
 
-(to be tested)
-* for SVG output: librsvg2-bin
+for SVG output `librsvg2-bin` is needed only if not using one of the
+above mentioned pdf rendering engines.
 
 # Markup examples
 
@@ -158,3 +169,10 @@ code:
 code with backticks is currently not working as the :has()
 pseudo-selector cannot undo the margin-left of our paragraphs and pandoc
 produces "p > code"
+
+colored dot on cover:
+
+<span class="category all"><!-- dot: don't delete the class "category".
+possible values: all, environment, geopolitics, standards,
+standards-geopolitics, environment-geopolitics, environment-standards
+---></span>
