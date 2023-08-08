@@ -396,22 +396,21 @@ table td {
     padding: 0;
     margin-left: 62.5mm;
     list-style-type: none;
-    counter-reset: list-number;
 }
 
 .footnotes li {
+    text-align: left;
     font-family: "SourceSans-Regular";
     font-size: 9.5pt;
     line-height: 11.5pt;
-    text-align: left;
     margin-bottom: 0.5em;
 }
 
 .footnotes li:before {
     font-family: "SourceSans-Bold";
     margin-left: -1em;
-    counter-increment: list-number;
-    content: counter(list-number, decimal-leading-zero);
+    counter-increment: footnote;
+    content: counter(footnote, decimal-leading-zero);
     float: left;
 }
 
