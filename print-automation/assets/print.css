@@ -419,6 +419,11 @@ table td {
     margin-left: 0.5em;
 }
 
+.footnotes code {
+    margin: 0;
+    display: inline-block;
+}
+
 /* To get the pandoc-generated bibliography to match style, define csl classes. */
 
 #references {
