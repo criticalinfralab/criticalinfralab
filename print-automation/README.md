@@ -150,3 +150,11 @@ table:
   |--------------|-----------|------------|
   | Juicy Apples | 1.99      | *7*        |
   | Bananas      | **1.89**  | 5234       |
+
+code:
+
+    indent 4 spaces
+
+code with backticks is currently not working as the :has()
+pseudo-selector cannot undo the margin-left of our paragraphs and pandoc
+produces "p > code"
