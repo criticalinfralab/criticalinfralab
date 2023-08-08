@@ -8,6 +8,9 @@
 * Weasyprint CSS support in detail
   https://doc.courtbouillon.org/weasyprint/v52.5/features.html#css
 
+* Pandoc manual
+  https://www.uv.es/wikibase/doc/eng/pandoc_manual_2.7.3.wiki
+
 # TODO
 
 ## Preprocessing
@@ -34,7 +37,6 @@ see AST produced by pandoc:
 # TODO list
 
 - [x] font variants
-      https://wakamaifondue.com/beta
       https://css-tricks.com/almanac/properties/f/font-variant-numeric/
       https://fonts.google.com/knowledge/using_type/implementing_open_type_features_on_the_web
 - [x] styles for footnotes
@@ -52,16 +54,17 @@ see AST produced by pandoc:
 - [x] cover page
   - [x] need to add logo infralab to front page
   - [x] need to add background image to front page
-- [] style toc and place it correctly
+- [x] style toc and place it correctly
 
 ### Nice to have
 
 the following things would be nice to have but require much more time:
 
 - [] Make page generation use pagedjs-cli as well
-  - [] footnote counter not working with pagedjs, but it works with
-        weasyprint
+  - [] custom footnote counter not working correctly with pagedjs
+       (ignores `before:` when counting)
   - [] pagedjs-cli page bottom rendering sucks
+  - [] pagedjs-cli fails to render the page numbers in toc
 - [] improve footnote placement - we want to have them at the bottom of
      the page, not right after the text
 - [] improve citation rendering and layout
@@ -75,9 +78,6 @@ the following things would be nice to have but require much more time:
 - [] generate and have a backcover (that should be fairly easy, but it's
   one more step in the process.)
 
-→ probably I first need to generate the front cover page, then the toc,
-then the contents and then merge it
-
 # Scope
 
 A markdown file that correctly renders to PDF using vanilla pandoc, as
@@ -86,14 +86,14 @@ you don't find confusing rendering artefacts in the output.
 
 # Generating the PDF
 
-## Generate cover
+## 1. Generate cover
 
 `pandoc ./examples/cover.md\
        -c assets/cover.css
        --pdf-engine=pagedjs-cli
        -o cover.pdf`
 
-## Generate pages
+## 2. Generate pages
 
 `pandoc input.md\
        --reference-location=section\
@@ -109,7 +109,7 @@ you don't find confusing rendering artefacts in the output.
        -css=assets/print.css\
        -o output.pdf`
 
-## Combine cover and text
+## 3. Combine cover and text
 
 `qpdf --empty --pages cover.pdf output.pdf -- combined.pdf`
 
