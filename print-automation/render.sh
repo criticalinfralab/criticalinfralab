@@ -99,7 +99,7 @@ pandoc ./examples/input.md\
        --toc-depth=2\
        --citeproc\
        --bibliography=assets/xapers.bib\
-       --metadata title="Shifting terrain"\
+       --metadata title="critical infrastructure lab report"\
        --filter filters/deleteemptyheader.py\
        --lua-filter filters/remove-space-before-note.lua\
        --pdf-engine=weasyprint\
