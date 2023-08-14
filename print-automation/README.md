@@ -110,7 +110,7 @@ you don't find confusing rendering artefacts in the output.
        --lua-filter filters/remove-space-before-note.lua
        --pdf-engine=weasyprint\
        --dpi=300\
-       -css=assets/print.css\
+       --css=assets/print.css\
        -o output.pdf`
 
 ## 3. Combine cover and text
