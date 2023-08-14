@@ -2,7 +2,7 @@
 
 # Install dependencies:
 ## sudo apt install pandoc python3-pandocfilters python-is-python3 weasyprint qpdf npm
-## npm install 
+## npm install
 
 # Exit values:
 ## 1 = Incompatible OS: Not a Debian-based GNU/Linux operating system distribution;9u
@@ -30,7 +30,7 @@ has_sudo () {
         exit 2
     fi
 }
-        
+
 is_installed_apt () {
     if apt policy $1 | grep Installed | grep none; then
         echo Missing Debian package dependency found: INSTALL $1
@@ -82,7 +82,7 @@ for x in ./examples/input.md\
     else
         echo File dependency $x missing.  Bad!
         echo ERROR: File not found
-        exit 3 
+        exit 3
     fi
 done
 
