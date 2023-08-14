@@ -124,7 +124,7 @@ contents is best interpreted by weasyprint. Ideally, both would work
 with one or the other.
 
   `sudo apt install pandoc python3-pandocfilters python-is-python3 weasyprint qpdf npm`
-  `sudo npm install -g pagedjs-cli`
+  `npm install -g pagedjs-cli`
 
 # Additional requirements
 
