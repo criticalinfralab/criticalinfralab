@@ -108,9 +108,9 @@ pandoc ./examples/input.md\
        -o output.pdf
 
 # 3. Generate backcover
-pandoc ./examples/backcover.md
-        --css=assets/backcover.css
-        --pdf-engine=pagedjs-cli
+pandoc ./examples/backcover.md\
+        --css=assets/backcover.css\
+        --pdf-engine=pagedjs-cli\
         -o backcover.pdf
 
 # 4. Combine cover, text, and backcover
