@@ -113,9 +113,16 @@ you don't find confusing rendering artefacts in the output.
        --css=assets/print.css\
        -o output.pdf`
 
-## 3. Combine cover and text
+## 3. Generate backcover
 
-`qpdf --empty --pages cover.pdf output.pdf -- combined.pdf`
+`pandoc ./examples/backcover.md\
+       -c assets/backcover.css
+       --pdf-engine=pagedjs-cli
+       -o backcover.pdf`
+
+## 4. Combine cover, text, and backcover
+
+`qpdf --empty --pages cover.pdf output.pdf backcover -- combined.pdf`
 
 # Requirements
 
