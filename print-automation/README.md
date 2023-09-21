@@ -59,6 +59,8 @@ see AST produced by pandoc:
   - [x] need to add background image to front page
 - [x] style toc and place it correctly
 - [x] footnote counter is broken
+- [x] generate and have a backcover (that should be fairly easy, but it's
+      one more step in the process.)
 
 ### Nice to have
 
@@ -79,8 +81,6 @@ the following things would be nice to have but require much more time:
      https://en.wikipedia.org/wiki/Widows_and_orphans
 - [] if possible break titles after colons ":"
 - [] compute page number placement → currently seems impossible to do
-- [] generate and have a backcover (that should be fairly easy, but it's
-  one more step in the process.)
 
 # Scope
 
