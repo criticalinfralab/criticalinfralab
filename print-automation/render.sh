@@ -107,5 +107,11 @@ pandoc ./examples/input.md\
        --css=assets/print.css\
        -o output.pdf
 
-# 3. Combine cover and text
-qpdf --empty --pages cover.pdf output.pdf -- combined.pdf
+# 3. Generate backcover
+pandoc ./examples/backcover.md
+        --css=assets/backcover.css
+        --pdf-engine=pagedjs-cli
+        -o backcover.pdf
+
+# 4. Combine cover, text, and backcover
+qpdf --empty --pages cover.pdf output.pdf backcover.pdf -- combined.pdf
