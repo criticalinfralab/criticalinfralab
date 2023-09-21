@@ -72,7 +72,7 @@ the following things would be nice to have but require much more time:
 - [] improve footnote placement - we want to have them at the bottom of
      the page, not right after the text
 - [] improve citation rendering and layout
-      https://pandoc.org/MANUAL.html#citations
+     https://pandoc.org/MANUAL.html#citations
 - [] Check hyphenation style, we can use CSS hyphenation but we need a
      lang attribute for this to work correctly
 - [] See if widows and orphans can be handled better:
