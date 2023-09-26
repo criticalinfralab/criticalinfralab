@@ -187,7 +187,7 @@ h1, h2 {
     page-break-before: always; /* starts a new page before this elm */
 }
 
-h1, h2, h3, h4, h5 { /* no page breaks in or after titles */
+h1, h2, h3, h4, h5, h6 { /* no page breaks in or after titles */
     page-break-inside: avoid;
     page-break-after: avoid;
 }
@@ -212,7 +212,7 @@ li:first-child { /* prevent orphan in lists */
  * Element styles
  * ***************/
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0;
     font-weight: normal;
     font-family: "SourceSans-Bold", sans-serif;
@@ -237,6 +237,18 @@ h3 {
 
 h3, h4, h5, figure, ol {
     margin-left: 64mm;
+}
+
+h6 { /* aka "pulled quote" */
+    border-top: 1px solid;
+    padding-top: 1mm;
+    margin-top: -1mm;
+    margin-bottom: 0.25em;
+    font-size: 11.5pt;
+    line-height: 16pt;
+    letter-spacing: 0.01em;
+    float: left;
+    width: 54mm;
 }
 
 ul {
