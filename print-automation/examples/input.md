@@ -77,15 +77,23 @@ Potential users of these networks need to be enrolled as *actual* users of the n
 
 Sovereignty is traditionally defined as the ultimate authority over a territory circumscribed by borders and the subjects that are attached to that territory.  ^[Following German political theorist Carl Schmitt, a prominent member of the Nazi party.]  On the one hand, there is a long-standing link between the concept of sovereignty and the military control of a land.  On the other hand, sovereignty is exercised over subjects, who are subjects to the sovereign power.  All in all, sovereignty today usually refers to the relationship between the modern state, its territory, and its citizenship.
 
+![Fucino example photo, by ESA](examples/image.jpg){width=100% height=100%}
+
+![Fucino example photo, by ESA](examples/image.jpg#fullcolumnwidth)
+
 Modern political and legal theory uses the concept of sovereignty to explain why states can define laws, and to be in some sense above the law themselves.  While sovereignty is the manifestation of human freedom on Earth, it is also what allows states to control their citizens.  Sovereignty is the basis of international relations where nation states face each other nominally as equal (ultimate) powers:
 
 > Sovereignty is a hypothetical trade, in which two potentially (or really)
 > conflicting sides, respecting de facto realities of power, exchange such
 > recognitions as their least costly strategy. [@Wallerstein1991 44]
 
+###### This is a fake pulled quote which needs to be longer so we can test the border
+
 Standards and protocols organise space and time to produce subject positions.  Users of the protocol occupy these subject positions, either intentionally or unintentionally.  When they do so, they fall under the regime of power defined by the operation of a protocols stack.  Protocols for authentication have the infrastructural effect to bring transform the user into a subject of a sovereign entity.  From this vantage point, interoperability becomes a question of power.
 
-Interoperability is the property of technologies to work together, so that we can plug any electric appliance into an electric wall socket and the plug would fit.  The question of interoperability is even more crucial for communication protocols that connect to systems, in this case any one system is as useful as it is interoperable with another system.  Standards are responsible for ensuring interoperability in technologies and protocols are specific to communication.
+Interoperability is the property of technologies to work together, so that we can plug any electric appliance into an electric wall socket and the plug would fit. The question of interoperability is even more crucial for communication protocols that connect to systems, in this case any one system is as useful as it is interoperable with another system. Standards are responsible for ensuring interoperability in technologies and protocols are specific to communication.
+
+![Fucino](examples/image.jpg#fullpagewidth)
 
 Interoperability is thus a way to extend the reach and scope of a protocol stack throughout the infrastructure, enrolling users into its regime of power, but also to negotiate the entanglements of power between different sovereignities.  Even though interoperability allows interconnection in communication protocols, the real question is on whose terms does interconnection happens.  At different points in history, the United States, and European nation states were in this position to define the terms of interconnection, when they introduced the network paradigm of open internetworking and cellular mobility.  At this historical moment, the burning question of the day is whether China’s bid to do the same with the 5G protocols stack could work, and with what consequences.
 
