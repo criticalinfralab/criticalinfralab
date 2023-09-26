@@ -153,6 +153,18 @@ logos:
   ![logo New America](./assets/images/logo-new-america.png)
   ![logo Ford Foundation](./assets/images/logo-ford-foundation.svg)
 
+images:
+
+  ![Fucino example photo, by ESA](examples/image.jpg){width=100% height=100%}
+
+  ![Fucino example photo, by ESA](examples/image.jpg#fullcolumnwidth)
+
+  ![Fucino](examples/image.jpg#fullpagewidth)
+
+pulled quote:
+
+  `###### This is a fake pulled quote which needs to be longer so we can test the border`
+
 table:
 
   | Item         | Price     | # In stock |
