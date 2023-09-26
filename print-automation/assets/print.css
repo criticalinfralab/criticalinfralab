@@ -381,6 +381,23 @@ table td {
     color: #000;
     font-family: "SourceSans-Bold";
 }
+/**************
+ * images
+ * ************/
+
+p img {
+    margin: 0;
+}
+
+img[src$='#fullcolumnwidth'] {
+    width: 138mm;
+}
+
+img[src$='#fullpagewidth'] {
+    position: static;
+    width: 22.5cm; /* page width + margin + bleed */
+    margin-left: -79mm /* undo margin of parent <p> 64mm + bleed + page margin 12mm */;
+}
 
 /**************
  * footnotes
