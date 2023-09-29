@@ -274,7 +274,8 @@ p {
 p:has(code),
 h2 + p,
 h3 + p,
-h4 + p {
+h4 + p,
+h2 + h6 + p {
     text-indent: 0;
 }
 
