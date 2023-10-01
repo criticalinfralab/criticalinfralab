@@ -56,8 +56,7 @@ has_sudo () {
 }
 
 is_installed_apt () {
-if ! dpkg -s $! >/dev/null 2>&1; then
-    #    if apt policy $1 | grep Installed | grep none; then
+    if ! dpkg -s $! >/dev/null 2>&1; then
         echo Missing Debian package dependency found: INSTALL $1
         has_sudo # this is a kind of assertion here because it will exit on fail
         sudo apt install $1
@@ -70,7 +69,7 @@ is_installed_npm () {
     if npm list -g | grep pagedjs-cli; then
         echo Found NPM dependency $1
     else
-        echo Found missing NPM dependency $1;
+        echo Found missing NPM dependency $1
         npm install $1
     fi
 }
@@ -88,7 +87,7 @@ for x in pandoc\
              qpdf\
              npm; do
     echo Checking for Debian package dependency $x
-    is_installed_apt $1
+    is_installed_apt $x
 done
 
 ## Check NPM package dependency
@@ -180,6 +179,9 @@ fi
 # 5. Combine cover, text, and backcover
 qpdf --empty --pages /tmp/render/?.pdf -- ../CIL$N.pdf
 
+# 6. Clean up
+
+rm -rf /tmp/render
 cd ..
 echo Wrote CIL$N.pdf as output to the current directory.
 

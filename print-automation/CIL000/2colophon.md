@@ -1,4 +1,4 @@
-# Exploring the public interest in media infrastructures through the lenses of geopolitics, standards, and the environment
+# Example title
 
 <div style="page-break-before: always; margin-top: +35em">
 \ 
@@ -22,11 +22,4 @@
     This work was generously supported by the            Ford Foundation [grant number 144895, 2022].
 
 </div>
-
-
-
-
-
-
-
 
