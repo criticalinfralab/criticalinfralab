@@ -1,9 +1,83 @@
+# Print automation
+
+For generating the critical infrastructure lab document series. 
+
+# Scope
+
+A markdown file that correctly renders to PDF using vanilla pandoc, as
+in `pandoc input.md -o out-vanilla.pdf` should work if "correctly" if
+you don't find confusing rendering artefacts in the output.
+
+This should work on recent Debian-based GNU/Linux distributions.
+
 # Manually verify:
 
 - that there are no paragraphs with bold text disguising as a headline →
-  please make them into h3 headlines manually
+  please make them into h3 headlines manually!
 
-# Documentation
+# Generating the PDF
+
+Start a new document:
+
+    ./new.sh
+    
+The command creates a new directory with an incremented serial number.  For example, if the last document was CIL002 then the next document will live in the folder CIL003.  Empty files are created for all the parts.  Look at CIL000 as an example and this file for explanation!
+
+Run the pipeline to generate a PDF from the plain text files with Markdown syntax:
+
+    ./render.sh N
+   
+Where “N” is the number of the document.  For example 5 for CIL005, etc.  If all goes well, the generated file will appear in the same folder as render.sh.  The new document will be called CIL005.pdf
+
+# Markup examples
+
+Single logo:
+
+    ![logo critical infrastructure lab](./assets/images/logo-criticalinfralab.svg)\
+
+Multiple logos:
+
+    ![logo Open Future](./assets/images/logo-open-future.svg)
+    ![logo critical infrastructure lab](./assets/images/logo-criticalinfralab.svg)
+    ![logo New America](./assets/images/logo-new-america.png)
+    ![logo Ford Foundation](./assets/images/logo-ford-foundation.svg)
+
+Images of multiple sizes:
+
+    ![Fucino example photo, by ESA](examples/image.jpg){width=100% height=100%}
+
+    ![Fucino example photo, by ESA](examples/image.jpg#fullcolumnwidth)
+
+    ![Fucino](examples/image.jpg#fullpagewidth)
+
+Pulled quote:
+
+     ###### This is a fake pulled quote which needs to be longer so we can test the border
+
+Table:
+
+     | Item         | Price     | # In stock |
+     |--------------|-----------|------------|
+     | Juicy Apples | 1.99      | *7*        |
+     | Bananas      | **1.89**  | 5234       |
+
+Code:
+
+    Indent 4 spaces!
+
+Code with backticks is currently not working as the :has()
+pseudo-selector cannot undo the margin-left of our paragraphs and pandoc
+produces "p > code".
+
+Colored dot on cover:
+
+    <span class="category all"></span>
+    
+Possible values: `all, environment, geopolitics, standards, standards-geopolitics, environment-geopolitics, environment-standards`.  Don't delete the `category` class!
+
+# HACKING
+
+## Documentation
 
 * Weasyprint CSS support in detail
   https://doc.courtbouillon.org/weasyprint/v52.5/features.html#css
@@ -14,7 +88,19 @@
 * Standard
   https://www.w3.org/TR/css-gcpm-3/
 
-# TODO
+## Requirements
+
+Currently, the cover is best interpreted by pagedjs-cli, while the
+contents is best interpreted by weasyprint. Ideally, both would work
+with one or the other.
+
+  `sudo apt install pandoc python3-pandocfilters python-is-python3 weasyprint qpdf npm`
+  `npm install -g pagedjs-cli`
+
+## Additional requirements
+
+for SVG output `librsvg2-bin` is needed only if not using one of the
+above mentioned pdf rendering engines.
 
 ## Preprocessing
 
@@ -82,107 +168,3 @@ the following things would be nice to have but require much more time:
 - [] if possible break titles after colons ":"
 - [] compute page number placement → currently seems impossible to do
 
-# Scope
-
-A markdown file that correctly renders to PDF using vanilla pandoc, as
-in `pandoc input.md -o out-vanilla.pdf` should work if "correctly" if
-you don't find confusing rendering artefacts in the output.
-
-# Generating the PDF
-
-## 1. Generate cover
-
-`pandoc ./examples/cover.md\
-       -c assets/cover.css
-       --pdf-engine=pagedjs-cli
-       -o cover.pdf`
-
-## 2. Generate pages
-
-`pandoc input.md\
-       --reference-location=section\
-       --toc -V toc-title:"Table of Contents"\
-       --toc-depth=2
-       --citeproc\
-       --bibliography=assets/xapers.bib
-       --metadata title="Shifting terrain"\
-       --filter filters/deleteemptyheader.py
-       --lua-filter filters/remove-space-before-note.lua
-       --pdf-engine=weasyprint\
-       --dpi=300\
-       --css=assets/print.css\
-       -o output.pdf`
-
-## 3. Generate backcover
-
-`pandoc ./examples/backcover.md\
-       -c assets/backcover.css
-       --pdf-engine=pagedjs-cli
-       -o backcover.pdf`
-
-## 4. Combine cover, text, and backcover
-
-`qpdf --empty --pages cover.pdf output.pdf backcover -- combined.pdf`
-
-# Requirements
-
-Currently, the cover is best interpreted by pagedjs-cli, while the
-contents is best interpreted by weasyprint. Ideally, both would work
-with one or the other.
-
-  `sudo apt install pandoc python3-pandocfilters python-is-python3 weasyprint qpdf npm`
-  `npm install -g pagedjs-cli`
-
-# Additional requirements
-
-for SVG output `librsvg2-bin` is needed only if not using one of the
-above mentioned pdf rendering engines.
-
-# Markup examples
-
-single logo:
-
-![logo critical infrastructure lab](./assets/images/logo-criticalinfralab.svg)\
-
-logos:
-
-  ### Logos
-
-  ![logo Open Future](./assets/images/logo-open-future.svg)
-  ![logo critical infrastructure lab](./assets/images/logo-criticalinfralab.svg)
-  ![logo New America](./assets/images/logo-new-america.png)
-  ![logo Ford Foundation](./assets/images/logo-ford-foundation.svg)
-
-images:
-
-  ![Fucino example photo, by ESA](examples/image.jpg){width=100% height=100%}
-
-  ![Fucino example photo, by ESA](examples/image.jpg#fullcolumnwidth)
-
-  ![Fucino](examples/image.jpg#fullpagewidth)
-
-pulled quote:
-
-  `###### This is a fake pulled quote which needs to be longer so we can test the border`
-
-table:
-
-  | Item         | Price     | # In stock |
-  |--------------|-----------|------------|
-  | Juicy Apples | 1.99      | *7*        |
-  | Bananas      | **1.89**  | 5234       |
-
-code:
-
-    indent 4 spaces
-
-code with backticks is currently not working as the :has()
-pseudo-selector cannot undo the margin-left of our paragraphs and pandoc
-produces "p > code"
-
-colored dot on cover:
-
-<span class="category all"><!-- dot: don't delete the class "category".
-possible values: all, environment, geopolitics, standards,
-standards-geopolitics, environment-geopolitics, environment-standards
----></span>
