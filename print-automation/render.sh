@@ -164,7 +164,7 @@ if test -f 3main.md; then
 else
    echo "CIL$N/3main.md missing.  No source file for the main text!  Skipping the main text..."
 fi
-    
+
 # 4. Generate backcover
 
 if test -f 4backcover.md; then
@@ -172,7 +172,7 @@ if test -f 4backcover.md; then
            --css=../assets/backcover.css\
            --pdf-engine=pagedjs-cli\
            -o /tmp/render/4.pdf
-else 
+else
    echo "CIL$N/4backcover.md missing.  No source file for the back cover!  Skipping the back cover..."
 fi
 
