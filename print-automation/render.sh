@@ -9,6 +9,30 @@
 ## 2 = Permission problem: Missing sudo rights
 ## 3 = File not found
 
+# For DEBUG change to
+# set -x
+set +x
+
+# Parse arguments
+
+if [ "$#" -eq "0" ]; then
+    N=0
+elif [ "$#" -eq "1" ]; then
+    N=$1
+else
+    echo "Illegal number of parameters.  Render accepts zero or one argument.  The optional argument is the serial number of the CIL publication (1-999) that points to a relevant directory like CIL001 or CIL999."
+    exit 1
+fi
+
+if ! [[ $N =~ ^[0-9]+$ ]] ; then
+    echo "ERROR: First parameter should be a number (e.g. an integer).
+
+Render accepts zero or one argument.  The optional argument is the serial number of the CIL publication (1-999) that points to a relevant directory like CIL001 or CIL999."
+    exit 2
+fi
+
+N=$(printf "%03d\n" $N) # Pad to three digits.  Example: 3->003; 33->033; 333->333
+
 # Utility functions
 
 is_debian_based () {
@@ -32,7 +56,7 @@ has_sudo () {
 }
 
 is_installed_apt () {
-    if apt policy $1 | grep Installed | grep none; then
+    if ! dpkg -s $! >/dev/null 2>&1; then
         echo Missing Debian package dependency found: INSTALL $1
         has_sudo # this is a kind of assertion here because it will exit on fail
         sudo apt install $1
@@ -42,11 +66,11 @@ is_installed_apt () {
 }
 
 is_installed_npm () {
-    if npm list | grep pagedjs-cli; then
-        echo Found missing NPM dependency $1;
-        npm install $1
-    else
+    if npm list -g | grep pagedjs-cli; then
         echo Found NPM dependency $1
+    else
+        echo Found missing NPM dependency $1
+        npm install $1
     fi
 }
 
@@ -62,8 +86,8 @@ for x in pandoc\
              weasyprint\
              qpdf\
              npm; do
-    echo Checking dor Debian package dependency $x
-    is_installed_apt $1
+    echo Checking for Debian package dependency $x
+    is_installed_apt $x
 done
 
 ## Check NPM package dependency
@@ -71,12 +95,13 @@ is_installed_npm pagedjs-cli
 
 ## Check necessary files
 
-for x in ./examples/input.md\
-             assets/cover.css\
-             assets/xapers.bib\
-             filters/deleteemptyheader.py\
+for x in filters/deleteemptyheader.py\
              filters/remove-space-before-note.lua\
-             assets/print.css; do
+             assets/print.css\
+             assets/colophon.css\
+             assets/cover.css\
+             assets/backcover.css\
+             assets/xapers.bib; do
     if test -f $x; then
         echo File dependency $x exists.  Good!
     else
@@ -86,32 +111,85 @@ for x in ./examples/input.md\
     fi
 done
 
-# 1. Generate cover
-pandoc ./examples/cover.md\
-       --css=assets/cover.css\
-       --pdf-engine=pagedjs-cli\
-       -o cover.pdf
+mkdir /tmp/render/
+cd CIL$N
 
-# 2. Generate pages
-pandoc ./examples/input.md\
+if test -f 0title.md; then
+    TITLE=$(cat 0title.md)
+else
+    echo "CIL$N/0title.md missing.  No source file for the title!  Please add a file with that name with a single line for the title.  Skipping title for now..."
+fi
+
+# 1. Generate cover
+if test -f 1cover.md; then
+    pandoc 1cover.md\
+           --css=../assets/cover.css\
+           --pdf-engine=pagedjs-cli\
+           -o /tmp/render/1.pdf
+else
+   echo "CIL$N/1cover.md missing.  No source file for the cover!  Skipping cover..."
+fi
+
+# 2. Generate colophon
+
+if test -f 2colophon.md; then
+    pandoc 2colophon.md\
+           --reference-location=section\
+           --metadata title=""\
+           --filter ../filters/deleteemptyheader.py\
+           --lua-filter ../filters/remove-space-before-note.lua\
+           --pdf-engine=weasyprint\
+           --dpi=300\
+           --css=../assets/colophon.css\
+           -o /tmp/render/2.pdf
+else
+   echo "CIL$N/2colophon.md missing.  No source file for the colophon!  Skipping colophon..."
+fi
+
+# 3. Generate pages
+if test -f 3main.md; then
+    pandoc 3main.md\
        --reference-location=section\
        --toc -V toc-title:"Table of Contents"\
        --toc-depth=2\
        --citeproc\
-       --bibliography=assets/xapers.bib\
-       --metadata title="critical infrastructure lab report"\
-       --filter filters/deleteemptyheader.py\
-       --lua-filter filters/remove-space-before-note.lua\
+       --bibliography=../assets/xapers.bib\
+       --metadata title="$TITLE"\
+       --filter ../filters/deleteemptyheader.py\
+       --lua-filter ../filters/remove-space-before-note.lua\
        --pdf-engine=weasyprint\
        --dpi=300\
-       --css=assets/print.css\
-       -o output.pdf
+       --css=../assets/print.css\
+       -o /tmp/render/3.pdf
+else
+   echo "CIL$N/3main.md missing.  No source file for the main text!  Skipping the main text..."
+fi
+    
+# 4. Generate backcover
 
-# 3. Generate backcover
-pandoc ./examples/backcover.md\
-        --css=assets/backcover.css\
-        --pdf-engine=pagedjs-cli\
-        -o backcover.pdf
+if test -f 4backcover.md; then
+    pandoc 4backcover.md\
+           --css=../assets/backcover.css\
+           --pdf-engine=pagedjs-cli\
+           -o /tmp/render/4.pdf
+else 
+   echo "CIL$N/4backcover.md missing.  No source file for the back cover!  Skipping the back cover..."
+fi
 
-# 4. Combine cover, text, and backcover
-qpdf --empty --pages cover.pdf output.pdf backcover.pdf -- combined.pdf
+# 5. Combine cover, text, and backcover
+qpdf --empty --pages /tmp/render/?.pdf -- ../CIL$N.pdf
+
+# 6. Clean up
+
+rm -rf /tmp/render
+cd ..
+echo Wrote CIL$N.pdf as output to the current directory.
+
+
+if ps ax | grep -v grep | grep CIL$N.pdf; then
+    echo DONE
+else
+    echo DONE
+    echo "Opening the document in PDF reader using xdg-open."
+    xdg-open CIL$N.pdf
+fi
