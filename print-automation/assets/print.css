@@ -125,7 +125,7 @@ body {
         padding-top: 0.25em;
         margin-top: 2em;
         counter-increment: pagenumbermargin;
-        margin-left: calc(1em+pagenumbermargin); /* this is not working */
+        /*margin-left: calc(1em+pagenumbermargin); */
     }
 }
 
