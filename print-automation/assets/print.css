@@ -135,6 +135,14 @@ body {
     @top-center { content: "This page is intentionally left blank." }
 }
 
+/* Colophon */
+
+#colophon {
+    page-break-before: always;
+    font-family: "SourceCode";
+    margin-top: 35em;
+}
+
 /* Logos section */
 
 #logos { /* hide title but keep margin */
