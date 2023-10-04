@@ -98,7 +98,6 @@ is_installed_npm pagedjs-cli
 for x in filters/deleteemptyheader.py\
              filters/remove-space-before-note.lua\
              assets/print.css\
-             assets/colophon.css\
              assets/cover.css\
              assets/backcover.css\
              assets/xapers.bib; do
@@ -140,7 +139,7 @@ if test -f 2colophon.md; then
            --lua-filter ../filters/remove-space-before-note.lua\
            --pdf-engine=weasyprint\
            --dpi=300\
-           --css=../assets/colophon.css\
+           --css=../assets/print.css\
            -o /tmp/render/2.pdf
 else
    echo "CIL$N/2colophon.md missing.  No source file for the colophon!  Skipping colophon..."
