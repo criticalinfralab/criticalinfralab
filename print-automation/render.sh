@@ -192,4 +192,3 @@ else
     echo "Opening the document in PDF reader using xdg-open."
     xdg-open CIL$N.pdf & 
 fi
-
