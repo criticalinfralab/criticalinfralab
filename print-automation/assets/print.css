@@ -258,7 +258,20 @@ ul {
 }
 
 ul li:before {
-    content: "-";
+    content: "◈";
+    /* content: "◊"; */
+    margin-left: -0.85em;
+    padding-right: 0.5em;
+}
+
+ul li li {
+    margin-left: -56.5mm;
+    list-style: none;
+    text-align: left;
+}
+
+ul li li:before {
+    content: "◇";
     margin-left: -0.85em;
     padding-right: 0.5em;
 }
@@ -396,7 +409,8 @@ img[src$='#fullcolumnwidth'] {
 
 img[src$='#fullpagewidth'] {
     position: static;
-    width: 22.5cm; /* page width + margin + bleed */
+    /* width: 22.5cm; /\* page width + margin + bleed *\/ */
+    width: 19.5cm;
     margin-left: -79mm /* undo margin of parent <p> 64mm + bleed + page margin 12mm */;
 }
 

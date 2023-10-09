@@ -10,23 +10,15 @@
     Set in Source Sans, Source Serif and Source Code.
     
     Made with free software from plain text:
-    https://github.com/u451f/criticalinfrastructurelab/tree/main/print-automation
+    https://doi.org/10.5281/zenodo.8412230
+    DOI 10.5281/zenodo.8412230
     
     critical infrastructure lab document series
-    CIL#002
+    CIL#003
+    https://doi.org/10.5281/zenodo.8412252
+    DOI 10.5281/zenodo.8412252
 
-    DOI FIXME
-    ISBN FIXME (Print)
-    ISBN FIXME (Digital)
-
-    This work was generously supported by the            Ford Foundation [grant number 144895, 2022].
+    This work was generously supported by funding from the Ford Foundation [grant number 144895, 2022]          and Omidyar Network.
 
 </div>
-
-
-
-
-
-
-
 

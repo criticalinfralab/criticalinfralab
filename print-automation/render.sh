@@ -185,9 +185,11 @@ rm -rf /tmp/render
 cd ..
 echo Wrote CIL$N.pdf as output to the current directory.
 
-if ps ax | grep /usr/bin/zathura | grep CIL$N.pdf; then
+if ps ax | grep -v grep | grep CIL$N.pdf; then
     echo DONE
 else
-    xdg-open CIL$N.pdf
+    echo DONE
+    echo "Opening the document in PDF reader using xdg-open."
+    xdg-open CIL$N.pdf & 
 fi
 
