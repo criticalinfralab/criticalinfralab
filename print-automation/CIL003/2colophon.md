@@ -15,10 +15,9 @@
     
     critical infrastructure lab document series
     CIL#003
-    https://doi.org/10.5281/zenodo.8412252
-    DOI 10.5281/zenodo.8412252
+    https://doi.org/10.5281/zenodo.10002322 
+    DOI 10.5281/zenodo.10002322 
 
-    This work was generously supported by funding from the Ford Foundation [grant number 144895, 2022]          and Omidyar Network.
+    This work was generously supported by funding from the Ford Foundation [grant number 144895, 2022], the Omidyar Network and the Internet Society Foundation [ISOC, grant number G-202208-06454].
 
 </div>
-
