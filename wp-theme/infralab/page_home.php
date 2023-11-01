@@ -13,49 +13,82 @@ Template Name: Homepage
             $args = array(
                 'child_of' => $post->ID,
                 'post-type' => 'page',
-   	        'posts_per_page' => -1,
+                'posts_per_page' => -1,
                 'post_status'  => 'publish',
                 'sort_column' => 'menu_order',
                 'sort_order' => 'ASC'
             );
             $pages = get_pages($args);
             foreach($pages as $page): ?>
-	        <div class="section" id="section-<?php echo $page->post_name; ?>">
-	            <h2 class="section-title"><a href="<?php echo esc_url(get_permalink($page->ID)); ?>" rel="nofollow"><?php echo $page->post_title; ?></a></h2>
-	            <?php if(str_contains($page->post_title, 'activit')) : ?>
-	    	    <div class="section-content blogposts">
-	    	          <?php // blogposts
+            <div class="section" id="section-<?php echo $page->post_name; ?>">
+                <h2 class="section-title"><a href="<?php echo esc_url(get_permalink($page->ID)); ?>" rel="nofollow"><?php echo $page->post_title; ?></a></h2>
+
+                <!-- blogposts - future -->
+                <?php if(str_contains($page->post_title, 'upcoming')) : ?>
+                    <div class="section-content upcoming">
+                    <?php
+                          $count = get_option('posts_per_page', 15);
+                          $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+                          $postquery = new WP_Query( array(
+                              'post-type' => 'post',
+                              'post_status'  => 'future',
+                              'sort_order' => 'ASC',
+                              'posts_per_page' => $count,
+                              'paged' => $paged,
+                          ));
+                        if ($postquery->have_posts()) :
+                          while ($postquery->have_posts()) : $postquery->the_post();
+                               get_template_part('post-content');
+                          endwhile;
+                          // Pagination
+                          if($postquery->max_num_pages > 1) {
+                              if($postquery->query_vars["paged"] == 0) {
+                                  $current_page = 1;
+                              } else {
+                                  $current_page = $postquery->query_vars["paged"];
+                              }
+                              echo '<div class="pagination" data-query="'.htmlspecialchars(json_encode($postquery->query_vars)).'" data-maxpages="'.htmlspecialchars(json_encode($postquery->max_num_pages)).'" data-current="'.$current_page.'">'.paginate_links(array('total' => $postquery->max_num_pages)).'</div>';
+                           }
+                        endif;
+                        wp_reset_postdata(); ?>
+                  </div>
+
+                <!-- blogposts - past -->
+                <?php elseif(str_contains($page->post_title, 'past')) : ?>
+                    <div class="section-content blogposts">
+                      <?php
                           $count = get_option('posts_per_page', 5);
                           $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-	    	          $postquery = new WP_Query( array(
-	    	              'post-type' => 'post',
-	    	              'post_status'  => 'publish',
-	    	              'sort_order' => 'ASC',
+                          $postquery = new WP_Query( array(
+                              'post-type' => 'post',
+                              'post__not_in'=>get_option('sticky_posts'),
+                              'post_status'  => 'publish',
+                              'sort_order' => 'ASC',
                               'posts_per_page' => $count,
-                              'paged' => $paged
-	    	          ));
-                          if ($postquery->have_posts()) : 
-                              while ($postquery->have_posts()) : $postquery->the_post();
-                                   get_template_part('post-content');
-	                      endwhile;
-                              // Pagination
-                              if($postquery->max_num_pages > 1) {
-                                  if($postquery->query_vars["paged"] == 0) {
-                                      $current_page = 1;
-                                  } else {
-                                      $current_page = $postquery->query_vars["paged"];
-                                  }
-                                  echo '<div class="pagination" data-query="'.htmlspecialchars(json_encode($postquery->query_vars)).'" data-maxpages="'.htmlspecialchars(json_encode($postquery->max_num_pages)).'" data-current="'.$current_page.'">'.paginate_links(array('total' => $postquery->max_num_pages)).'</div>';
-                             }
-	                     wp_reset_postdata(); ?>
-	              </div>
-	              <?php endif; ?>
-	        <?php else : ?>
-	    	   <div class="section-content">
-	    	       <?php echo remove_html_comments($page->post_content); ?>
-	           </div>
-	        <?php endif; ?>
-	        </div>
+                              'paged' => $paged,
+                          ));
+                        if ($postquery->have_posts()) :
+                          while ($postquery->have_posts()) : $postquery->the_post();
+                               get_template_part('post-content');
+                          endwhile;
+                          // Pagination
+                          if($postquery->max_num_pages > 1) {
+                              if($postquery->query_vars["paged"] == 0) {
+                                  $current_page = 1;
+                              } else {
+                                  $current_page = $postquery->query_vars["paged"];
+                              }
+                              echo '<div class="pagination" data-query="'.htmlspecialchars(json_encode($postquery->query_vars)).'" data-maxpages="'.htmlspecialchars(json_encode($postquery->max_num_pages)).'" data-current="'.$current_page.'">'.paginate_links(array('total' => $postquery->max_num_pages)).'</div>';
+                          }
+                        endif;
+                        wp_reset_postdata(); ?>
+                  </div>
+            <?php else : ?>
+               <div class="section-content">
+                   <?php echo remove_html_comments($page->post_content); ?>
+               </div>
+            <?php endif; ?>
+            </div>
             <?php endforeach; ?>
         <?php endif;
         wp_reset_postdata(); ?>
