@@ -13,12 +13,12 @@ Template Name: Upcoming
     <?php endwhile; ?>
         <div class="section-content">
             <?php // blogposts
-            $postquery = new WP_Query( array(
-                'post-type' => 'post',
-                'post_status'  => 'future',
-                'sort_order' => 'ASC',
-                'posts_per_page' => -1,
-            ));
+                $postquery = new WP_Query( array(
+                    'post-type' => 'post',
+                    'post_status'  => 'future',
+                    'sort_order' => 'ASC',
+                    'posts_per_page' => -1,
+                ));
                 if ($postquery->have_posts()) :
                     while ($postquery->have_posts()) : $postquery->the_post();
                          get_template_part('post-content');
