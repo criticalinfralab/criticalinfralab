@@ -1,6 +1,6 @@
 /*
 Theme Name: criticalinfralab
-Version: 1.1
+Version: 1.2
 Theme URI: https://criticalinfralab.net
 Author: U. Uhlig
 Author URI: https://www.curlybracket.net
@@ -292,7 +292,7 @@ a {
     border-bottom: 1px solid var(--color2);
 }
 
-.section#section-activities .section-content {
+.section-content.blogposts {
     border-bottom: none;
 }
 
@@ -304,7 +304,7 @@ a {
     transition: 0.5s ease-in-out;
 }
 
-/* publication categories */ 
+/* publication categories */
 .section#section-publications .section-content p:before {
     content: " ";
     width: 25px;
@@ -359,6 +359,7 @@ a {
     cursor: pointer;
 }
 
+.section#section-upcoming .item-title .category,
 .section#section-activities .item-title .category,
 .section#section-publications .section-content p em:first-of-type {
     margin-right: .25em;
