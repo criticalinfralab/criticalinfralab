@@ -52,7 +52,7 @@ Template Name: Homepage
                         endif;
                         wp_reset_postdata(); ?>
                   </div>
-
+<?php /*
                 <!-- blogposts - past -->
                 <?php elseif(str_contains($page->post_title, 'past')) : ?>
                     <div class="section-content blogposts">
@@ -83,6 +83,7 @@ Template Name: Homepage
                         endif;
                         wp_reset_postdata(); ?>
                   </div>
+				  */ ?>
             <?php else : ?>
                <div class="section-content">
                    <?php echo remove_html_comments($page->post_content); ?>
