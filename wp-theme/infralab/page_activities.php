@@ -15,7 +15,7 @@ Template Name: Activities
             <?php // blogposts
                 $postquery = new WP_Query( array(
                     'post-type' => 'post',
-                    'post__not_in'=>get_option('sticky_posts'),
+                    'post__not_in' => get_option('sticky_posts'),
                     'post_status'  => 'publish',
                     'sort_order' => 'ASC',
                     'posts_per_page' => -1,
