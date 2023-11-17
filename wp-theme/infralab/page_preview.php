@@ -24,7 +24,7 @@ Template Name: Preview Event
                             $postquery = new WP_Query($args);
                             if ($postquery->have_posts()) :
                                 while ($postquery->have_posts()) : $postquery->the_post();
-                                    get_template_part('post-content');
+                                    get_template_part('post-content-single');
                                 endwhile;
                             endif;
                             wp_reset_postdata();
