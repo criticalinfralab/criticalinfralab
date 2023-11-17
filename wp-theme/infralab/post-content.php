@@ -2,6 +2,8 @@
 <div class="item<?php if ( empty( get_the_content() ) ): echo " empty-content"; endif; ?>">
     <?php if($post->post_status == "publish"): ?>
         <a class="permalink" href="<?php the_permalink(); ?>" title="permanent link to <?php the_title(); ?>">#</a>
+    <?php elseif($post->post_status == "future"): ?>
+        <a class="permalink" href="/preview/?id=<?php the_ID(); ?>" title="preview for <?php the_title(); ?>">#</a>
     <?php endif; ?>
     <?php if(has_tag('has-recording')): ?>
        <span class="has-recording" title="This item has a link to a recording."><!-- has link to a recording --></span>
