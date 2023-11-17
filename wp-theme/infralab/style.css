@@ -468,11 +468,13 @@ a {
 
 .single .item,
 .category .item,
-.page-template-default .item:hover {
+.page-template-default .item:hover,
+.page-template-page_preview .item {
     background: var(--color1);
 }
 
-.single .item-title {
+.single .item-title,
+.page-template-page_preview .item-title {
     line-height: 145%;
     font-size: var(--basefontsize);
     font-variation-settings: "wght" 600;
