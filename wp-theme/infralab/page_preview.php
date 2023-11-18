@@ -19,7 +19,8 @@ Template Name: Preview Event
                         if ( "publish" == get_post_status( $postid ) OR "future" == get_post_status( $postid ) AND $posttype == "post" ) {
                             $args = array(
                                 'p' => $postid,
-                                'post_type' => 'post'
+                                'post_type' => 'post',
+                                'post_status'  => ['future', 'publish'],
                             );
                             $postquery = new WP_Query($args);
                             if ($postquery->have_posts()) :
