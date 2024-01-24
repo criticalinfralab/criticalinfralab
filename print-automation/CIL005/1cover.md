@@ -1,12 +1,15 @@
-![](../assets/images/cover.svg)\
+![](images/cover.svg)
+\ 
 
 <div id="header">
-# Network paradigms and infrastructural ideologies:
-# Standards and protocols in a geopolitical context
+# Shifting terrain:
+# “Standards, Protocols, Ecosystem”
+# Report on a round-table discussion
 </div>
 
-## Maxigas, <br>2023
+## Maxigas & Alek Tarkowski
 
-<span class="category standards-geopolitics"><!-- dot: possible values: all, environment, geopolitics, standards, standards-geopolitics, environment-geopolitics,
+<span class="category standards-geopolitics"><!-- dot: possible values: all, environment,
+geopolitics, standards, standards-geopolitics, environment-geopolitics,
 environment-standards ---></span>
 

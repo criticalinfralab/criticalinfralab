@@ -8,8 +8,8 @@
 
 ## Workshop report October 6^th^ 2023
 
-<span class="category all"><!-- dot: possible values: all, environment,
-geopolitics, standards, standards-geopolitics, environment-geopolitics,
-environment-standards ---></span>
+<span class="category all"><!-- dot: possible values: all,
+environment, geopolitics, standards, standards-geopolitics,
+environment-geopolitics, environment-standards ---></span>
 
 

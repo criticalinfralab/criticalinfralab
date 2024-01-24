@@ -1,6 +1,6 @@
 # Exploring the public interest in media infrastructures through the lenses of geopolitics, standards, and the environment
 
-<div style="page-break-before: always; margin-top: +35em">
+<div style="margin-top: +26em">
 \ 
 
     Published by the critical infrastructure lab, Amsterdam, September 2023.

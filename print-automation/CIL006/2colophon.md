@@ -1,31 +1,24 @@
-# Shifting terrain: “Standards, Protocols, Ecosystem”
+# Network paradigms and infrastructural ideologies: <br>Standards and protocols in a geopolitical context
 
-<div style="page-break-before: always; margin-top: +30em">
+<div style="page-break-before: always; margin-top: +35em">
 \ 
 
-    Published by the critical infrastructure lab, Amsterdam, October 2023.
+    Published by the critical infrastructure lab, Amsterdam, November 2023.
 
-    Shifting terrain: “Standards, Protocols, Ecosystem” — Report on a round-table discussion © 2023 by Maxigas & Alek Tarkowski is licensed under Attribution-NonCommercial-ShareAlike 4.0 International.
-    https://creativecommons.org/licenses/by-nc-sa/4.0/
+    Exploring the public interest in media infrastructures through the lenses of geopolitics, standards, and the environment is marked with CC0 1.0 Universal.
 
-    Set in Source Sans, Source Serif and Source Code fonts.
+    Set in Source Sans, Source Serif and Source Code.
     
     Made with free software from plain text:
     https://doi.org/10.5281/zenodo.8412230
     DOI 10.5281/zenodo.8412230
     
     critical infrastructure lab document series
-    CIL#006
+    CIL#005
+    https://doi.org/10.5281/zenodo.8412252
+    DOI 10.5281/zenodo.8412252
 
-    DOI FIXME
-    
-    Open Future
-         https://openfuture.eu/
-
-    critical infrastructure lab
-         https://www.criticalinfralab.net/
-
-<!-- This work was generously supported by funding from the Ford Foundation [grant number 144895, 2022], the Omidyar Network and the Internet Society Foundation [ISOC, grant number G-202208-06454]. -->
+    This work was generously supported by funding from the Ford Foundation [grant number 144895, 2022]          and Omidyar Network.
 
 </div>
 
