@@ -175,6 +175,29 @@ else
    echo "CIL$N/4backcover.md missing.  No source file for the back cover!  Skipping the back cover..."
 fi
 
+# 4. Insert orange pages for the inside of the cover pages
+
+## Rename files to make space for orange pages 
+
+# 1 cover (was 1)
+# 2 orange (new)
+# 3 colophon (was 2)
+# 4 main (was 3)
+# 5 orange (new)
+# 6 backcover (was 4)
+
+cd /tmp/render/
+mv 4.pdf 6.pdf
+mv 3.pdf 4.pdf
+mv 2.pdf 3.pdf
+cd -
+
+## Copy organge pages in place
+
+cp -v ../assets/placeholder-cover-inside-A4-orange-bleed-surely-there.pdf /tmp/render/2.pdf
+
+cp -v ../assets/placeholder-cover-inside-A4-orange-bleed-surely-there.pdf /tmp/render/5.pdf
+
 # 5. Combine cover, text, and backcover
 qpdf --empty --pages /tmp/render/?.pdf -- ../CIL$N.pdf
 
@@ -184,11 +207,10 @@ rm -rf /tmp/render
 cd ..
 echo Wrote CIL$N.pdf as output to the current directory.
 
-
 if ps ax | grep -v grep | grep CIL$N.pdf; then
     echo DONE
 else
     echo DONE
     echo "Opening the document in PDF reader using xdg-open."
-    xdg-open CIL$N.pdf
+    xdg-open CIL$N.pdf & 
 fi
