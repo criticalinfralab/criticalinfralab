@@ -7,13 +7,13 @@
                <div class="section-content">
                    <h2 class="section-title"><a href="<?php bloginfo('url'); ?>/activities" rel="nofollow">activities</a></h2>
                    <a class="go-home" href="<?php bloginfo('url'); ?>">←</a>
-           <div class="item">
-               <h2 class="item-title"><?php the_title(); ?></h2>
-               <div class="item-content">
-               <?php the_content(); ?>
+                   <div class="item">
+                        <h2 class="item-title"><?php the_title(); ?></h2>
+                        <div class="item-content">
+                        <?php the_content(); ?>
+                        </div>
                    </div>
-            </div>
-        </div>
+               </div>
             </div>
             <?php else: ?>
         <?php global $post;
