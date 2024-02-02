@@ -219,7 +219,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
     font-family: "SourceSans-Bold", sans-serif;
     font-variant: slashed-zero;
-    font-feature-settings: "ss01" on, "ss02" on, "ss10" on;
+    font-feature-settings: "ss03" on, "ss04" on, "ss10" on;
     line-height: 24pt;
 }
 
