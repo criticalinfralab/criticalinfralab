@@ -254,7 +254,7 @@ h6 { /* aka "pulled quote" */
 }
 
 h6,
-h6+p {
+h6 + p {
     margin-top: 2.5mm;
 }
 
@@ -354,7 +354,6 @@ pre, code {
     margin-left: 31.5mm;
     display: block;
 }
-
 
 /* Prevent superscripts and subscripts from affecting line-height */
 sup, sub {
