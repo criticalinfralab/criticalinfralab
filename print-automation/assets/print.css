@@ -90,6 +90,7 @@ body {
     bleed: 3mm;
     margin-top: 15mm;
     margin-bottom: 36mm;
+    display: flow-root;
 }
 
 @page:left {
@@ -249,8 +250,18 @@ h6 { /* aka "pulled quote" */
     font-size: 11.5pt;
     line-height: 14pt;
     letter-spacing: 0.01em;
-    float: left;
     width: 54mm;
+    float: left;
+    display: block;
+}
+
+.footnotes + h6 {
+    page-break-before: always;
+    float: none;
+}
+
+.footnotes + h6 + p {
+    margin-top: -20mm;
 }
 
 h6,
@@ -435,6 +446,7 @@ img[src$='#fullpagewidth'] {
     page-break-after: always;
     letter-spacing: 0;
     text-align: left;
+    display: table;
 }
 
 .footnotes:before {
