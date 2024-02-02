@@ -13,7 +13,6 @@
     src: url("./fonts/SourceSans3-Bold.ttf") format("truetype");
 }
 
-
 @page {
     size: 210mm 297mm;
     bleed: 3mm;
@@ -35,24 +34,25 @@ p > img { /* cover background image */
 }
 
 #header {
-    transform: rotate(28deg) translateY(15mm) translateX(10mm);
+    transform: rotate(28deg) translateY(15mm) translateX(25mm);
     transform-origin: 0 50%;
-    width: 153mm;
+    width: 145mm;
 }
 
 h1 {
-    font-size: 27pt;
-    line-height: 27pt;
+    font-size: 25pt;
+    line-height: 26pt;
     padding: 0;
-    margin: 2pt 0 0 0;
+    margin: 0;
 }
 
 h2 {
     font-size: 18pt;
     line-height: 18.5pt;
     position: absolute;
-    top: 156mm;
-    left: 135mm;
+    top: 160mm;
+    left: 137mm;
+    width: 50mm;
 }
 
 .category {
