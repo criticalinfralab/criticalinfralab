@@ -7,7 +7,7 @@
     --color-environment: rgb(86,214,44);
     --color-geopolitics: rgb(122,77,43);
     --color-standards: rgb(71,144,255);
-    --basefontsize: 10pt;
+    --basefontsize: 9.5pt;
 }
 
 /********
@@ -238,10 +238,10 @@ h2 {
 }
 
 h3 {
-    font-size: 13pt;
-    line-height: 17pt;
+    font-size: 12pt;
+    line-height: 15.5pt;
     letter-spacing: 0.01em;
-    margin-bottom: 0.25em;
+    margin-bottom: 0;
 }
 
 h3, h4, h5, figure, ol {
@@ -284,6 +284,7 @@ p:has(code),
 h2 + p,
 h3 + p,
 h4 + p,
+h5 + p,
 h2 + h6 + p {
     text-indent: 0;
 }
