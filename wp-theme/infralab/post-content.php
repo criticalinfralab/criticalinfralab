@@ -11,7 +11,9 @@
     <h4 class="item-title">
         <em class="category"><?php echo $category[0]->cat_name; ?></em>
         <span class="title"><?php the_title(); ?></span>
+        <?php if(!is_sticky()): ?>
         <span class="date"><?php the_time('F Y');?></span>
+        <?php endif; ?>
     </h4>
     <?php if ( !empty( get_the_content() ) ): ?>
     <div class="item-content hidden"><?php the_content(); ?></div>
