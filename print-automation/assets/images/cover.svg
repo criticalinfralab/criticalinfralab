@@ -7,7 +7,7 @@
    viewBox="0 0 319.99999 444.9662"
    version="1.1"
    id="svg2355"
-   sodipodi:docname="antenna-white.svg"
+   sodipodi:docname="cover.svg"
    inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -25,10 +25,10 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="false"
-     showguides="false"
-     inkscape:zoom="0.31930129"
-     inkscape:cx="678.04298"
-     inkscape:cy="413.40265"
+     showguides="true"
+     inkscape:zoom="1.2772052"
+     inkscape:cx="683.5237"
+     inkscape:cy="937.98556"
      inkscape:window-width="1366"
      inkscape:window-height="699"
      inkscape:window-x="0"
@@ -36,7 +36,7 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="g575">
     <sodipodi:guide
-       position="220.1182,281.45233"
+       position="233.82398,224.20126"
        orientation="1,0"
        id="guide4642"
        inkscape:locked="false" />
@@ -45,6 +45,9 @@
        orientation="0,-1"
        id="guide9020"
        inkscape:locked="false" />
+    <inkscape:grid
+       type="xygrid"
+       id="grid356" />
   </sodipodi:namedview>
   <defs
      id="defs2352">
@@ -132,7 +135,7 @@
       </g>
       <g
          id="g377"
-         transform="matrix(0.43569611,0,0,-0.43569611,213.50974,297.6375)">
+         transform="matrix(0.38710327,0,0,-0.38710327,213.50976,295.52631)">
         <g
            id="g379"
            clip-path="url(#clipPath383)">
