@@ -109,7 +109,7 @@ body {
 @page {
     @bottom-left:after {
         /* when using pagedjs-cli, then this should not be :after */
-        /* content: counter(page); */
+        content: counter(page);
         font-family: "SourceSans-Bold";
         font-variant: slashed-zero;
         font-size: 11pt;
