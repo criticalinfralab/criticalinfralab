@@ -88,6 +88,9 @@ Possible values: `all, environment, geopolitics, standards, standards-geopolitic
 * Standard
   https://www.w3.org/TR/css-gcpm-3/
 
+* Check capabilities and subsets of font file:
+  https://wakamaifondue.com/
+
 ## Requirements
 
 Currently, the cover is best interpreted by pagedjs-cli, while the
