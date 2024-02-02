@@ -114,8 +114,8 @@ body {
         font-variant: slashed-zero;
         font-size: 11pt;
         line-height: 12pt;
-        /*width: 1.2em;*/
-        border-top: 2px solid;
+        /* width: 1.2em; */
+        border-top: 1px solid;
         vertical-align: top;
         padding-top: 0.25em;
         margin-top: 2em;
