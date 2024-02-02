@@ -27,15 +27,15 @@
      showgrid="false"
      showguides="true"
      inkscape:zoom="1.2772052"
-     inkscape:cx="651.81384"
+     inkscape:cx="634.19723"
      inkscape:cy="1060.9102"
-     inkscape:window-width="945"
-     inkscape:window-height="1041"
+     inkscape:window-width="1366"
+     inkscape:window-height="699"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:current-layer="g575"><sodipodi:guide
-       position="220.1182,281.45233"
+       position="233.64109,177.41996"
        orientation="1,0"
        id="guide4642"
        inkscape:locked="false" /><sodipodi:guide
@@ -43,7 +43,7 @@
        orientation="0,-1"
        id="guide9020"
        inkscape:locked="false" /><sodipodi:guide
-       position="209.43678,182.49695"
+       position="181.24225,198.86891"
        orientation="0,-1"
        id="guide1778"
        inkscape:locked="false" /></sodipodi:namedview><defs
@@ -108,7 +108,7 @@
              id="path9362"
              sodipodi:nodetypes="ccccc" /></g></g><g
          id="g377"
-         transform="matrix(0.43569611,0,0,-0.43569611,213.50974,297.6375)"><g
+         transform="matrix(0.36265788,0,0,-0.36265788,217.12935,295.7726)"><g
            id="g379"
            clip-path="url(#clipPath383)"><g
              id="g385"
@@ -237,7 +237,7 @@
                style="fill:#00040c;fill-opacity:1;fill-rule:nonzero;stroke:none"
                id="path481" /></g></g></g><g
          id="g1618"
-         transform="matrix(0.1838093,0,0,0.1838093,120.6116,272.73691)"><g
+         transform="matrix(0.12626683,0,0,0.12626683,150.4899,276.85648)"><g
            id="text"
            transform="matrix(2.7603075,0,0,2.7603075,163.70485,27.517595)"><svg
              version="1.1"
