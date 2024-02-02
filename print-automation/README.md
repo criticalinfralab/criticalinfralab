@@ -1,6 +1,6 @@
 # Print automation
 
-For generating the critical infrastructure lab document series. 
+For generating the critical infrastructure lab document series.
 
 # Scope
 
@@ -20,14 +20,14 @@ This should work on recent Debian-based GNU/Linux distributions.
 Start a new document:
 
     ./new.sh
-    
-The command creates a new directory with an incremented serial number.  For example, if the last document was CIL002 then the next document will live in the folder CIL003.  Empty files are created for all the parts.  Look at CIL000 as an example and this file for explanation!
+
+The command creates a new directory with an incremented serial number. For example, if the last document was CIL002 then the next document will live in the folder CIL003.  Empty files are created for all the parts. Look at CIL000 as an example and this file for explanation!
 
 Run the pipeline to generate a PDF from the plain text files with Markdown syntax:
 
     ./render.sh N
-   
-Where “N” is the number of the document.  For example 5 for CIL005, etc.  If all goes well, the generated file will appear in the same folder as render.sh.  The new document will be called CIL005.pdf
+
+Where “N” is the number of the document.  For example 5 for CIL005, etc. If all goes well, the generated file will appear in the same folder as render.sh. The new document will be called CIL005.pdf
 
 # Markup examples
 
@@ -72,7 +72,7 @@ produces "p > code".
 Colored dot on cover:
 
     <span class="category all"></span>
-    
+
 Possible values: `all, environment, geopolitics, standards, standards-geopolitics, environment-geopolitics, environment-standards`.  Don't delete the `category` class!
 
 # HACKING
@@ -88,7 +88,7 @@ Possible values: `all, environment, geopolitics, standards, standards-geopolitic
 * Standard
   https://www.w3.org/TR/css-gcpm-3/
 
-* Check capabilities of font file
+* Check capabilities and subsets of font file:
   https://wakamaifondue.com/
 
 ## Requirements
