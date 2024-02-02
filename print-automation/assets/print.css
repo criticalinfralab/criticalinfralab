@@ -7,7 +7,7 @@
     --color-environment: rgb(86,214,44);
     --color-geopolitics: rgb(122,77,43);
     --color-standards: rgb(71,144,255);
-    --basefontsize: 10pt;
+    --basefontsize: 9.5pt;
 }
 
 /********
@@ -77,13 +77,8 @@ body {
     font-variant: common-ligatures;
     line-height: 14.5pt;
     font-size: var(--basefontsize);
-    letter-spacing: 0.025em;
     color: var(--color2);
     counter-reset: pagenumbermargin;
-    /*
-    shape-rendering: geometricPrecision;
-    text-rendering: optimizeLegibility;
-    */
 }
 
 /* *******************
@@ -95,6 +90,7 @@ body {
     bleed: 3mm;
     margin-top: 15mm;
     margin-bottom: 36mm;
+    display: flow-root;
 }
 
 @page:left {
@@ -114,18 +110,17 @@ body {
 @page {
     @bottom-left:after {
         /* when using pagedjs-cli, then this should not be :after */
-        /* content: counter(page); */
+        content: counter(page);
         font-family: "SourceSans-Bold";
         font-variant: slashed-zero;
         font-size: 11pt;
         line-height: 12pt;
-        /*width: 1.2em;*/
-        border-top: 2px solid;
+        /* width: 1.2em; */
+        border-top: 1px solid;
         vertical-align: top;
         padding-top: 0.25em;
-        margin-top: 2em;
+        margin-top: 16mm;
         counter-increment: pagenumbermargin;
-        /*margin-left: calc(1em+pagenumbermargin); */
     }
 }
 
@@ -225,7 +220,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: normal;
     font-family: "SourceSans-Bold", sans-serif;
     font-variant: slashed-zero;
-    font-feature-settings: "ss01" on, "ss02" on, "ss10" on;
+    font-feature-settings: "ss03" on, "ss04" on, "ss10" on;
     line-height: 24pt;
 }
 
@@ -238,10 +233,10 @@ h2 {
 }
 
 h3 {
-    font-size: 13pt;
-    line-height: 17pt;
+    font-size: 12pt;
+    line-height: 15.5pt;
     letter-spacing: 0.01em;
-    margin-bottom: 0.25em;
+    margin-bottom: 0;
 }
 
 h3, h4, h5, figure, ol {
@@ -251,13 +246,31 @@ h3, h4, h5, figure, ol {
 h6 { /* aka "pulled quote" */
     border-top: 1px solid;
     padding-top: 1mm;
-    margin-top: -1mm;
     margin-bottom: 0.25em;
     font-size: 11.5pt;
-    line-height: 16pt;
+    line-height: 14pt;
     letter-spacing: 0.01em;
-    float: left;
     width: 54mm;
+    float: left;
+    display: block;
+}
+
+.footnotes + h6 {
+    page-break-before: always;
+    float: none;
+}
+
+.footnotes + h6 + p {
+    margin-top: -20mm;
+}
+
+h6,
+h6 + p {
+    margin-top: 2.5mm;
+}
+
+h6 + p {
+    text-indent: 0;
 }
 
 ul {
@@ -297,6 +310,7 @@ p:has(code),
 h2 + p,
 h3 + p,
 h4 + p,
+h5 + p,
 h2 + h6 + p {
     text-indent: 0;
 }
@@ -351,7 +365,6 @@ pre, code {
     margin-left: 31.5mm;
     display: block;
 }
-
 
 /* Prevent superscripts and subscripts from affecting line-height */
 sup, sub {
@@ -433,6 +446,7 @@ img[src$='#fullpagewidth'] {
     page-break-after: always;
     letter-spacing: 0;
     text-align: left;
+    display: table;
 }
 
 .footnotes:before {
