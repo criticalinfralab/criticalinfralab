@@ -77,13 +77,8 @@ body {
     font-variant: common-ligatures;
     line-height: 14.5pt;
     font-size: var(--basefontsize);
-    letter-spacing: 0.025em;
     color: var(--color2);
     counter-reset: pagenumbermargin;
-    /*
-    shape-rendering: geometricPrecision;
-    text-rendering: optimizeLegibility;
-    */
 }
 
 /* *******************
@@ -125,7 +120,6 @@ body {
         padding-top: 0.25em;
         margin-top: 2em;
         counter-increment: pagenumbermargin;
-        /*margin-left: calc(1em+pagenumbermargin); */
     }
 }
 
