@@ -245,13 +245,21 @@ h3, h4, h5, figure, ol {
 h6 { /* aka "pulled quote" */
     border-top: 1px solid;
     padding-top: 1mm;
-    margin-top: -1mm;
     margin-bottom: 0.25em;
     font-size: 11.5pt;
-    line-height: 16pt;
+    line-height: 14pt;
     letter-spacing: 0.01em;
     float: left;
     width: 54mm;
+}
+
+h6,
+h6+p {
+    margin-top: 2.5mm;
+}
+
+h6 + p {
+    text-indent: 0;
 }
 
 ul {
