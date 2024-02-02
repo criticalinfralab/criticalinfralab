@@ -27,15 +27,15 @@ Template Name: Homepage
                 <?php if(str_contains($page->post_title, 'upcoming')) : ?>
                     <div class="section-content upcoming">
                     <?php
-                          $count = get_option('posts_per_page', 15);
-                          $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-                          $postquery = new WP_Query( array(
-                              'post-type' => 'post',
-                              'post_status'  => 'future',
-                              'sort_order' => 'ASC',
-                              'posts_per_page' => $count,
-                              'paged' => $paged,
-                          ));
+                        $count = get_option('posts_per_page', 15);
+                        $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+                        $postquery = new WP_Query( array(
+                            'post-type' => 'post',
+                            'post_status'  => 'future',
+                            'sort_order' => 'ASC',
+                            'posts_per_page' => $count,
+                            'paged' => $paged,
+                        ));
                         if ($postquery->have_posts()) :
                           while ($postquery->have_posts()) : $postquery->the_post();
                                get_template_part('post-content');
