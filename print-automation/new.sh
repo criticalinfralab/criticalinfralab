@@ -18,5 +18,6 @@ DIR=CIL$N
 mkdir -v $DIR
 # Create empty files
 for x in 0title 1cover 2colophon 3main 4backcover;do
-         touch $DIR/"$x".md
+         # touch $DIR/"$x".md
+         cp -v CIL000/"$x".md $DIR/"$x".md
 done

@@ -1,6 +1,6 @@
 # Exploring the public interest in media infrastructures through the lenses of geopolitics, standards, and the environment
 
-<div style="page-break-before: always; margin-top: +35em">
+<div style="margin-top: +26em">
 \ 
 
     Published by the critical infrastructure lab, Amsterdam, September 2023.
@@ -10,23 +10,14 @@
     Set in Source Sans, Source Serif and Source Code.
     
     Made with free software from plain text:
-    https://github.com/u451f/criticalinfrastructurelab/tree/main/print-automation
+    https://doi.org/10.5281/zenodo.8412230
+    DOI 10.5281/zenodo.8412230
     
     critical infrastructure lab document series
-    CIL#002
+    CIL#003
+    https://doi.org/10.5281/zenodo.10002322 
+    DOI 10.5281/zenodo.10002322 
 
-    DOI FIXME
-    ISBN FIXME (Print)
-    ISBN FIXME (Digital)
-
-    This work was generously supported by the            Ford Foundation [grant number 144895, 2022].
+    This work was generously supported by funding from the Ford Foundation [grant number 144895, 2022], the Omidyar Network and the Internet Society Foundation [ISOC, grant number G-202208-06454].
 
 </div>
-
-
-
-
-
-
-
-
