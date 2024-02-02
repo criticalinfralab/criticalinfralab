@@ -16,8 +16,8 @@
                </div>
             </div>
             <?php else: ?>
-        <?php global $post;
-        $slug = $post->post_name; ?>
+            <?php global $post;
+            $slug = $post->post_name; ?>
             <div class="section" id="section-<?php echo $slug; ?>">
                <h2 class="section-title"><a href="<?php echo esc_url(get_the_permalink($page->ID)); ?>" rel="nofollow"><?php the_title(); ?></a></h2>
                <div class="section-content">
