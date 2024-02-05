@@ -201,12 +201,12 @@ qpdf --empty --pages /tmp/render/?.pdf -- ../output/CIL$N.pdf
 # 7. Clean up
 rm -rf /tmp/render
 cd ..
-echo Wrote CIL$N.pdf as output to the current directory.
+echo "Wrote CIL$N.pdf to the \"output\" directory."
 
 if ps ax | grep -v grep | grep CIL$N.pdf; then
     echo DONE
 else
     echo DONE
     echo "Opening the document in PDF reader using xdg-open."
-    xdg-open CIL$N.pdf & 
+    xdg-open output/CIL$N.pdf & 
 fi
