@@ -1,4 +1,3 @@
-
 ![](images/statements.png#fullpagewidth)
 
 ## Intro
