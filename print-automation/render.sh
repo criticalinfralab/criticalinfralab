@@ -199,7 +199,7 @@ cp -v ../assets/placeholder-cover-inside-A4-orange-bleed-surely-there.pdf /tmp/r
 cp -v ../assets/placeholder-cover-inside-A4-orange-bleed-surely-there.pdf /tmp/render/5.pdf
 
 # 5. Combine cover, text, and backcover
-qpdf --empty --pages /tmp/render/?.pdf -- ../CIL$N.pdf
+qpdf --empty --pages /tmp/render/?.pdf -- ../output/CIL$N.pdf
 
 # 6. Clean up
 
