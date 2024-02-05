@@ -1,7 +1,3 @@
-# \ 
-
-\ 
-
 # Shifting terrain: “Standards, Protocols, Ecosystem”
 
 <div style="page-break-before: always; margin-top: +29em">
