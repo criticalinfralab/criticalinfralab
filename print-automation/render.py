@@ -9,7 +9,7 @@ def assert_debian_based():
         print("Found Debian-based GNU/Linux distro.  Good!")
     else:
         exit("""You need a Debian-based GNU/Linux distro to run this script.
-ERROR Incompatible OS: Not a Debian-based GNU/Linux operating system distribution""", 1)
+ERROR Incompatible OS: Not a Debian-based GNU/Linux operating system distribution""")
 
 def assert_correct_number_of_arguments():
     if len(sys.argv) > 2:
