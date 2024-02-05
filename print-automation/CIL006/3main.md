@@ -317,8 +317,7 @@ Beyond working upwards towards shaping power dynamics and policy making, broader
 
 \newpage
 
-# References
+## References
 
-# \ 
 
 
