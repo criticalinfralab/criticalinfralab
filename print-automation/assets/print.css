@@ -181,6 +181,14 @@ a {
     text-decoration: none;
 }
 
+/* insert blank page
+ * <div class="blankpage"></div> */
+.blankpage {
+    page-break-before: always;
+    page-break-after: always;
+    content: "&nbsp;";
+}
+
 /* page breaks */
 
 h1, h2 {
