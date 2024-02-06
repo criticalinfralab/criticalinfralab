@@ -359,6 +359,10 @@ dl p {
     text-align: left;
 }
 
+dl p {
+    margin-bottom: 1em;
+}
+
 dl {
     margin-left: 64mm;
     margin-top: 1em;
