@@ -386,6 +386,9 @@ i, em {
 
 pre, code {
     font-family: "SourceCode";
+}
+
+pre {
     margin-left: 31.5mm;
     display: block;
 }
