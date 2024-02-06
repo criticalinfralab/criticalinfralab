@@ -229,6 +229,12 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 24pt;
 }
 
+h1 span,
+h2 span {
+    display: block;
+    padding-left: 10mm;
+}
+
 h2 {
     font-size: 19pt;
     line-height: 21pt;
