@@ -130,7 +130,6 @@ else
 fi
 
 # 2. Generate colophon
-
 if test -f 2colophon.md; then
     pandoc 2colophon.md\
            --reference-location=section\
@@ -139,7 +138,7 @@ if test -f 2colophon.md; then
            --lua-filter ../filters/remove-space-before-note.lua\
            --pdf-engine=weasyprint\
            --dpi=300\
-           --css=../assets/print.css\
+           --css=../assets/colophon.css\
            -o /tmp/render/2.pdf
 else
    echo "CIL$N/2colophon.md missing.  No source file for the colophon!  Skipping colophon..."
@@ -165,7 +164,6 @@ else
 fi
 
 # 4. Generate backcover
-
 if test -f 4backcover.md; then
     pandoc 4backcover.md\
            --css=../assets/backcover.css\
@@ -175,8 +173,7 @@ else
    echo "CIL$N/4backcover.md missing.  No source file for the back cover!  Skipping the back cover..."
 fi
 
-# 4. Insert orange pages for the inside of the cover pages
-
+# 5. Insert orange pages for the inside of the cover pages
 ## Rename files to make space for orange pages 
 
 # 1 cover (was 1)
@@ -198,19 +195,18 @@ cp -v ../assets/placeholder-cover-inside-A4-orange-bleed-surely-there.pdf /tmp/r
 
 cp -v ../assets/placeholder-cover-inside-A4-orange-bleed-surely-there.pdf /tmp/render/5.pdf
 
-# 5. Combine cover, text, and backcover
-qpdf --empty --pages /tmp/render/?.pdf -- ../CIL$N.pdf
+# 6. Combine cover, text, and backcover
+qpdf --empty --pages /tmp/render/?.pdf -- ../output/CIL$N.pdf
 
-# 6. Clean up
-
+# 7. Clean up
 rm -rf /tmp/render
 cd ..
-echo Wrote CIL$N.pdf as output to the current directory.
+echo "Wrote CIL$N.pdf to the \"output\" directory."
 
 if ps ax | grep -v grep | grep CIL$N.pdf; then
     echo DONE
 else
     echo DONE
     echo "Opening the document in PDF reader using xdg-open."
-    xdg-open CIL$N.pdf & 
+    xdg-open output/CIL$N.pdf & 
 fi
