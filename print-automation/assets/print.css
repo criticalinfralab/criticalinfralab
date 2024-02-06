@@ -336,6 +336,14 @@ p, li {
     text-align: justify;
 }
 
+ol {
+    margin-left: 57mm;
+}
+
+ol li p {
+    margin-left: 2mm;
+}
+
 blockquote {
     font-family: "SourceSerif-Italic";
     margin-top: 1em;
