@@ -1,5 +1,4 @@
-# Shifting terrain: “Standards, Protocols, Ecosystem” 
-
+# Shifting terrain: “Standards, Protocols, Ecosystem”
 
 ### Acknowledgements
 
@@ -247,11 +246,11 @@ Standardisation work of W3C is contingent on the openness of user agents. Even w
 
 The round-table discussion was an opportunity to assess the shifting policy terrain and possible strategies for intervention. We highlight three points to consider for policy advocates here:
 
-1. **Standards bodies** are delegated an increasing role in European policymaking as standards and certification are instrumentalised in regulation in competition and trade, as well as values and norms. The implementation of the AI Act is a case in point. Policy advocacy that traditionally targeted policymaking and legislative processes must shift towards standards to influence outcomes.
+ 1. **Standards bodies** are delegated an increasing role in European policymaking as standards and certification are instrumentalised in regulation in competition and trade, as well as values and norms. The implementation of the AI Act is a case in point. Policy advocacy that traditionally targeted policymaking and legislative processes must shift towards standards to influence outcomes.
 
-2. **Telecommunication companies** attempt to diversify their role in digital services by providing access to data and compute provision. The introduction of smart networks such as 5G is a case in point, as well as the identification of citizens and consumers through mobile phones and SIM cards. Digital rights activists who traditionally focus on the Internet alone should consider widening their focus and perspectives to telecommunications.
+ 2. **Telecommunication companies** attempt to diversify their role in digital services by providing access to data and compute provision. The introduction of smart networks such as 5G is a case in point, as well as the identification of citizens and consumers through mobile phones and SIM cards. Digital rights activists who traditionally focus on the Internet alone should consider widening their focus and perspectives to telecommunications.
 
-3. The **European Parliament elections** will result in a *new European Commission* to be set up, shifting the balance of power and changing who is in charge of relevant portfolios.
+ 3. The **European Parliament elections** will result in a *new European Commission* to be set up, shifting the balance of power and changing who is in charge of relevant portfolios.
 
 ###### Standards bodies are delegated an increasing role in European policy making
 
