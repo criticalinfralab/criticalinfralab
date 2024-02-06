@@ -1,6 +1,6 @@
 # Shifting terrain: “Standards, Protocols, Ecosystem”
 
-<div style="page-break-before: always; margin-top: +29em">
+<section id="colophon">
 \ 
 
     Published by the critical infrastructure lab, Amsterdam, November 2023.
