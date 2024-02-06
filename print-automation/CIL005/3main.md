@@ -259,6 +259,3 @@ In the short term, the *Digital Markets Act, AI Act, Data Act, European Digital 
 The key take-away from European developments, such as the work on AI standards,  is that ***interoperability regulations work***, and highlight the role of sovereign powers in shaping digital ecosystems. European policy has knock-on effects and spillover to other regions through leading by example, the entanglement of industrial processes, research and development, as well as markets. Centering people and the planet through shifting power to the public interest can increasingly happen through standards development, governance and policy with the input of a strategically aware civil society. 
 
 ## References
-
-
-
