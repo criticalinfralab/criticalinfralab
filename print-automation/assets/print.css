@@ -318,6 +318,7 @@ p {
 }
 
 p:has(code),
+h1 + p,
 h2 + p,
 h3 + p,
 h4 + p,
