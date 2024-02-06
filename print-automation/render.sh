@@ -138,7 +138,7 @@ if test -f 2colophon.md; then
            --lua-filter ../filters/remove-space-before-note.lua\
            --pdf-engine=weasyprint\
            --dpi=300\
-           --css=../assets/print.css\
+           --css=../assets/colophon.css\
            -o /tmp/render/2.pdf
 else
    echo "CIL$N/2colophon.md missing.  No source file for the colophon!  Skipping colophon..."
