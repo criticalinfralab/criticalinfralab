@@ -86,11 +86,10 @@ body {
  * *******************/
 
 @page {
-    size: 210mm 297mm;
+    size: a4 portrait;
     bleed: 3mm;
     margin-top: 15mm;
     margin-bottom: 36mm;
-    display: flow-root;
 }
 
 @page:left {
@@ -108,8 +107,12 @@ body {
  * ************/
 
 @page {
+    size: a4 portrait;
+    bleed: 3mm;
+    margin-top: 15mm;
+    margin-bottom: 36mm;
+
     @bottom-left:after {
-        /* when using pagedjs-cli, then this should not be :after */
         content: counter(page);
         font-family: "SourceSans-Bold";
         font-variant: slashed-zero;
@@ -127,8 +130,9 @@ body {
 
 #colophon {
     page-break-before: always;
+    page-break-after: always;
     font-family: "SourceCode";
-    margin-top: 35em;
+    margin-top: 29em;
 }
 
 /* Logos section */
