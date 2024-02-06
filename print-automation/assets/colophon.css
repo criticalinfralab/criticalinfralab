@@ -131,9 +131,11 @@ body {
 
 #colophon {
     page-break-before: always;
+    page-break-after: always;
     font-family: "SourceCode";
-    margin-top: 35em;
+    margin-top: 29em;
 }
+
 h1, h2, h3, h4, h5, h6 {
     margin-bottom: 0;
     font-weight: normal;
@@ -143,3 +145,16 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 24pt;
 }
 
+h1 span {
+    display: block;
+    padding-left: 10mm;
+}
+
+/* insert blank page
+ * <div class="blankpage"></div> */
+
+.blankpage {
+    page-break-before: always;
+    page-break-after: always;
+    content: "&nbsp;";
+}
