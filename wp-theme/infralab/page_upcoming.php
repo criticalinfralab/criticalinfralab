@@ -16,7 +16,8 @@ Template Name: Upcoming
                 $postquery = new WP_Query( array(
                     'post-type' => 'post',
                     'post_status'  => 'future',
-                    'sort_order' => 'ASC',
+                    'orderby' => 'date',
+                    'order' => 'ASC',
                     'posts_per_page' => -1,
                 ));
                 if ($postquery->have_posts()) :
