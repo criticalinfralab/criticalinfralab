@@ -1,0 +1,160 @@
+/*
+ * This CSS file is a duplicate of the first lines of print.css
+ * because @import is not supported nor can we load 2 CSS files.
+ * The only difference is that this one has no pagination counter
+ * specified.
+ * */
+@charset "UTF-8";
+
+:root {
+    --color1: #fff;
+    --color2: #000;
+    --hilight: #ff962e;
+    --color-environment: rgb(86,214,44);
+    --color-geopolitics: rgb(122,77,43);
+    --color-standards: rgb(71,144,255);
+    --basefontsize: 9.5pt;
+}
+
+/********
+ * Fonts
+ * ******/
+
+@font-face {
+    font-family: 'SourceSerif';
+    font-style:  normal;
+    src: url("./fonts/SourceSerif4-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'SourceSerif-Italic';
+    font-style:  normal;
+    src: url("./fonts/SourceSerif4-Italic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'SourceSerif-Bold';
+    font-style:  normal;
+    src: url("./fonts/SourceSerif4-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'SourceSans-Regular';
+    font-style:  normal;
+    src: url("./fonts/SourceSans3-Regular.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'SourceSans-Bold';
+    font-style:  normal;
+    src: url("./fonts/SourceSans3-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'SourceSans-Italic';
+    font-style:  normal;
+    src: url("./fonts/SourceSans3-Italic.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: 'SourceCode';
+    font-style:  normal;
+    src: url("./fonts/SourceCodePro-VariableFont_wght.ttf") format("truetype");
+}
+
+/**
+ *  Reset
+ */
+
+body {
+    margin: 0;
+}
+
+hr {
+    display: none;
+}
+
+/* *******
+ * Basics
+ * *******/
+
+body {
+    font-family: "SourceSerif";
+    font-variant: common-ligatures;
+    line-height: 14.5pt;
+    font-size: var(--basefontsize);
+    color: var(--color2);
+    counter-reset: pagenumbermargin;
+}
+
+/* *******************
+ * general page setup
+ * *******************/
+
+@page {
+    size: 210mm 297mm;
+    bleed: 3mm;
+    margin-top: 15mm;
+    margin-bottom: 36mm;
+    display: flow-root;
+}
+
+@page:left {
+    margin-left: 12mm;
+    margin-right: 12mm;
+}
+
+@page:right {
+    margin-left: 12mm;
+    margin-right: 12mm;
+}
+
+/***************
+ * pagination
+ * ************/
+
+@page {
+    @bottom-left:after {
+        /* when using pagedjs-cli, then this should not be :after */
+        font-family: "SourceSans-Bold";
+        font-variant: slashed-zero;
+        font-size: 11pt;
+        line-height: 12pt;
+        border-top: 1px solid;
+        vertical-align: top;
+        padding-top: 0.25em;
+        margin-top: 16mm;
+    }
+}
+
+/* Colophon */
+
+#colophon {
+    page-break-before: always;
+    page-break-after: always;
+    font-family: "SourceCode";
+    margin-top: 29em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 0;
+    font-weight: normal;
+    font-family: "SourceSans-Bold", sans-serif;
+    font-variant: slashed-zero;
+    font-feature-settings: "ss03" on, "ss04" on, "ss10" on;
+    line-height: 24pt;
+}
+
+h1 span {
+    display: block;
+    padding-left: 10mm;
+}
+
+/* insert blank page
+ * <div class="blankpage"></div> */
+
+.blankpage {
+    page-break-before: always;
+    page-break-after: always;
+    content: "&nbsp;";
+}

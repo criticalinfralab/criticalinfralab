@@ -1,6 +1,6 @@
-# Network paradigms and infrastructural ideologies: <br>Standards and protocols in a geopolitical context
+# Network paradigms and infrastructural ideologies: <span>Standards and protocols in a geopolitical context</span>
 
-<div style="page-break-before: always; margin-top: +35em">
+<div id="colophon" style="margin-top: +35em">
 \ 
 
     Published by the critical infrastructure lab, Amsterdam, November 2023.
@@ -18,7 +18,7 @@
     https://doi.org/10.5281/zenodo.8412252
     DOI 10.5281/zenodo.8412252
 
-    This work was generously supported by funding from the Ford Foundation [grant number 144895, 2022]          and Omidyar Network.
+    This work was generously supported by funding from the Ford Foundation [grant number 144895, 2022] and Omidyar Network.
 
 </div>
 

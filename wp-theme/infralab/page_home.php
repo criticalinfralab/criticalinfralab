@@ -27,28 +27,18 @@ Template Name: Homepage
                 <?php if(str_contains($page->post_title, 'upcoming')) : ?>
                     <div class="section-content upcoming">
                     <?php
-                        $count = get_option('posts_per_page', 15);
-                        $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+                        $count = get_option('posts_per_page', 10);
                         $postquery = new WP_Query( array(
                             'post-type' => 'post',
                             'post_status'  => 'future',
-                            'sort_order' => 'ASC',
-                            'posts_per_page' => $count,
-                            'paged' => $paged,
+                            'orderby' => 'date',
+                            'order' => 'ASC',
+                            'posts_per_page' => $count
                         ));
                         if ($postquery->have_posts()) :
                           while ($postquery->have_posts()) : $postquery->the_post();
                                get_template_part('post-content');
                           endwhile;
-                          // Pagination
-                          if($postquery->max_num_pages > 1) {
-                              if($postquery->query_vars["paged"] == 0) {
-                                  $current_page = 1;
-                              } else {
-                                  $current_page = $postquery->query_vars["paged"];
-                              }
-                              echo '<div class="pagination" data-query="'.htmlspecialchars(json_encode($postquery->query_vars)).'" data-maxpages="'.htmlspecialchars(json_encode($postquery->max_num_pages)).'" data-current="'.$current_page.'">'.paginate_links(array('total' => $postquery->max_num_pages)).'</div>';
-                           }
                         endif;
                         wp_reset_postdata(); ?>
                   </div>

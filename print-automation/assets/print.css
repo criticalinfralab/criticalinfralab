@@ -86,11 +86,10 @@ body {
  * *******************/
 
 @page {
-    size: 210mm 297mm;
+    size: a4 portrait;
     bleed: 3mm;
     margin-top: 15mm;
     margin-bottom: 36mm;
-    display: flow-root;
 }
 
 @page:left {
@@ -108,14 +107,17 @@ body {
  * ************/
 
 @page {
+    size: a4 portrait;
+    bleed: 3mm;
+    margin-top: 15mm;
+    margin-bottom: 36mm;
+
     @bottom-left:after {
-        /* when using pagedjs-cli, then this should not be :after */
         content: counter(page);
         font-family: "SourceSans-Bold";
         font-variant: slashed-zero;
         font-size: 11pt;
         line-height: 12pt;
-        /* width: 1.2em; */
         border-top: 1px solid;
         vertical-align: top;
         padding-top: 0.25em;
@@ -124,18 +126,13 @@ body {
     }
 }
 
-/* any page that is intentionally left blank: */
-
-@page:blank {
-    @top-center { content: "This page is intentionally left blank." }
-}
-
 /* Colophon */
 
 #colophon {
     page-break-before: always;
+    page-break-after: always;
     font-family: "SourceCode";
-    margin-top: 35em;
+    margin-top: 29em;
 }
 
 /* Logos section */
@@ -184,6 +181,14 @@ a {
     text-decoration: none;
 }
 
+/* insert blank page
+ * <div class="blankpage"></div> */
+.blankpage {
+    page-break-before: always;
+    page-break-after: always;
+    content: "&nbsp;";
+}
+
 /* page breaks */
 
 h1, h2 {
@@ -222,6 +227,12 @@ h1, h2, h3, h4, h5, h6 {
     font-variant: slashed-zero;
     font-feature-settings: "ss03" on, "ss04" on, "ss10" on;
     line-height: 24pt;
+}
+
+h1 span,
+h2 span {
+    display: block;
+    padding-left: 10mm;
 }
 
 h2 {
@@ -307,6 +318,7 @@ p {
 }
 
 p:has(code),
+h1 + p,
 h2 + p,
 h3 + p,
 h4 + p,
@@ -324,6 +336,14 @@ p, li {
     text-align: justify;
 }
 
+ol {
+    margin-left: 57mm;
+}
+
+ol li p {
+    margin-left: 2mm;
+}
+
 blockquote {
     font-family: "SourceSerif-Italic";
     margin-top: 1em;
@@ -337,6 +357,10 @@ dl p {
     margin: 0;
     text-indent: 0;
     text-align: left;
+}
+
+dl p {
+    margin-bottom: 1em;
 }
 
 dl {
@@ -362,6 +386,9 @@ i, em {
 
 pre, code {
     font-family: "SourceCode";
+}
+
+pre {
     margin-left: 31.5mm;
     display: block;
 }

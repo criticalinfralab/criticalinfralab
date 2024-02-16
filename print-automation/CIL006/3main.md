@@ -145,7 +145,7 @@ All ideologies make misleading promises to users in response to users' demand, p
 
 \newpage
 
-#  3 Longitudial study: Network paradigms
+#  3 Longitudial study: <span>Network paradigms</span>
 
 ##  3.1 *Internet: open internetworking*
 
