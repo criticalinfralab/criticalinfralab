@@ -295,27 +295,51 @@ The general principles set out by the critical infrastructure lab for infrastruc
 
 Beyond working upwards towards shaping power dynamics and policy making, broader civil society should work with social movements and rally around citizens' concerns in so far as these are crucial sites where the public interest is articulated.
 
-\ \newline
- \newline
- \newline
- \newline
- \newline
- \newline
- \newline
- \newline
- \newline
- \newline
- \newline
- \newline
- \newline
- \newline
- \newline
- \newline
- \newline
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
+
+\ 
 
 > *Open Future and the critical infrastructure lab organised a roundtable debate in Amsterdam on June 20^th^, 2023, to debate the topics of the report.*
-
-\newpage
 
 ## References
 
