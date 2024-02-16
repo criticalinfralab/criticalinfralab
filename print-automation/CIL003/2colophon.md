@@ -1,8 +1,4 @@
-# \ 
-
-\
-
-# Exploring the public interest in media infrastructures through the lenses of geopolitics, standards, and the environment
+<div class="blankpage"></div>
 
 <div style="margin-top: +26em">
 \ 
@@ -25,3 +21,5 @@
     This work was generously supported by funding from the Ford Foundation [grant number 144895, 2022], the Omidyar Network and the Internet Society Foundation [ISOC, grant number G-202208-06454].
 
 </div>
+
+# Exploring the public interest in media infrastructures through the lenses of geopolitics, standards, and the environment
