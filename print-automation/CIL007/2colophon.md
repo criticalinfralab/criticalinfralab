@@ -5,7 +5,7 @@
 
     Published by the critical infrastructure lab, Amsterdam, Februari 2024.
 
-    Exploring the public interest in media infrastructures through the lenses of geopolitics, standards, and the environment is marked with CC0 1.0 Universal.
+    The Privacy Camp 2024 workshop "Down with Datacentres: developing critical policy for environmentally sustainable tech in Europ" report is marked with CC0 1.0 Universal.
 
     Set in Source Sans, Source Serif, and Source Code.
 
