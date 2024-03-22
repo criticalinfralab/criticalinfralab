@@ -110,6 +110,7 @@ for x in filters/deleteemptyheader.py\
     fi
 done
 
+rm -rf /tmp/render/
 mkdir /tmp/render/
 cd CIL$N
 
