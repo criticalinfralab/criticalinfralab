@@ -240,7 +240,7 @@ h2 {
     line-height: 21pt;
     letter-spacing: 0;
     margin-top: 0;
-    margin-bottom: 30mm;
+    margin-bottom: 30mm; /* 20mm for CIL007 works better. */
 }
 
 h3 {
@@ -468,9 +468,9 @@ img[src$='#fullpagewidth'] {
  * ************/
 
 .footnotes {
-    break-before: avoid;
-    page-break-inside: avoid;
-    page-break-after: always;
+    /* break-before: avoid; */
+    /* page-break-inside: avoid; */
+    /* page-break-after: always; */
     letter-spacing: 0;
     text-align: left;
     display: table;
