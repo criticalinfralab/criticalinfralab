@@ -13,21 +13,22 @@ Report of workshop organised at Privacy Camp 2024 by University of Delft and the
 
 ### Acknowledgements
 
-This work was generously supported by the Ford Founcation and Internet Society Foundation.
+This work was generously supported by the Ford Foundation and Internet Society Foundation.
 
 ### Logos
 
-![logo critical infrastructure lab](images/logo-criticalinfralab.svg)
+![](../assets/images/logo-criticalinfralab.png){width="134" height="69"} 
 
 
-## Introduction 
+## 1 Introduction 
+
 In the face of a climate crisis, the current regulation of data centres across Europe seems scattered, often favouring businesses, whack-a-mole and NIMBY ^[https://en.wikipedia.org/wiki/NIMBY] approaches, or simply insufficiently ambitious. Any current efforts to govern data centres miss the mark by neglecting shifts in the business model of the tech industry, that encourage the growth of data centres, and by assuming there is an abundance of natural resources to fuel them in perpetuity. This makes rethinking the policy approach to limit the harms from data centres one of the biggest policy challenges of our age. 
 
 At Privacy Camp 2024 in Brussels, we hosted a discussion on what a critical policy intervention should look like to ensure environmentally sustainable tech in Europe ^[https://privacycamp.eu/down-with-datacenters-developing-critical-policy-for-environmentally-sustainable-tech-in-europe/] . This post is a reflection of the discussion, where we summarize the contributions made by our speakers and the discussion held in the break-out sessions between audience members. We also provide several concrete recommendations that arose from the convening. 
 
 The discussion at Privacy Camp is part of our broader efforts to shift the debate about data centres in the EU. In our ongoing research, we argue for an updated political-economic framework to grasp the driving forces behind hyperscale data centre expansion. Notably, the top three technology companies—AWS, Microsoft, and Google—are cloud giants, highlighting a close link between data centre growth and the shift to the cloud in the broader industry. We also argue that a radical approach to regulating data centres should be rooted in a scarcity, rather than an abundance, of resources approach--as our future is one in which water, fuel, land, and other critical resources that enable data centres to function will become increasingly scarce. 
 
-## 2 Contributions by Speakers:
+## 2 Contributions by Speakers
 
 *Corinne Cath* (University of Delft): 
 
@@ -37,7 +38,7 @@ This is, in part, because we’re missing the bigger picture. Current efforts ar
 
 The growth of data centres is related to the shift towards cloud computing, across industries not just in tech. These insights are developed by academics like Nathan Ensmenger, Seda Gürses, and Martha Poon. Their work on the cloud as a production hub or a factory is crucial to understanding how we can halt the environmental harm caused by data centres. We need to start looking at data centres with a strong political-economic lens backed by real-life research, or we’re likely to only put band-aids on symptoms, rather than tackling causes. It is impossible to deal with the environmental fallout of data centres while keeping the underlying political and economic issues that fundamentally impact the environment untouched.
 
-![](images/privacy_camp1#fullpagewidth)
+![](images/privacy_camp1.jpg#fullpagewidth)
 
 *Claire Pershan* (Mozilla): 
 
@@ -62,7 +63,7 @@ Meaningful connectivity requires accountability, social and organizational innov
 
 To overcome these challenges Fieke presented a project she and Corinne Cath (TU Delft) are working on, a critical data centre policy to set the tone for EU-wide debates by one that centring people and planet over profit and capital. Such an approach should weigh the purpose of data centres and computational processes against their potential social benefits and environmental costs. For example, a scarcity approach requires municipalities, national governments, and utility companies to rethink if it is desirable to allocate significant resources, i.e. land, water, and (renewable) energy to run the Metaverse ^[https://www.thegreenwebfoundation.org/news/the-politics-of-data-centers/], cloud computing or if this should be allocated to households or computation for the public interest. This Privacy Camp session was intended to engage the digital rights community in a discussion on how the data centre could be governed by the notion of scarcity. 
  
-## 3 Break-out Sessions Summaries:
+## 3 Break-out Sessions Summaries
 
 ### Break out session 1 (Led by Joris van Hoboken and Corinne Cath): Burning questions surrounding the political economy of data centres
 
@@ -96,35 +97,38 @@ The discussion also encouraged a shift away from the carbon emission narrative p
 
 Politically, the discussion delved into the regulatory landscape, urging consideration of existing and upcoming EU mandates to make them more comprehensive and ambitious. Participants contemplated the requirements of a just energy transition and explored strategies for transforming the tech market, as well as enhancing enforcement of the General Data Protection Regulation (GDPR). At the local level collaboration with local government, especially municipalities, was again identified as a crucial avenue for change (as in previous sessions). Participants stressed the need to build coalitions across municipalities to exert influence on regional and national policies, while also grappling with the integration of data sovereignty into this approach.
 
+## 4 Concrete Actions Moving Forward
 
-## 4 Concrete Actions Moving Forward:
+<!-- ###### On cloud computing and warfare, see <br> <https://www.politico.eu/article/war-drones-technology-arms-industry-munich-security-conference-2024/> -->
 
-**1 Highlight Power Dynamics:**
+###### *We invite anyone with an interest in this topic to follow our work here,  ^[https://www.criticalinfralab.net/] join our climate and tech reading group, ^[https://www.criticalinfralab.net/2024/02/01/environment-reading-group/] or sign up for a monthly newsletter at the bottom of this page.* ^[https://greenscreen.network/en/]
+
+1 Highlight Power Dynamics: 
 
 : This action aims to illustrate the broader consequences of data centres. In addressing data centres' political and economic nature, we can reveal links between the growth of data centres and paradigmatic changes in the computing industry that continue to fuel growth. Likewise, we must demonstrate existing political entanglement between states and companies, which bleeds into the reliance of states on tech in general ^[https://www.politico.eu/article/war-drones-technology-arms-industry-munich-security-conference-2024/] and cloud computing (and hence data centres)  for warfare, immigration, or austerity policies in particular. 
 
-**2 Use Clearer Terms and Raise Awareness through Real-Life Effects:** 
+2 Use Clearer Terms and Raise Awareness through Real-Life Effects:
 
 : The aim is to increase public and policy makers' public awareness. WE suggest using simpler language and learning from public initiatives like "reclaim your face" to better explain data centres' role in society as cloud computing centres, and highlight their societal impact. More real-life examples, like water restrictions for Irish farmers due to data centres, are needed to show immediate impacts.
 
-**3 Challenge Carbon Talk, Highlight Resource Issues:** 
+3 Challenge Carbon Talk, Highlight Resource Issues:
 
 : This action aims to shift attention and deepen understanding of the environmental challenges linked to data centres, in a future of climate collapse. We must move away from the carbon emission talk pushed by companies and focus on resource scarcity as the real problem.
 
-**4 Push for Grassroots Efforts and Social Justice:** 
+4 Push for Grassroots Efforts and Social Justice:
 
 : This action focuses on acknowledging environmental concerns and grassroots actions. We must prioritise social justice impacts, which include the costs of EU data centres to the Majority World. This includes addressing societal and environmental impacts from the ground up. 
 
-**5 Improve Regulations and Work with (Local) Government:** 
+5 Improve Regulations and Work with (Local) Government:
 
 : We must examine existing regulations related to data centres and the environment, at local, national, and pan-national levels, and understand their sufficiency for the challenges at hand. This includes making regulations more ambitious, considering a just energy transition, and transforming the tech market. Collaboration with local and pan-national institutions, especially municipalities, is key to influencing these policies.
 
-*We invite anyone reading this blog with an interest in this topic to follow our work here ^[https://www.criticalinfralab.net/] , join our climate and tech reading group ^[https://www.criticalinfralab.net/2024/02/01/environment-reading-group/] , or sign up for a monthly newsletter at the bottom of this page ^[https://greenscreen.network/en/] .*
+\ 
 
-### About the lab
+## About the lab
 
 The critical infrastructure lab researches power and contestation in transnational media infrastructures.  The lab aims to create space to co-develop alternative infrastructural futures that recenter people and planet over profit and capital.  We aim to do this by establishing a community around three infrastructural subtopic (geopolitics, standards, environment), producing a sound body of research, as well as developing strategic insights and actionable policy recommendations.
 
 > <https://www.criticalinfralab.net/>
 
-### References
+
