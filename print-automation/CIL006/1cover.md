@@ -7,6 +7,6 @@
 
 ## Maxigas, <br>2023
 
-<span class="category standards-geopolitics"><!-- dot: possible values: all, environment, geopolitics, standards, standards-geopolitics, environment-geopolitics,
+<span class="category standards"><!-- dot: possible values: all, environment, geopolitics, standards, standards-geopolitics, environment-geopolitics,
 environment-standards ---></span>
 
