@@ -1,0 +1,15 @@
+[Unit]
+Description=Dump database so that it is backed up properly
+Wants=database_dump.timer
+# After=network.target
+
+[Service]
+Type=oneshot
+# Environment="KUBECONFIG=/etc/rancher/k3s/k3s.yaml"
+# WorkingDirectory=/root
+# ExecStart=ping -c 1 xkcd.com
+ExecStart=/usr/local/bin/database_dump.sh
+# ExecStart=/usr/local/bin/kubectl exec --namespace=stackspin-apps wordpress-database-0 -- mariadb-dump -u wordpress -pdnqUyw7pFkuGcdDsIMXHAUs2WZ1s45cb wordpress_db > /var/backups/wordpress_db.sql
+# ExecStart=kubectl cp --namespace=stackspin-apps /var/backups/wordpress_db.sql wordpress-database-0:/tmp/
+[Install]
+WantedBy=multi-user.target
