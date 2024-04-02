@@ -2,14 +2,14 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="233.00621mm"
-   height="87.44162mm"
-   viewBox="0 0 233.00621 87.44162"
+   width="319.76474mm"
+   height="120.00001mm"
+   viewBox="0 0 319.76474 120.00001"
    version="1.1"
    id="svg437"
    xml:space="preserve"
-   inkscape:version="1.2.1 (9c6d41e4, 2022-07-14)"
-   sodipodi:docname="ford-logo.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   sodipodi:docname="logo-fordfoundation.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -27,19 +27,19 @@
      inkscape:zoom="0.2102413"
      inkscape:cx="309.16856"
      inkscape:cy="233.06553"
-     inkscape:window-width="1344"
-     inkscape:window-height="430"
+     inkscape:window-width="1366"
+     inkscape:window-height="699"
      inkscape:window-x="0"
-     inkscape:window-y="23"
-     inkscape:window-maximized="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
      inkscape:current-layer="svg437"><inkscape:page
        x="0"
        y="0"
-       width="233.00621"
-       height="87.44162"
+       width="319.76474"
+       height="120.00001"
        id="page481" /><inkscape:page
        x="197.58051"
-       y="-86.836151"
+       y="-86.836143"
        width="233.0062"
        height="87.443024"
        id="page483" /></sodipodi:namedview><defs
@@ -47,9 +47,9 @@
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-22.419492,-86.836148)" /><g
+     transform="translate(-22.419492,-86.836137)" /><g
      id="g451"
-     transform="matrix(0.03527778,0,0,-0.03527778,0,87.441622)"><path
+     transform="matrix(0.04841326,0,0,-0.04841326,0,120.00001)"><path
        d="m 538.527,1764.93 h 54.571 v 288.65 h -54.571 c -78.984,0 -38.773,-86.16 -117.757,-86.16 H 288.648 v 376.25 h 236.954 c 84.726,0 41.644,-152.22 126.375,-152.22 h 56.003 v 274.28 c -25.847,-2.87 -63.183,-4.3 -101.96,-4.3 H 0 v -57.45 c 0,-34.46 10.0508,-48.82 37.3359,-64.62 25.8516,-15.8 33.0313,-28.72 33.0313,-63.18 v -778.36 c 0,-34.46 -7.1797,-47.39 -33.0313,-63.18 C 10.0508,1418.84 0,1404.48 0,1370.01 v -57.44 h 371.941 v 57.44 c 0,34.47 -11.488,48.83 -44.515,64.63 -31.598,15.79 -38.778,28.72 -38.778,63.18 V 1851.1 H 420.77 c 78.984,0 38.773,-86.17 117.757,-86.17"
        style="fill:#100f0d;fill-opacity:1;fill-rule:nonzero;stroke:none"
        id="path453" /><path
