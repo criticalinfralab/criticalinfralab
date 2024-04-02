@@ -238,13 +238,14 @@ a {
 #footer {
     margin-top: 3em;
     padding-bottom: 1.5em;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 1em;
 }
 
 #footer img {
-    width: 180px;
-    max-width: 16%;
+    max-height: 60px;
+    margin: auto;
 }
 
 #canvas {
