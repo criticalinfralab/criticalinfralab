@@ -238,13 +238,13 @@ a {
 #footer {
     margin-top: 3em;
     padding-bottom: 1.5em;
-    display: flex;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-column-gap: 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1em;
 }
 
 #footer img {
-    height: 45px;
+    max-height: 45px;
 }
 
 #footer img:nth-child(3n) {
@@ -521,4 +521,9 @@ a {
         padding-top: 1em;
     }
 
+}
+@media all and (min-width: 1025px) {
+    #footer {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
 }
