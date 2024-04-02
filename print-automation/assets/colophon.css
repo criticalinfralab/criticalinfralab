@@ -130,7 +130,7 @@ body {
 /* Colophon */
 
 #colophon {
-    page-break-before: always;
+    break-before: always;
     page-break-after: always;
     font-family: "SourceCode";
     margin-top: 29em;
@@ -154,7 +154,7 @@ h1 span {
  * <div class="blankpage"></div> */
 
 .blankpage {
-    page-break-before: always;
+    break-before: always;
     page-break-after: always;
     content: "&nbsp;";
 }

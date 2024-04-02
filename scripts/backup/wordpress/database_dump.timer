@@ -1,0 +1,8 @@
+[Unit]
+Description=Periodical database dumps
+Requires=database_dump.service
+
+[Timer]
+Unit=database_dump.service
+OnCalendar=Daily
+

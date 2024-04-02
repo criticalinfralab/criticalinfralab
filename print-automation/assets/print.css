@@ -129,7 +129,7 @@ body {
 /* Colophon */
 
 #colophon {
-    page-break-before: always;
+    break-before: always;
     page-break-after: always;
     font-family: "SourceCode";
     margin-top: 29em;
@@ -184,7 +184,7 @@ a {
 /* insert blank page
  * <div class="blankpage"></div> */
 .blankpage {
-    page-break-before: always;
+    break-before: always;
     page-break-after: always;
     content: "&nbsp;";
 }
@@ -192,7 +192,7 @@ a {
 /* page breaks */
 
 h1, h2 {
-    page-break-before: always; /* starts a new page before this elm */
+    break-before: always; /* starts a new page before this elm */
 }
 
 h1, h2, h3, h4, h5, h6 { /* no page breaks in or after titles */
@@ -240,7 +240,7 @@ h2 {
     line-height: 21pt;
     letter-spacing: 0;
     margin-top: 0;
-    margin-bottom: 30mm;
+    margin-bottom: 30mm; /* 20mm for CIL007 works better. */
 }
 
 h3 {
@@ -267,7 +267,7 @@ h6 { /* aka "pulled quote" */
 }
 
 .footnotes + h6 {
-    page-break-before: always;
+    break-before: always;
     float: none;
 }
 
@@ -468,9 +468,9 @@ img[src$='#fullpagewidth'] {
  * ************/
 
 .footnotes {
-    page-break-before: avoid;
-    page-break-inside: avoid;
-    page-break-after: always;
+    /* break-before: avoid; */
+    /* page-break-inside: avoid; */
+    /* page-break-after: always; */
     letter-spacing: 0;
     text-align: left;
     display: table;
