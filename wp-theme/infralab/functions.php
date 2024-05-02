@@ -1,16 +1,4 @@
 <?php
-function infralab_widgets_init() {
-    register_sidebar( array(
-        'name' => __( 'Footer', 'infralab' ),
-        'id' => 'footer-widget',
-        'before_widget' => '<div id="%1$s" class="%2$s">',
-        'after_widget' => "</div>",
-        'before_title' => "",
-        'after_title' => "",
-    ) );
-}
-add_action( 'widgets_init', 'infralab_widgets_init' );
-
 function removeHeadLinks() {
    remove_action('wp_head', 'rsd_link');
    remove_action('wp_head', 'wlwmanifest_link');
