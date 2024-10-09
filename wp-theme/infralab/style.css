@@ -414,6 +414,10 @@ a {
     font-variation-settings: "wght" 400;
 }
 
+.item-title .title {
+    font-variation-settings: "wght" 600;
+}
+
 .item-content {
     padding: 1em 0 0.5em;
 }
