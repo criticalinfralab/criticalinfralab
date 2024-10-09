@@ -393,6 +393,7 @@ a {
 .item:not(.empty-content) .item-title {
     padding-right: 50px; /* prevent arrow from wrapping to next line */
     cursor: pointer;
+    font-size: var(--basefontsize);
 }
 
 .home .item:not(.empty-content) .item-title:after, /* blogposts */

@@ -8,13 +8,13 @@
     <?php if(has_tag('has-recording')): ?>
        <span class="has-recording" title="This item has a link to a recording."><!-- has link to a recording --></span>
     <?php endif; ?>
-    <h4 class="item-title">
+    <h3 class="item-title">
         <em class="category"><?php echo $category[0]->cat_name; ?></em>
         <span class="title"><?php the_title(); ?></span>
         <?php if(!is_sticky()): ?>
         <span class="date"><?php the_time('F Y');?></span>
         <?php endif; ?>
-    </h4>
+    </h3>
     <?php if ( !empty( get_the_content() ) ): ?>
     <div class="item-content hidden"><?php the_content(); ?></div>
     <?php endif; ?>
