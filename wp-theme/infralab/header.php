@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <link rel="profile" href="http://gmpg.org/xfn/11" />
-    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?revalidate" type="text/css" media="all">
+    <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>?revalidate151024" type="text/css" media="all">
     <link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php bloginfo('rss2_url'); ?>">
     <?php wp_head(); ?>
 </head>
