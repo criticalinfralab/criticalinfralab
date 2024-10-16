@@ -13,11 +13,11 @@
 <body <?php body_class(); ?>>
     <div id="header">
         <h1 class="site-title">
-            <?php if(!is_front_page()): ?><a href="<?php bloginfo('url'); ?>" title="go to startpage"><?php endif; ?>
+            <?php if(!is_front_page()): ?><a href="<?php bloginfo('url'); ?>" title="Go to the landing page"><?php endif; ?>
             <?php bloginfo('name'); ?>
             <?php if(is_home()): ?></a><?php endif; ?>
         </h1>
         <div id="antennaspace"><!-- space for antennas --></div>
-        <a class="button" id="eyecare" href="#">desaturate</a>
+        <span class="button" id="eyecare" href="#">desaturate</span>
     </div>
     <div id="container">
