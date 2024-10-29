@@ -138,6 +138,7 @@ if test -f 2colophon.md; then
            --filter ../filters/deleteemptyheader.py\
            --lua-filter ../filters/remove-space-before-note.lua\
            --pdf-engine=weasyprint\
+           --pdf-engine-opt=--pdf-variant=pdf/ua-1\
            --dpi=300\
            --css=../assets/colophon.css\
            -o /tmp/render/2.pdf
@@ -157,6 +158,7 @@ if test -f 3main.md; then
        --filter ../filters/deleteemptyheader.py\
        --lua-filter ../filters/remove-space-before-note.lua\
        --pdf-engine=weasyprint\
+       --pdf-engine-opt=--pdf-variant=pdf/ua-1\
        --dpi=300\
        --css=../assets/print.css\
        -o /tmp/render/3.pdf
@@ -200,7 +202,7 @@ cp -v ../assets/placeholder-cover-inside-A4-orange-bleed-surely-there.pdf /tmp/r
 qpdf --empty --pages /tmp/render/?.pdf -- ../output/CIL$N.pdf
 
 # 7. Clean up
-rm -rf /tmp/render
+# rm -rf /tmp/render
 cd ..
 echo "Wrote CIL$N.pdf to the \"output\" directory."
 
