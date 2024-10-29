@@ -177,7 +177,7 @@ else
 fi
 
 # 5. Insert orange pages for the inside of the cover pages
-## Rename files to make space for orange pages 
+## Rename files to make space for orange pages
 
 # 1 cover (was 1)
 # 2 orange (new)
@@ -192,7 +192,7 @@ mv 3.pdf 4.pdf
 mv 2.pdf 3.pdf
 cd -
 
-## Copy organge pages in place
+## Copy orange pages in place
 
 cp -v ../assets/placeholder-cover-inside-A4-orange-bleed-surely-there.pdf /tmp/render/2.pdf
 
@@ -211,5 +211,5 @@ if ps ax | grep -v grep | grep CIL$N.pdf; then
 else
     echo DONE
     echo "Opening the document in PDF reader using xdg-open."
-    xdg-open output/CIL$N.pdf & 
+    xdg-open output/CIL$N.pdf &
 fi
