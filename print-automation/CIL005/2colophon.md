@@ -1,3 +1,6 @@
+---
+lang: en-GB
+---
 # Shifting terrain: “Standards, Protocols, Ecosystem”
 
 <section id="colophon">

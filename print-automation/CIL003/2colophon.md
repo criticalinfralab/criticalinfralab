@@ -1,3 +1,6 @@
+---
+lang: en-GB
+---
 <div class="blankpage"></div>
 
 <div style="margin-top: +26em">
