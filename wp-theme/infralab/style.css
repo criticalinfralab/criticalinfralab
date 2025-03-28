@@ -1,6 +1,6 @@
 /*
 Theme Name: criticalinfralab
-Version: 1.5
+Version: 1.7
 Theme URI: https://criticalinfralab.net
 Author: U. Uhlig
 Author URI: https://www.curlybracket.net
@@ -161,7 +161,7 @@ a {
 
 .button.reveal {
     display: inline-block;
-    margin-top: 1em;
+    margin-top: -1px;
 }
 
 .alignright {
@@ -238,13 +238,18 @@ a {
 #footer {
     margin-top: 3em;
     padding-bottom: 1.5em;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 1em;
+    align-items: center;
 }
 
 #footer img {
-    width: 180px;
-    max-width: 20%;
+    max-height: 45px;
+}
+
+#footer img:nth-child(3n) {
+    margin: auto;
 }
 
 #canvas {
@@ -289,6 +294,7 @@ a {
 }
 
 .section-content {
+    border-top: 1px solid var(--color2);
     border-bottom: 1px solid var(--color2);
 }
 
@@ -309,7 +315,13 @@ a {
     transition: 0.5s ease-in-out;
 }
 
-/* publication categories */ 
+.section-content .item:first-child,
+.section#section-publications .section-content p:first-child,
+.section-content:has(h1) {
+    border-top: none;
+}
+
+/* publication categories */
 .section#section-publications .section-content p:before {
     content: " ";
     width: 25px;
@@ -381,6 +393,7 @@ a {
 .item:not(.empty-content) .item-title {
     padding-right: 50px; /* prevent arrow from wrapping to next line */
     cursor: pointer;
+    font-size: var(--basefontsize);
 }
 
 .home .item:not(.empty-content) .item-title:after, /* blogposts */
@@ -399,6 +412,10 @@ a {
 
 .item-title .date {
     font-variation-settings: "wght" 400;
+}
+
+.item-title .title {
+    font-variation-settings: "wght" 600;
 }
 
 .item-content {
@@ -517,4 +534,9 @@ a {
         padding-top: 1em;
     }
 
+}
+@media all and (min-width: 1025px) {
+    #footer {
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
 }

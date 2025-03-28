@@ -1,3 +1,7 @@
+---
+lang: en-GB
+---
+
 # Example title
 
 <div id="colophon">

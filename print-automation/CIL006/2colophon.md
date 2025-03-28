@@ -1,3 +1,6 @@
+---
+lang: en-GB
+---
 # Network paradigms and infrastructural ideologies: <span>Standards and protocols in a geopolitical context</span>
 
 <div id="colophon" style="margin-top: +40em">

@@ -144,6 +144,7 @@ if test -f 2colophon.md; then
            --filter ../filters/deleteemptyheader.py\
            --lua-filter ../filters/remove-space-before-note.lua\
            --pdf-engine=weasyprint\
+           --pdf-engine-opt=--pdf-variant=pdf/ua-1\
            --dpi=300\
            --css=../assets/colophon.css\
            -o /tmp/render/2.pdf
@@ -163,6 +164,7 @@ if test -f 3main.md; then
        --filter ../filters/deleteemptyheader.py\
        --lua-filter ../filters/remove-space-before-note.lua\
        --pdf-engine=weasyprint\
+       --pdf-engine-opt=--pdf-variant=pdf/ua-1\
        --dpi=300\
        --css=../assets/print.css\
        -o /tmp/render/3.pdf
@@ -181,7 +183,7 @@ else
 fi
 
 # 5. Insert orange pages for the inside of the cover pages
-## Rename files to make space for orange pages 
+## Rename files to make space for orange pages
 
 # 1 cover (was 1)
 # 2 orange (new)
@@ -207,6 +209,8 @@ qpdf --empty --pages /tmp/render/?.pdf -- ../output/CIL$N.pdf
 
 # 8. Clean up
 rm -rf /tmp/render
+# rm -rf /tmp/render
+
 cd ..
 echo "Wrote CIL$N.pdf to the \"output\" directory."
 
@@ -215,6 +219,6 @@ if ps ax | grep -v grep | grep CIL$N.pdf; then
 else
     echo DONE
     echo "Opening the document in PDF reader using xdg-open."
-    xdg-open output/CIL$N.pdf & 
+    xdg-open output/CIL$N.pdf &
 fi
 

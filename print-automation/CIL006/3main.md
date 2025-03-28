@@ -2,8 +2,6 @@
 
 \ 
 
-\ 
-
 ###### *For the Missing Layers “standards & protocols workstream” collaboration.*
 
 > *A draft of this report been released for the
