@@ -35,11 +35,13 @@ N=$(printf "%03d\n" $N) # Pad to three digits.  Example: 3->003; 33->033; 333->3
 
 # Utility functions
 
-is_debian_based () {
+is_distro_compatible () {
     if test -f "/etc/debian_version"; then
         echo Found Debian-based GNU/Linux distro.  Good!
+    elif test -f "/etc/fedora-release"; then
+        echo Found Fedora-based GNU/Linux distro.  Good!        
     else
-        echo You need a Debian-based GNU/Linux distro to run this script.
+        echo You need a Debian-based or Fedora-based GNU/Linux distro to run this script.
         echo ERROR Incompatible OS: Not a Debian-based GNU/Linux operating system distribution
         exit 1
     fi
@@ -77,9 +79,11 @@ is_installed_npm () {
 # 0. Sanity checks
 
 ## Check if this is a Debian-based distro
-is_debian_based
+is_distro_compatible
 
 ## Check Debian package dependencies
+## If necessary, `apt install on3-pandocfilters python-is-python3 weasyprint qpdf npm`
+
 for x in pandoc\
              python3-pandocfilters\
              python-is-python3\
@@ -89,6 +93,8 @@ for x in pandoc\
     echo Checking for Debian package dependency $x
     is_installed_apt $x
 done
+
+
 
 ## Check NPM package dependency
 is_installed_npm pagedjs-cli
@@ -190,16 +196,16 @@ mv 3.pdf 4.pdf
 mv 2.pdf 3.pdf
 cd -
 
-## Copy organge pages in place
+## 6. Copy orange pages in place
 
 cp -v ../assets/placeholder-cover-inside-A4-orange-bleed-surely-there.pdf /tmp/render/2.pdf
 
 cp -v ../assets/placeholder-cover-inside-A4-orange-bleed-surely-there.pdf /tmp/render/5.pdf
 
-# 6. Combine cover, text, and backcover
+# 7. Combine cover, text, and backcover
 qpdf --empty --pages /tmp/render/?.pdf -- ../output/CIL$N.pdf
 
-# 7. Clean up
+# 8. Clean up
 rm -rf /tmp/render
 cd ..
 echo "Wrote CIL$N.pdf to the \"output\" directory."
@@ -211,3 +217,4 @@ else
     echo "Opening the document in PDF reader using xdg-open."
     xdg-open output/CIL$N.pdf & 
 fi
+
