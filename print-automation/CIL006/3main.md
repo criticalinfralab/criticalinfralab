@@ -1,20 +1,16 @@
----
-lang: en-GB
----
 \ 
 
 \ 
 
-*For the standards & protocols workstream collaboration.*
+###### *For the Missing Layers “standards & protocols workstream” collaboration.*
 
-> *A draft has been released for the debate on <br>
-> “Standards, Protocols and Governance” <br>
-> on the 20^th^ June in Amsterdam, <br>
-> organised by Open Future and <br>
+> *A draft of this report been released for the
+> debate on “Standards, Protocols and Governance” 
+> on the 20^th^ June in Amsterdam, 
+> organised by Open Future and 
 > the critical infrastructure lab.*
 
-
-> *A report of the debate is available as CIL005*: <br>
+> *A report of the debate is available as CIL#005*: <br>
 > <https://doi.org/10.5281/zenodo.10155807>
 
 \newpage
@@ -140,7 +136,7 @@ Network paradigms are few and far between in the history of technology.  It take
 
 I identify three network paradigms in the longitudial study of chapter 3.  Like archaeological artefacts, network paradigms reflect the times, spaces and peoples that produce them.  The engineers, policy makers and advocates that work on communication protocols and other standard elements of media infrastructures that are destined to become part and parcel of a network paradigm in the future are not necessarily aware of all the factors they work into the standards and protocols that they produce.  Nor is such awareness  necessary for successful the standardisation of communication protocols.  That is because they are always already immersed in their own culture and routinely keep their own interests in mind.  Identifying and analysing network paradigms therefore involves shedding light on the unquestioned assumptions, cultural logics, political principles and political-economic realities that served as a backdrop for the production process.
 
-Infrastructural effects exert power in the here and now and can be potentially configured at the deployment stage of an infrastructure.  Network paradigms constitute a totality of infrastructural effects, including the means through which infrastructural effects can be configured.  As such, network paradigms inhabit longer time scales and change incrementally.  A particularly pertinent consequence is that once one has been established, there is no guarantee that it will continue to serve its masters infinitely.  For instance, openness as as it has been inscribed into the Internet protocols may have served US interests at the time, when it has been US capital that was in the best position to compete on the global market.  Today, such openness might serve the interest of ascendant capitalist classes in East Asia that are now competitive with the US information technology industry.  Yet, even the US cannot change the network paradigm of open internetworking in order to correct course.  The already deployed infrastructure continues to shape power relationships according to protocological rules, often long after the demise of its masters.  The durability of the infrastructures is due their hard materiality, large scale and deep integration in the technological systems that increasingly mediate the fabric of social life [@Truscello2020; @PinchHughes1987a].  The geopolitical power struggle has to play out on the grounds of the current emergent network paradigm (smart networks).  What the US can do is to regulate deployment to reconfigure network effects, such as by issueing calls to “rip and replace” Huawei mobile communication hardware [@Cramers2023; @Harwit2023; @deMedeiros+Trebat2024].
+Infrastructural effects exert power in the here and now and can be potentially configured at the deployment stage of an infrastructure.  Network paradigms constitute a totality of infrastructural effects, including the means through which infrastructural effects can be configured.  As such, network paradigms inhabit longer time scales and change incrementally.  A particularly pertinent consequence is that once one has been established, there is no guarantee that it will continue to serve its masters infinitely.  For instance, openness as as it has been inscribed into the Internet protocols may have served US interests at the time, when it has been US capital that was in the best position to compete on the global market.  Today, such openness might serve the interest of ascendant capitalist classes in East Asia that are now competitive with the US information technology industry.  Yet, even the US cannot change the network paradigm of open internetworking in order to correct course.  The already deployed infrastructure continues to shape power relationships according to protocological rules, often long after the demise of its masters.  The durability of the infrastructures is due their hard materiality, large scale and deep integration in the technological systems that increasingly mediate the fabric of social life [@Truscello2020; @PinchHughes1987a].  The geopolitical power struggle has to play out on the grounds of the current emergent network paradigm (smart networks).  What the US can do is to regulate deployment to reconfigure network effects, such as by issueing calls to “rip and replace” Huawei mobile communication hardware [@Cramer2023; @Harwit2023; @deMedeiros+Trebat2024].
 
 I show in chapter 4 in a cross-sectional study of identity protocols that specific communication protocols — used on the Internet, in mobile telecommunications, or in smart networks — hark back to specific network paradigms that serve to frame them.  Network paradigms provide frameworks for protocol development and come with their own ideological committments.  The next section concentrates on unpacking the ideological character of infrastructures, and why it is useful to consider infrastructural ideologies in policy and advocacy work.
 
@@ -160,11 +156,11 @@ All ideologies make misleading promises to users in response to users' demand, p
 
 \newpage
 
-#  3 \ Longitudial study: <span>Network paradigms</span>
+#  3 \ Longitudial study: Network paradigms
 
 ##  3.1 \ *Internet: open internetworking*
 
-*…where users identify with specific computers.*
+***…where users identify with specific computers.***
 
 The US could design a new network paradigm at the historical moment after the collapse of the USSR, taking advantage of its newly confirmed hegemonic position in the world system.  The ideology of openness has its roots in the 19^th^ century, when Open Doors was a trade doctrine devised for China that the US pursued as an alternative to colonialism [@Russell2014 8], aiming for a “world open to American ideas and influence” [@Appelman_Williams1978] – a form of economic imperialism.  During the Cold War, US propaganda framed the Soviet Block as a closed world, while the Western side of the iron curtain has been pronounced the free and open world.  Since neoliberalism was enacted into policy in the 1980s, it justified opening markets to US capital.  The Internet cemented the US' superpower status for the next decades, showcased its cultural and technological leadership, and facilitated unequal exchange through  open markets.
 
@@ -186,7 +182,7 @@ Thus, users end up identifying themselves on the Application layer, which sits o
 
 ##  3.2 \  *GSM: mobile cellular networks*
 
-**…where Users identify with the network.**
+***…where users identify with the network.***
 
 European telecommunications firms — the so-called “national champions” ^[While Nokia and Ericsson stand out as vendors of network equipment and solutions, national service providers in major European economies contributed significantly to mobile phone standards.] led the contribution of a new network paradigm in the 1990s and early 2000s.  Supported by the US through the Marshall plan, Europe has been rebuilt following the Second World War.  After the fall of the Berlin wall, European economies re-integrated into the global division of labour.  Internally, European integration was achieved first through the European Economic Community (1957), and then through the European Union (1993).  The tension between a relatively advanced economic union and a more limited political union continued to plague the emergence of a new superpower to this day.
 
@@ -214,7 +210,7 @@ In summary, the subject position harks back to the Westphalian sovereignty of Eu
 
 ##  3.3 \  *5G: smart networks*
 
-*…where users identify with a combination of the network and the computers.*
+***…where users identify with a combination of the network and the computers.***
 
 Smart networks refer to a whole new set of technologies, standards and protocols that open up market segments such as software-defined networking, Internet of Things, and edge computing.  While these industry buzzwords are loosely defined, 5G infrastructures are actually existing applications of those ideas, based on a standardised protocol suite.  My assumption is that the convergence of networking and computing at the heart of 5G networks constitutes a new network paradigm of its own.  I theorise this new network paradigm as that of *programmable infrastructures*.
 
@@ -264,19 +260,36 @@ In the next section, I analyse the Aadhaar identity solution, which *has* achiev
 
 ###### 6622-2350-9284
 
-The second case study is about Aadhaar, a proof of residence managed by the Unique Identification Authority of India (UIDAI).  As seen on the left of this paragraph, the identification is a simple twelve digit number.  The number also comes printed on a card that includes additional information like a photograph and the basic personal details of the subject.  Users' biometric data such as iris scans and fingerprints are attached to their digital file.  Aadhaar is used for both authentication and authorisation to access government subsidies, apply for loans, acquire a SIM card, make online payments  [@OHara+Hall2021 190-193].  It functions in a larger API ecosystem dubbed the India Stack, taking clues from the open-source movement and open standards such as the OpenID discussed in the previous section.
+The second case study is about Aadhaar, a proof of residence managed by the Unique Identification Authority of India (UIDAI).  As seen on the left of this paragraph, the identification is a simple twelve digit number.  The associated document can be printed on a card that includes additional information such as a photograph and the basic personal details of the subject.  Users' biometric data such as iris scans and fingerprints are attached to their digital file in a central database.  Aadhaar is used for both authentication and authorisation to access government subsidies, apply for loans, acquire a SIM card, make online payments  [@OHara+Hall2021 190-193].  It functions in a larger API ecosystem dubbed the India Stack, taking clues from the open-source movement and open standards such as the OpenID discussed in the previous section.
 
 A significant limitation of the system is that it is only useful in the Indian context.  While India is exporting the technology itself, cross-national interoperability understandably remains a low priority.  This identification protocol is closely coupled to the territory of national sovereignty.  Indeed, its purpose is arguably the gatekeeping of the national polity.  This is in stark contrast with OpenID, where it has been an unquestioned assumption that the technology will work in a borderless world and serve a global market dominated by the US firms on its governance board.
 
-Therefore, I argue that Aadhaar shares its assumptions with the network paradigm of cellular mobility, even if in this case it is perhaps social mobility that is the key promise of the technology.  Be it as it may, the price to pay is social control, since the identification offered by Aadhaar is strongly anchored in materiality, biology and legal provisions.  The limitation to the territory, and through the territory, the anchor in state sovereignty, makes Aadhaar a very powerful identification solution, for better or worse.  Aadhaar’s interoperability is conceived within the limited perimeter of a national network just like with the GSM protocol.  For the same reason, Aadhaar has been criticised for allowing promiscuous access for the public and private sector to the personal information of users, a criticism upheld by the Supreme Court [@Bhatia2019].
+Therefore, I argue that Aadhaar shares its assumptions with the network paradigm of cellular mobility, even if in this case it is perhaps social mobility that is the key promise of the technology.  Be it as it may, the price to pay is social control, since the identification offered by Aadhaar is strongly anchored in materiality, biology and jurisdiction.  The limitation to the territory, and through the territory, the anchor in state sovereignty, makes Aadhaar a very powerful identification solution, for better or worse.  Aadhaar’s interoperability is conceived within the limited perimeter of a national network just like with the GSM protocol.  For the same reason, Aadhaar has been criticised for allowing promiscuous access for the public and private sector to the personal information of users, a criticism upheld by the Supreme Court [@Bhatia2019].
 
-Even though the Supreme Court also ruled that nobody can be denied their rights because of the lack of a unique ID, it seems increasingly difficult to get by without one, and a matching mobile phone.  Indeed, Aadhaar has been developed with a population in mind where mobile phone adoption is far ahead of the adoption of personal computers.  In this capacity, the system both overcame and entrenched the digital divide.  It increased access for those who manage to benefit from the system, while also increased the exclusion of those for whom the infrastructure does not work, for whatever reason.  As a successful infrastructural ideology, Aadhaar might have empowered citizens, but also increased the hold of the state over their lives.
+Even though the Supreme Court also ruled that nobody can be denied their rights because of the lack of a unique ID, it seems increasingly difficult to get by without one, and a matching mobile phone.  Indeed, Aadhaar has been developed with a population in mind where mobile phone adoption is far ahead of the adoption of personal computers.  In this capacity, the system both overcame and entrenched the digital divide.  It increased access for those who manage to benefit from the system, while also increased the exclusion of those for whom the infrastructure does not work, for whatever reason.  As a successfully performed infrastructural ideology, Aadhaar might have empowered citizens, but at the same time surely increased the hold of the state over their lives. ^[See @Bhandari2020 for a thorough critical analysis of the identity solution from a digital rights point of view.]
 
-\newpage
+<!-- \  -->
 
-## 4.3 \ European self-sovereign identity
+<!-- \  -->
 
-TODO
+<!-- ![](images/lower+aadhar.png#fullcolumnwidth){style="margin-left: -10mm"} -->
+
+## 4.3 \ *European self-sovereign identity: interoperable sovereignty*
+
+###### **did:example:123456789abcdefghi**
+
+The third case study is about The example on the right of this paragraph shows a Decentralised Identifier as it was standardised by the World Wide Web Consortium [-@did].  It serves as a unique reference to an entity that is decentralised as far as it is not residing exclusively with an identity provider such as a state institution (as in the case of Aadhaar) or a service provider company (as in the case of OpenID).  European citizens with DIDs can store their “identity wallet” in the cloud, while determining what information to share with which parties, and simultaneously being able to receive official attestations of properties that flesh out their digital identity built around their unique identifier.  European self-sovereign identity is based on the network paradigm of programmable infrastructures, embedded in a blockchain platform.  While the blockchain is another example of programmable infrastructures, it is different from the 5G networks discussed in section 3.3.
+
+In contrast to 5G networks, the blockchain does not provide a material basis such as device, subscriber number or SIM card.  Neither does it is rooted in a sovereign foundation such an underlying national jurisdiction, or even a circumscribed territory such a nation-wide deployed radio access network.  In diametrical opposition to the logic of 5G networks, blockchains have been conceived with the idea to transcend these perceived limitations and restore user control of technology. ^[Restoring user control of technology is measured in relation to the ideas and ideals of the early Internet.  Hence, it is commonly referred to as a process of *redecentralisation*.  @Ibanez+2017 is an illustrative example, and @Schneider2019 a fitting critique along the lines that I advance in this report.  An overview of the theoretical problematic on an exemplary case study is to be found in @Smith+Burrows2021.]  The conventional promise of the blockchain is to provide a technological fix to the problem that the production of subjects necessarily involves a sovereignity, including a regime of identity to which subjects are subject to.  In the ideal blockchain, the subject interpellates itself, and interpellated by subjects of equal sovereignty. 
+
+Is a European self-sovereign identity a contradiction in terms, then?  Or worse, a threat to the technological sovereignty of the geopolitical power block as well as the national sovereignty of its member states?  None of the above, but it is certainly true that the standardisation, implementation and deployment of a European self-sovereign identity has to contend with resolving the contradictions between the promises associated with “European” and “self-sovereign” identities, respectively.  That work can be attempted under the aegis of programmable infrastructures that provide enough plasticity for protocol design, power distribution and legal provisions. ^[The conceptual term for resolving the political paradox through such a combination of legal provisions and technical architecture is *legally embedded self-sovereign identity* [LESS, @Bouma2018]].
+
+European self-sovereign identity brings together a number of infrastructural elements in order to create an extremely ambitious — but relatively elegant — identity solution, where trust is rooted in sovereignty, yet a degree of user control is maintained.  Notably, the technology exists only as prototype, without a clear plan for mass adoption.  Despite its questionable practical value, the case was chosen because it represents some of the most advanced scheming towards a next generation of identity protocols [@Windley2023, Chapter 2, “Locus of Control”].  Going beyond the limitations of the subjects of the previous case studies (OpenID and Aadhaar).  In that capacity, it is worth to discuss it even if it is easy to argue that it is bound to fail to deliver on its promises for the simple reason that an individual subjects’ sovereignty can seldom override the power of a major geopolitical player such as the European Union.
+
+The infrastructural elements at play in European self-sovereign identity are the following.  The overall legal framework for digital identity in the Digital Single Market harks back to the Electronic Signatures Directive in 1999, when the European Parliament required each member state to develop digital identity solutions.  ^[“Directive 1999/93/EC of the European Parliament and of the Council of 13 December 1999 on a Community framework for electronic signatures.”]  Later in 2014, the eIDAS regulation defined a roadmap for technological interoperability and legal harmonisation ^[“Regulation (EU) No 910/2014 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 23 July 2014 on electronic identification and trust services for electronic transactions in the internal market and repealing Directive 1999/93/EC”.].  Notably, the legal requirements have been defined in a technology agnostic manner, so that many different implementations of digital identity can qualify [@Alamillo-Domingo2021 401].  Finally, the European Commission defined the European Self-Sovereign Identity Framework (ESSIF), a specification for the implementation of a particular digital identity solution that is compatible with the aforementioend eIDAS.
+
+Meanwhile on the technical side, the European blockchain services infrastructure (EBSI) have been developed.  EBSI provides a computing environment where the “digital identity wallets” specified by ESSIF can be stored and manipulated.  Again, EBSI has been designed to conform with existing regulations both as they pertain to personal information such as the General Data Protection Regulation (GDPR) and digital infrastructure such as the NIS and NIS2 Directives on the Security of Network and Information Systems. ^[“Directive (EU) 2016/1148 of the European Parliament and of the Council of 6 July 2016 concerning measures for a high common level of security of network and information systems across the Union.”]  It can be a cross-border digital identity that is *both* legally valid *and* technically interoperable.  Notably, none of the aforementioned identity solutions (OpenID and Aadhaar) qualify for both, but they both work right now in practical real world applications.  The European self-sovereign identity exists as a legal framework, a technical specification, a network and computing infrastructure, as well as a reference implementation and testbed.  All of those are intended to support the development of real world national idenity solutions to be used in the context of the Digital Single Market.
+
 
 #  5 \ Strategic outlook in protocols and identities
 
@@ -284,23 +297,27 @@ TODO
 
 Identity protocols are as powerful as the sovereignty backing them.  Protocol design can tie a digital identity to lower protocol layers in the stack, and through the lower layers to materiality outside the digital realm, and through such materiality, to the territory, and through the territory, to the sovereignty of the state.  Design choices are political in so far as they negotiate the tradeoff between a strong identity giving more power over the user to the operators, or a weak identity that is practically less useful to its end users.
 
-In the case of the Internet, the identity provisioned by the network ideology of open internetworking conceived the world as an open market of permissionless participationa and innovation.  This has led to a fragmented identity landscape where users identify with the many particular computers connected to the network.  Service providers such as Google, Apple, Facebook, Amazon and  Microsoft (GAFAM) in the US arguably opted for advancing their own platform sovereignty in order to produce relatively strong user identities.  Identification happens on the Application Layer where each service provider is left to their own device to provision identities.
+In the case of the Internet, the identity provisioned by the network ideology of open internetworking conceived the world as an open market of permissionless participation and innovation.  This has led to a fragmented identity landscape where users identify with the many particular computers connected to the network.  Service providers such as Google, Apple, Facebook, Amazon and  Microsoft (GAFAM) in the US arguably opted for advancing their own platform sovereignty in order to produce relatively strong user identities.  Identification happens on the Application Layer where each service provider is left to their own device to provision identities.
 
-OpenID fits into the network paradigm of open internetworking becasuse it provides a lightweight identity that any actor on the open market can offer.  In this capacity, it is not designed or intended to address the need for a powerful identity provision that would make it really useful for the most important things people need to get done in their lives.  Failing that, its decentralised model is outcompeted by the platform monopolies that can provision an equivalent lightweight identity and take advantage of their monopolies for adoption.
+OpenID fits into the network paradigm of open internetworking because it provides a lightweight identity that any actor on the open market can offer.  In this capacity, it is not designed or intended to address the need for a powerful identity provision that would make it really useful for the most important things people need to get done in their lives.  Failing that, its federated model is outcompeted by the platform monopolies that can provision an equivalent lightweight identity and take advantage of their monopolies for adoption.  Rather than convergence as a result of the standardisation, what ensued after OpenID has been standardised was competition in the market segment of digital identity provision.
 
-In the case of mobile telecommunications, the communication protocol stack has been developed and it is managed by national champions that offer mobility within national borders in exchange for strong identity provision.  Devices, SIM cards, and subscriber contracts are identified at the moment when connection is established with the network, so that users identify directly with the network itself.  The identity provision is a powerful one that even actors on the internet ^[That is, working within the open internetworking paradigm.] reach out to in order to identify their users, namely through SMS and phone calls.  The latter replace the Internet-native email mailbox as the anchor of user identity.  However, telecommunications corporations cannot expose the low-level identification behind making phone calls and sending text messages as a service that can be reused by third parties.
+In the case of mobile telecommunications, the communication protocol stack has been developed and it is managed by national champions that offer mobility within national borders in exchange for strong identity provision.  Devices, SIM cards, and subscriber contracts are identified at the moment when connection is established with the network.  Thus, users identify directly with the network itself.  The identity provision is a powerful one.  The identity solution baked into telecommunications protocols features authentication and authorisation.  What is authorised is the access to the network.  The authentication is so effective that even actors on the internet — that is, working within the open internetworking paradigm — reach out the telecommunications networks to identify their users, namely through SMS and phone calls.  The paradigmatic example was the authentication that precedes the authorisation to acces the WiFi network in public spaces such as libraries.  SMSs and phone calls replace the Internet-native email mailbox as the anchor of user identity.  However, telecommunications corporations cannot expose the low-level identification behind making phone calls and sending text messages as a service that can be reused by third parties.
 
-Aadhar follows the pattern of cellular mobility, aiming for a powerful identity provision backed up by state sovereignty, and consequently it is limited to the perimeter of the national context by design.  The powerful identity Aadhaar provides is tied to the materiality of the human body through biometrics, in addition to SIM cards and legal frameworks provided by the state.  While many citizens benefit from a strong digital identity, the public interest is at jeopardy when different kinds of anchors for identity and personal information from various sources is pooled to the same database without appropriate access control guarantees.  Furthermore, for those for whom Aaadhar does not work, it itself becomes a barrier for access to essential public and private services.
+Aadhaar follows the pattern of cellular mobility, aiming for a powerful identity provision backed up by state sovereignty, and consequently it is limited to the perimeter of the national context.  The powerful identity that Aadhaar provides is tied to the materiality of the human body through biometrics, in addition to SIM cards and legal frameworks provided by the state.  While many citizens benefit from a strong digital identity, the public interest is at jeopardy when different kinds of anchors for identity and personal information from various sources is pooled to the same database without appropriate access control guarantees.  Furthermore, for those for whom Aadhaar does not work, it becomes a barrier for access to essential public and private services.  Thus, Aadhaar expresses the paradox at the heart of identity.  Since identity is relational, participating in an identity regime means becoming subject to a sovereign power.
 
-In the case of smart networks, I observe a convergence between the computers with which Internet users identify with, and the networks that mobile phone users identify with.  The convergence makes it possible for carriers to expose strong user identities that are established at a very low level of the protocol stack, in the Data Layer, as a business-to-business service that can become available to third parties providing user-facing services on the Application Layer.  The combination yields relatively powerful identities that are potentially operative on a planetary scale, transcending the territorial limitations of sovereign power.
+That is exactly what the work on European self-sovereign identities attempts to address.  ESSIF is designed to mobilise sovereign power and digital infrastructures in order to yield control to individual users without hollowing out the feature set that a strong digital identity can offer.  ESSIF identities are not necessarily tied to a material token or even a legally binding contract between the user and the provider.  They rely on a permissioned blockchain implementing a ledger where users keep so-called “identity wallets”.  The underlying idea is that the user is in control of what they expose to whom, while authorities can make verifiable attestations that feed into the wallet.  Since the framework exists to provide for interoperability between national identity regimes, its promises towards serving the public interest are as good as the inderlying juridictions would cater for.  Conversely, putting users in control of their identities might put too much responsibility on data subjects.  Similarly to Aadhaar, the system assumes a level of digital literacy from citizens that is unevenly distributed.  The might digital divide counterweight the autonomy gained by citizens.
+
+In the case of smart networks, I observe a convergence between the computers with which Internet users identify with, and the networks that mobile phone users identify with.  The convergence makes it possible for carriers to expose on the high level Application Layer the strong user identities that are established at a very low level of the protocol stack.  As a business-to-business service, such identity exposure can become available to third parties providing user-facing services, such as eIDAS-compatible identity solutions.  The combination yields relatively powerful identities that are potentially operative on a planetary scale, transcending the territorial limitations of sovereign power. <!-- ^[Notably, this development puts the industry body called the GSM Association (GSMA) in a strategic position, since it is the organisation that is in charge of coordinating subscriber identity numbering such as IMEI worldwide.] -->
 
 ##  5.2 \ *Strategic outlook*
 
 I argued that the proposition and imposition of interoperable protocols and standards – for communication interconnection or digital identity provision — hinges on the question of sovereignty.  Users who are immersed in these media and control environments subject themselves to power structures larger than themselves.  Consequently, it is a crucial question *what kind of powers should provision communication protocols and identity standards so that those infrastructures would best serve the public interest?*
 
-I demonstrated that in the case of the Internet, it was the US who was in a position to propose and impose a new network paradigm at the time and the infrastructural ideology of open internetworking has been based on US foreign policy doctrines.  The industrial consortium behind OpenID could not reach its goal for the wide adoption of its identity provision standard, and even though the design goals of the protocol has been limited.  The next network paradigm has been advanced by European national champions who opted for a stronger identification regime in the new communication protocol stack, inspired by the political experience and economic reality of the European single market and community.  This has achieved limited success because interoperability was constrained by the identity being readily available only to the carriers themselves, and seamless mobility has been achieved by the design only within a single carrier network.
+I demonstrated that in the case of the Internet, it was the US who was in a position to propose and impose a new network paradigm at the time and the infrastructural ideology of open internetworking has been based on US foreign policy doctrines.  The industrial consortium behind OpenID could not reach its goal for the wide adoption of its identity provision standard even though the design goals of the protocol are limited.  The next network paradigm has been advanced by European national champions who opted for a stronger identification regime in the new communication protocol stack, inspired by the political experience and economic reality of the European single market and community.  This has achieved limited success because interoperability was constrained by the identity being readily available only to the carriers themselves, and seamless mobility has been achieved by the design only within a single carrier network.
 
-The Indian state efficiently backed and rolled out Aaadhaar, a national digital identity system that provides strong identification by design, and can be used by third parties, which presented its own set of challenges.  The network paradigm of smart networks, epitomised by 5G, promises a flexible vertical integration between different functions of the protocol stack, which would allow strong low-level identities to be exposed to third parties in the form of a business-to-business service.  Such programmable infrastructures are currently backed by Chinese political ambitions, manufacturing capacity and engineering prowess.  5G networks are thus an element in an overarching geopolitical strategy through which the country pursues to project its power infrastructurally, as in the wider Belt and Road initiative.
+The Indian state efficiently supported and rolled out Aaadhaar, a national digital identity system that provides strong identification by design, and can be used by third parties, which presented its own set of challenges.  The network paradigm of smart networks, epitomised by 5G, promises a flexible vertical integration between different functions of the protocol stack, which would allow strong low-level identities to be exposed to third parties in the form of a business-to-business service.  Such programmable infrastructures are currently backed by Chinese political ambitions, manufacturing capacity and engineering prowess.  5G networks are thus an element in an overarching geopolitical strategy through which the country pursues to project its power infrastructurally, as in the wider Belt and Road initiative.
+
+The ESSIF proposal is similarly infrastructural in the sense that it is presented as a framework for interoperability between national digital identities.  Yet, its promise is to devolve the power of sovereignty to individual users through a decentralised architecture of access control, as well as through legal embedding, while keeping the states responsible for the development, maintainenance and availability of the underlying technical infrastructure and legal provisions.  Therefore, this third case study of digital identity protocols can be seen as a showcase for the paradox between standards and soverengty.  ESSIF can fall short of its promises in both directions: through states having too much power over individuals that can be exerted through the infrastructure, or individuals left with too many responsibilities that would have to be fulfilled through overly bureaucratic procedures.
 
 The UN Sustainable Development Goals include the recommendation for nation states to provide citizens unique digital identities by 2030.  Who and how will propose and impose the communication protocols and identity standards that make that possible remains to be seen.  Policy advocates may consider whether a strong digital identity backed by low-level identification on the protocol level and powerful sovereignty on the political level is a desirable outcome.  Is it good for citizens and non-citizens to be unambiguously identified?  To what extent stable, rich, and powerful identities may serve the public interest?  Can bodies be separated from the sovereign territory, and can platform monopolies develop their own sovereignty vis-a-vis nation states?  Alternatively, can self-sovereign identities and lightweight communication protocol designs be useful tools to advance the public interest?  These questions point to the underlying problem of how best to distribute power in societies and on a planetary scale.
 
@@ -314,7 +331,7 @@ The eIDAS reform is a strategic point of engagement for European civil society i
 
 The nexus of 5G roll-out and digital identity provision is a crucial conjecture to monitor and engage.  The potential concrete points for intervention are numerous.  On the specific point of 5G roll-out, three promising levels of engagement can be identified:
 
-1. A substantial amount of EU funding from the COVID-19 recovery fund was earmarked for projects advancing the development and deployment of 5G technologies in Europe.  These funds subsidise industrial project with little or minimum impact assessment, civil society participation, or other public interest measures.  They could potentially include all these in the light of high-level language enacted by the Commission about its approach to 5G and related technologies.  National 
+1. A substantial amount of EU funding from the COVID-19 recovery fund was earmarked for projects advancing the development and deployment of 5G technologies in Europe.  These funds subsidise industrial projects with little or minimum impact assessment, civil society participation, or other public interest measures.  They could potentially include all these in the light of high-level language enacted by the Commission about its approach to 5G and related technologies.
 
 2. National spectrum allocations and frequency auctions to support 5G roll-out provide another venue for advancing the public interest.  These have been organised in most European countries as industry-facing processes without public participation or civil society engagement.  As in the case of community radios, it can be argued that the electromagnetic spectrum is a critical natural resource [@Herter_Jr1985], so that civil society should be able to make use of them and the public interest should be safeguarded in their exploitation.
 
@@ -322,53 +339,9 @@ The nexus of 5G roll-out and digital identity provision is a crucial conjecture 
 
 The general principles set out by the critical infrastructure lab for infrastructures to serve the public interest can serve as a guidance in engaging on these three levels.  Infrastructures should be *noticable*, so that citizens should be aware that they are immersed in specific media and control environments.  Moreover, infrastructures should be *observable*, so that citizens should be able to find out what programmable infrastructures do and how they work.  Finally, infrastructures should be *contestable*, so that citizens should have a say in their introduction to the built environment and in their continued operation.
 
-Beyond working upwards towards shaping power dynamics and policy making, broader civil society should work with social movements and rally around citizens' concerns in so far as these are crucial sites where the public interest is articulated.
+Beyond working upwards towards shaping power dynamics and policy making, broader civil society should work with social movements and rally around citizens' concerns in so far as these are crucial sites where the public interest is articulated.  Ultimately, then, sovereign power should not be taken as a given, but a privileged site of contestation around what identity regimes would serve best the public interest.  Whereas in the contemporary historical moment it is often through digital identity protocols that we become subjects of a sovereign power, Antonio Negri reminds us that it is through the *constituent power* exercised by potential subjects that such sovereignty is shaped in the first place.
 
-\ 
-
-\ 
-
-\ 
-
-\ 
-
-\ 
-
-\ 
-
-\ 
-
-\ 
-
-\ 
-
-\ 
-
-\ 
-
-\ 
-
-\ 
-
-\ 
-
-\ 
-
-\ 
-
-\ 
-
-\ 
-
-\ 
-
-\ 
-
-\ 
-
-\ 
-
-> *Open Future and the critical infrastructure lab organised a roundtable debate in Amsterdam on June 20^th^, 2023, to debate the topics of the report.*
+Constituent power is put to work during the insurgency that culminates in refounding state sovereignty on a different basis, but remains a force to be reckoned with every sovereignty is contested [-@Negri1999].  Given the periodic institutional crises of the European Union that hinges on the degree to which it can serve as a political union, and more recent concerns around technological sovereignty, the real question of digital identity is what kind of sovereignty can serve the public interest through granting identity positions to subjects, rather than impose it on them.
 
 ## References
 

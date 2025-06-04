@@ -1,13 +1,11 @@
 ![](../assets/images/cover.svg)\
 
 <div id="header">
-# Down with Datacentres:
-# developing critical policy
-# for environmentally sustainable
-# tech in Europe
+# Down with Data Centres:
+# Developing Critical Policy
 </div>
 
-## Corinne Cath & Fieke Jansen
+## Fieke Jansen & Corinne Cath
 
 <span class="category environment"><!-- dot: possible values: all, environment,
 geopolitics, standards, standards-geopolitics, environment-geopolitics,

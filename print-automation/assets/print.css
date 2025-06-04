@@ -356,7 +356,8 @@ blockquote p,
 dl p {
     margin: 0;
     text-indent: 0;
-    text-align: left;
+    margin-left: -11mm;
+    /* text-align: left; */
 }
 
 dl p {
@@ -366,13 +367,14 @@ dl p {
 dl {
     margin-left: 64mm;
     margin-top: 1em;
-    text-indent: 10mm;
+    /* text-indent: 10mm; */
     margin-bottom: 0;
 }
 
 dt {
-    float: left;
-    margin-right: 0.4em;
+    /* float: left; */
+    /* margin-right: 0.4em; */
+    margin-left: -5mm;
 }
 
 b, strong, dt {
