@@ -1,13 +1,15 @@
 #!/bin/python3
 
+import os
+from glob import glob
+from shutil import copy
 from sys import argv
-from os import chdir, getcwd, path, mkdir, rmdir, remove, replace, walk
 from subprocess import run, DEVNULL, PIPE
 
 # Utility functions ------------------------------------------------------------
 
 def assert_debian_based():
-    if path.isfile('/etc/debian_version'):
+    if os.path.isfile('/etc/debian_version'):
         print("Found Debian-based GNU/Linux distro.  Good!")
     else:
         exit("""
@@ -41,14 +43,15 @@ def assert_correct_type_of_arguments():
                   that points to a relevant directory like CIL001 or CIL999.
             """)
 
-def assert_sudo_capability():
-    su = run(['sudo', '-l'], stdout=DEVNULL)
-    if su.returncode:
-        exit("""
-        You need sudo rights to run this script.
-        PERMISSION ERROR:
-                   Missing sudo rights
-        """)
+def if_su():
+    su = run(['sudo', '--list', '--non-interactive'], stdout=DEVNULL)
+    return su.returncode
+#    if su.returncode:
+#        exit("""
+#        You need sudo rights to run this script.
+#        PERMISSION ERROR:
+#                   Missing sudo rights
+#        """)
 
 def assert_deb_dependency(name):
     dpkg = run(['dpkg', '-s', name], stdout=DEVNULL, stderr=DEVNULL)
@@ -67,35 +70,61 @@ def assert_npm_dependency(name):
         print(f'Found installed NPM package {name}')
 
 def assert_file_dependency(name):
-    if path.isfile(name):
+    if os.path.isfile(name):
         print(f'File dependency {name} exists.  Good!')
     else:
-        print('File dependency $x missing.  Bad!')
+        print(f'File dependency {name} missing.  Bad!')
         print('ERROR: File not found')
         exit(3)
 
 def delete(which):
     '''Delete a directory recursively'''
     print(f'Deleting {which}...')
-    for root, dirs, files in walk(which, topdown=False):
+    for root, dirs, files in os.walk(which, topdown=False):
         for name in files:
-            remove(path.join(root, name))
-            print('RM')
+            os.remove(os.path.join(root, name))
+            print(f'Debug: RM {name}')
         for name in dirs:
-            rmdir(path.join(root,name))
-            print('RMDIR')
-        rmdir(which)
+            os.rmdir(os.path.join(root,name))
+            print(f'Debug: RMDIR {name}')
+        os.rmdir(which)
+        print(f'Debug: RMDIR {which}')
+
+def clean_up():
+    delete(tmpdir)
+    # Sometimes there are also leftover temporary directories from renderers! 
+    # rm -rf /tmp/puppeteer_dev_chrome_profile-* /tmp/weasyprint-*
+    delete('/tmp/puppeteer_dev_chrome_profile-*')
+    delete('/tmp/weasyprint-*')
+    os.chdir(f'{cwd}/{serialdir}')
+    print("Cleaned up the temporary directory!")
 
 def r(cmd):
     '''Run the passed list of command line function and arguments'''
-    run(cmd, stdout=DEVNULL, stderr=DEVNULL)
+    print(f"Executing {cmd}")
+    # run(cmd, stdout=DEVNULL, stderr=DEVNULL)
+    print(run(cmd, capture_output=True))
         
-# Dependencies ----------------------------------------------------------------
+# Constants -------------------------------------------------------------------
 
 # Pad to three digits.  Example: 3->003; 33->033; 333->333
 if len(argv) == 2:
     serial = argv[1].zfill(3)
-    serialdir = 'CIL'+str(serial)+'/'
+    serialdir = f'CIL{str(serial)}/'
+else:
+    serial = 0
+    ls = os.listdir()
+    for x in ls:
+        if "CIL" in x and os.path.isfile(x):
+            x = int(x[3:].lstrip("0"))
+            serial = x if x > serial else x
+    serial = str(serial).zfill(3)
+    serialdir = f'CIL{serial}/'
+
+cwd = os.getcwd()
+
+# Dependencies ----------------------------------------------------------------
+
 dependencies = {}
 dependencies['files'] = ['filters/deleteemptyheader.py',
                          'filters/remove-space-before-note.lua',
@@ -111,17 +140,17 @@ dependencies['Debian'] = ['pandoc',
                           'python3-pandocfilters',
                           'python-is-python3',
                           'weasyprint',
-                          'pdf',
+                          'pdftk-java',
                           'npm']
 dependencies['NPM'] = ['pagedjs-cli']
 tmpdir = '/tmp/render/'
+
 
 # Sanity checks ----------------------------------------------------------------
         
 assert_debian_based()
 assert_correct_number_of_arguments()
 assert_correct_type_of_arguments()
-assert_sudo_capability()
 for name in dependencies['Debian']:
     assert_deb_dependency(name)
 for name in dependencies['NPM']:
@@ -129,59 +158,73 @@ for name in dependencies['NPM']:
 for name in dependencies['files']:
     assert_file_dependency(name)
     
-# Clean up ---------------------------------------------------------------------
-
-delete(tmpdir)
-mkdir(tmpdir)
-chdir(f'CIL{serial}')
-
 # Render -----------------------------------------------------------------------
+
+clean_up()
+os.mkdir(tmpdir)
 
 with open('0title.md') as f: title = f.read()
 
 ## 1. Generate cover
+print()
+print("## 1. Generate cover")
 r (['pandoc',
     '1cover.md',
+    '--metadata',
+    f'title="{title}"',
     '--css=../assets/cover.css',
     '--pdf-engine=pagedjs-cli',
-    f'-o {tmpdir}1.pdf'])
+    f'--output={tmpdir}1.pdf'])
 
 ## 2. Generate colophon
+print()
+print("## 2. Generate colophon")
 r (['pandoc',
     '2colophon.md',
     '--reference-location=section',
-    f'--metadata title="{title}"',
-    '--filter ../filters/deleteemptyheader.py'
-    '--lua-filter ../filters/remove-space-before-note.lua'
+    '--metadata',
+    # f'title="{title}"',
+    '--filter=../filters/deleteemptyheader.py',
+    '--lua-filter=../filters/remove-space-before-note.lua',
     '--pdf-engine=weasyprint',
     '--dpi=300',
     '--css=../assets/colophon.css',
-    f'-o {tmpdir}2.pdf'])
+    f'--output={tmpdir}2.pdf'])
 
 ## 3. Generate pages
+print()
+print("## 3. Generate pages")
 r (['pandoc',
     '3main.md',
-    'reference-location=section',
-    'toc -V toc-title:"Table of Contents"',
-    'toc-depth=2',
-    'citeproc',
-    'bibliography=../assets/xapers.bib',
-    'metadata title="$TITLE"',
-    'filter ../filters/deleteemptyheader.py',
-    'lua-filter ../filters/remove-space-before-note.lua',
-    'pdf-engine=weasyprint',
-    'dpi=300',
-    'css=../assets/print.css',
-    '-o /tmp/render/3.pdf'])
+    '--reference-location=section',
+    '--toc',
+    '-V',
+    'toc-title:Table of Contents',
+    '--toc-depth=2',
+    # '--citeproc',
+    # '--bibliography=../assets/xapers.bib',
+    '--metadata',
+    # f'--title="{title}"',
+    '--filter=../filters/deleteemptyheader.py',
+    '--lua-filter=../filters/remove-space-before-note.lua',
+    '--pdf-engine=weasyprint',
+    '--dpi=300',
+    '--css=../assets/print.css',
+    f'--output={tmpdir}3.pdf'])
 
-# 4. Generate backcover
-r (['pandoc'
+## 4. Generate backcover
+print()
+print("## 4. Generate backcover")
+r (['pandoc',
     '4backcover.md',
     '--css=../assets/backcover.css',
     '--pdf-engine=pagedjs-cli',
-    '-o /tmp/render/4.pdf'])
+    f'--output={tmpdir}4.pdf'])
 
-# 5. Insert orange pages for the inside of the cover pages
+## 5. Insert orange pages for the inside of the cover pages
+print()
+print("## 5. Insert orange pages for the inside of the cover pages")
+
 ## Rename files to make space for orange pages 
 
 # 1 cover (was 1)
@@ -191,16 +234,49 @@ r (['pandoc'
 # 5 orange (new)
 # 6 backcover (was 4)
 
-working_directory = getcwd()
-chdir($tmpdir)
-replace('4.pdf' '6.pdf')
-replace('3.pdf' '4.pdf')
-replace('2.pdf' '3.pdf')
-chdir(working_directory)
+working_directory = os.getcwd()
+os.chdir(tmpdir)
+os.replace('4.pdf', '6.pdf')
+os.replace('3.pdf', '4.pdf')
+os.replace('2.pdf', '3.pdf')
+os.chdir(working_directory)
 
 ## 6. Copy orange pages in place
+print()
+print('## 6. Copy orange pages in place')
+placeholder=f'{os.getcwd()}/../assets/placeholder-cover-inside-A4-orange-bleed-surely-there.pdf'
 
-# cp -v ../assets/placeholder-cover-inside-A4-orange-bleed-surely-there.pdf /tmp/render/2.pdf
+copy(placeholder, f'{tmpdir}5.pdf')
+copy(placeholder, f'{tmpdir}2.pdf')
 
-# cp -v ../assets/placeholder-cover-inside-A4-orange-bleed-surely-there.pdf /tmp/render/5.pdf
+## 7. Join PDF files
+print()
+print('## 7. Join PDF files')
+outputfilepath = f'../output/CIL{serial}.pdf'
+
+print(f"tmpdir = {tmpdir}")
+
+r(['qpdf',
+   '--empty',
+   '--pages',
+   *sorted(glob(f'{tmpdir}?.pdf')),
+   '--',
+   outputfilepath])
+
+## 8. Clean up
+print()
+print('## 8. Clean up')
+clean_up() # again, like in the beginning
+# Leave a copy in /tmp
+copy(outputfilepath, '/tmp/')
+
+## 9. Notify user or open file
+print()
+print('## 9. Notify user or open file')
+print(f"Rendered PDF file ready under {outputfilepath} !")
+print() # Print an empty line when all is done
+
+# Only open the output file in a PDF viewer if there is a graphical environment:
+if 'DISPLAY' in os.environ.keys(): r(['xdg-open', outputfilepath])
+
 

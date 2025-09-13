@@ -34,7 +34,11 @@ p > img { /* cover background image */
 }
 
 #header {
-    transform: rotate(28deg) translateY(15mm) translateX(25mm);
+    /* transform: rotate(28deg) translateY(15mm) translateX(25mm); */
+    /* CIL010 works with this: */
+    transform: rotate(28deg) translateY(12mm) translateX(25mm);
+    /* CIL009 works with this: */ 
+    /* transform: rotate(28deg) translateY(10mm) translateX(20mm); */
     transform-origin: 0 50%;
     width: 145mm;
 }

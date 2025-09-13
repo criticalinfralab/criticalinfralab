@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-:root {
+:root { 
     --color1: #fff;
     --color2: #000;
     --hilight: #ff962e;
@@ -22,7 +22,7 @@
 
 @font-face {
     font-family: 'SourceSerif-Italic';
-    font-style:  normal;
+    font-style:  italic;
     src: url("./fonts/SourceSerif4-Italic.ttf") format("truetype");
 }
 
@@ -46,7 +46,7 @@
 
 @font-face {
     font-family: 'SourceSans-Italic';
-    font-style:  normal;
+    font-style:  italic;
     src: url("./fonts/SourceSans3-Italic.ttf") format("truetype");
 }
 
@@ -89,7 +89,7 @@ body {
     size: a4 portrait;
     bleed: 3mm;
     margin-top: 15mm;
-    margin-bottom: 36mm;
+    margin-bottom: 26mm;
 }
 
 @page:left {
@@ -110,7 +110,7 @@ body {
     size: a4 portrait;
     bleed: 3mm;
     margin-top: 15mm;
-    margin-bottom: 36mm;
+    margin-bottom: 26mm;
 
     @bottom-left:after {
         content: counter(page);
@@ -181,7 +181,7 @@ a {
     text-decoration: none;
 }
 
-/* insert blank page
+/* insert blank page like this:
  * <div class="blankpage"></div> */
 .blankpage {
     break-before: always;
@@ -195,8 +195,13 @@ h1, h2 {
     break-before: always; /* starts a new page before this elm */
 }
 
-h1, h2, h3, h4, h5, h6 { /* no page breaks in or after titles */
+h1, h2, h3, h4 { /* no page breaks in or after titles */
     page-break-inside: avoid;
+    page-break-after: avoid;
+}
+
+.section {
+	page-break-inside: avoid;
     page-break-after: avoid;
 }
 
@@ -206,6 +211,10 @@ p:last-child {
 
 table, figure { /* don't break figures and tables */
     page-break-inside: avoid;
+}
+
+li {
+	margin-left: -4mm;
 }
 
 li:last-child { /* prevent orphan in lists */
@@ -220,13 +229,38 @@ li:first-child { /* prevent orphan in lists */
  * Element styles
  * ***************/
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 { 
     margin-bottom: 0;
     font-weight: normal;
     font-family: "SourceSans-Bold", sans-serif;
     font-variant: slashed-zero;
     font-feature-settings: "ss03" on, "ss04" on, "ss10" on;
     line-height: 24pt;
+}
+
+.pull {
+	margin-bottom: 0;
+	font-weight: normal;
+    font-family: "SourceSans-Bold", sans-serif;
+    font-variant: slashed-zero;
+    font-feature-settings: "ss03" on, "ss04" on, "ss10" on;
+    line-height: 24pt;
+    text-align: left;
+}
+
+.section {
+	margin-top: 6mm;
+    margin-bottom: 0;
+    font-weight: normal;
+    font-family: "SourceSans-Bold", sans-serif;
+    font-variant: slashed-zero;
+    font-feature-settings: "ss03" on, "ss04" on, "ss10" on;
+    line-height: 24pt;
+    text-align: left;
+}
+
+p.section:has(+ol) {
+	margin-bottom: 0;
 }
 
 h1 span,
@@ -240,17 +274,44 @@ h2 {
     line-height: 21pt;
     letter-spacing: 0;
     margin-top: 0;
-    margin-bottom: 30mm; /* 20mm for CIL007 works better. */
+    margin-bottom: 5mm; /* 20mm for CIL007/9 works better. */
 }
 
-h3 {
+h3, h4 {
+    margin-left: 64mm;
     font-size: 12pt;
     line-height: 15.5pt;
     letter-spacing: 0.01em;
     margin-bottom: 0;
 }
 
-h3, h4, h5, figure, ol {
+.section {
+    text-indent: 0;
+    margin-left: 64mm;
+    font-size: 12pt;
+    line-height: 15.5pt;
+    letter-spacing: 0.01em;
+    margin-bottom: 0;
+}
+
+.subsection {
+    text-indent: 0;
+    margin-left: 64mm;
+    font-size: 11pt;
+    line-height: 15.5pt;
+    letter-spacing: 0.01em;
+    margin-bottom: 0;
+}
+
+p.section + p {
+	text-indent: 0;
+}
+
+p.subsection + p {
+	text-indent: 0;
+}
+
+h3, h4, h5, figure {
     margin-left: 64mm;
 }
 
@@ -266,7 +327,39 @@ h6 { /* aka "pulled quote" */
     display: block;
 }
 
+.affiliation {
+	text-indent: 0;
+	text-align: left;
+    border-top: 1px solid;
+    margin-left: 0;
+	margin-bottom: 0;
+    line-height: 14pt;
+    letter-spacing: 0.01em;
+    width: 54mm;
+    float: left;
+    display: block;
+}
+
+.pull { /* aka "pulled quote" */
+	text-indent: 0;
+    border-top: 1px solid;
+    padding-top: 1mm;
+    margin-left: 0mm;
+    margin-bottom: 0.25em;
+    font-size: 11.5pt;
+    line-height: 14pt;
+    letter-spacing: 0.01em;
+    width: 54mm;
+    float: left;
+    display: block;
+}
+
 .footnotes + h6 {
+    break-before: always;
+    float: none;
+}
+
+.footnote + .pull {
     break-before: always;
     float: none;
 }
@@ -275,12 +368,25 @@ h6 { /* aka "pulled quote" */
     margin-top: -20mm;
 }
 
+.footnotes + .pull + p {
+    margin-top: -20mm;
+}
+
 h6,
 h6 + p {
     margin-top: 2.5mm;
 }
 
+.pull,
+.pull + p {
+    margin-top: 2.5mm;
+}
+
 h6 + p {
+    text-indent: 0;
+}
+
+.pull + p {
     text-indent: 0;
 }
 
@@ -332,12 +438,16 @@ li p {
     text-indent: 0;
 }
 
-p, li {
+p {
     text-align: justify;
 }
 
+li {
+	text-align:left;
+}
+
 ol {
-    margin-left: 57mm;
+    margin-left: 55.8mm; 
 }
 
 ol li p {
@@ -388,6 +498,8 @@ i, em {
 
 pre, code {
     font-family: "SourceCode";
+    margin-right: 0;
+    width: 100%;
 }
 
 pre {
@@ -410,15 +522,32 @@ sub {
 
 table {
     font-family: "SourceSans-Regular";
-    margin-left: 63mm;
-    width: 123mm;
-    text-align: left;
+    margin-top: 5mm;
+    margin-bottom: 5mm;
+    margin-left: 64mm;
+    width: 115mm;
     border-collapse: collapse;
     border: .25mm solid;
 }
 
+.widetable {
+	width: 123mm ;
+	margin-left: 0mm;
+}
+
 table thead, table b, table strong {
-    font-family: "SourceSans-Bold";
+    /* font-family: "SourceSans-Regular"; */
+}
+
+table th {
+	text-align: justify !important;
+	padding: 5mm;
+}
+
+table th b, table th em, table th strong {
+	font-style: normal;
+	font-family: "SourceSans-Bold";
+	font-size: 12pt;
 }
 
 table em, table i {
@@ -426,7 +555,8 @@ table em, table i {
 }
 
 table tr {
-    border-bottom: .25mm solid;
+    border-bottom: .5mm solid;
+    border-right: .5mm solid;
 }
 
 table,
@@ -434,10 +564,10 @@ table tr {
     border-color: rgba(0, 0, 0, 0.8);
 }
 
-table th,
+/* table th,
 table td {
     padding: 0 1mm;
-}
+} */
 
 /* footnote references in text */
 
@@ -446,6 +576,7 @@ table td {
     color: #000;
     font-family: "SourceSans-Bold";
 }
+
 /**************
  * images
  * ************/
@@ -470,9 +601,9 @@ img[src$='#fullpagewidth'] {
  * ************/
 
 .footnotes {
-    /* break-before: avoid; */
-    /* page-break-inside: avoid; */
-    /* page-break-after: always; */
+    break-before: avoid;
+/*    page-break-inside: avoid; */
+    page-break-after: always;
     letter-spacing: 0;
     text-align: left;
     display: table;
@@ -489,8 +620,9 @@ img[src$='#fullpagewidth'] {
 }
 
 .footnotes ol {
-    padding: 0;
-    margin-left: 62.5mm;
+    /* padding: 0; */
+    /* margin-left: 62.5mm; */
+    margin-left: 55.8mm;
     list-style-type: none;
 }
 
@@ -517,6 +649,19 @@ img[src$='#fullpagewidth'] {
 .footnotes code {
     margin: 0;
     display: inline-block;
+}
+
+.footnotes i {
+    font-family: "SourceSerif-Italic";
+}
+
+.bibliography p {
+	/* margin-top: 10px; */
+	margin-bottom: 5px;
+	/* margin-left: 64mm; */
+	margin-left: 69mm;
+	text-indent: -20px;
+	text-align: left;
 }
 
 /* To get the pandoc-generated bibliography to match style, define csl classes. */
